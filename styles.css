@@ -70,6 +70,7 @@ body {
     height: 50px;
     border-radius: 50%;
     border: 2px solid var(--secondary-color);
+    object-fit: cover;
 }
 
 .logo-text {
@@ -127,12 +128,14 @@ body {
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.6rem;
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 4px;
     white-space: nowrap;
     font-size: 0.9rem;
+    min-width: 40px;
+    text-align: center;
 }
 
 .lang-btn.active,
@@ -732,6 +735,7 @@ body {
     height: 60px;
     border-radius: 50%;
     border: 2px solid var(--secondary-color);
+    object-fit: cover;
 }
 
 .footer-logo p {
@@ -815,6 +819,11 @@ body {
     
     .nav-toggle {
         display: flex;
+    }
+    
+    .nav-language {
+        margin-left: auto;
+        justify-content: flex-end;
     }
     
     .hero-content {
