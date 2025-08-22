@@ -824,6 +824,16 @@ body {
     .nav-language {
         margin-left: auto;
         justify-content: flex-end;
+        flex-shrink: 0;
+    }
+    
+    .nav-logo {
+        flex-shrink: 1;
+        min-width: 0;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
     }
     
     .hero-content {
@@ -834,6 +844,9 @@ body {
     
     .hero-title {
         font-size: 2.5rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
     
     .about-content,
@@ -873,6 +886,9 @@ body {
     
     .hero-title {
         font-size: 2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
     
     .section-title {
@@ -886,5 +902,17 @@ body {
     
     .taoist-symbol::before {
         font-size: 5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        padding: 0 1rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
     }
 }
