@@ -404,6 +404,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 添加页面加载动画
     document.body.classList.add('loaded');
+    
+    // 页面内容加载完成后立即滚动到顶部
+    window.scrollTo({
+        top: 0,
+        behavior: 'instant'
+    });
+});
+
+// 页面完全加载完成后也滚动到顶部
+window.addEventListener('load', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'instant'
+    });
 });
 
 // 添加CSS样式

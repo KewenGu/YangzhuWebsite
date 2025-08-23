@@ -193,7 +193,9 @@
                     </div>
                 </div>
                 <div class="international-image">
-                    <div class="world-map"></div>
+                    <div class="earth-image">
+                        <img src="images/Rotating_earth_animated_transparent.gif" alt="地球" class="earth-photo">
+                    </div>
                 </div>
             </div>
         </div>
@@ -206,21 +208,37 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
                         <div>
                             <h4 data-zh="地址" data-en="Address"></h4>
                             <p data-zh="纽约市曼哈顿区" data-en="Manhattan, New York City"></p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
                         <div>
                             <h4 data-zh="邮箱" data-en="Email"></h4>
-                            <p>office@yangzhu.org</p>
+                            <a href="mailto:office@yangzhu.org">office@yangzhu.org</a>
                         </div>
                     </div>
-                    <div class="contact-item" hidden>
-                        <div class="contact-icon">📱</div>
+                    <div class="contact-item"  style="display: none;">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                                <polyline points="9,6 12,3 15,6"/>
+                            </svg>
+                        </div>
                         <div>
                             <h4 data-zh="电话" data-en="Phone"></h4>
                             <p>+1 (212) XXX-XXXX</p>
@@ -230,9 +248,9 @@
                 <div class="contact-form">
                     <h3 data-zh="留言咨询" data-en="Send Message"></h3>
                     <form>
-                        <input type="text" placeholder="姓名 / Name" required>
-                        <input type="email" placeholder="邮箱 / Email" required>
-                        <textarea placeholder="留言内容 / Message" rows="5" required></textarea>
+                        <input type="text" placeholder="姓名 / Name" required disabled>
+                        <input type="email" placeholder="邮箱 / Email" required disabled>
+                        <textarea placeholder="留言内容 / Message" rows="5" required disabled></textarea>
                         <button type="submit" data-zh="发送留言" data-en="Send Message" disabled>发送留言</button>
                     </form>
                 </div>
@@ -254,9 +272,24 @@
                     <a href="#contact" data-zh="联系方式" data-en="Contact">联系方式</a>
                 </div>
                 <div class="footer-social">
-                    <a href="#" class="social-link">📱</a>
-                    <a href="#" class="social-link">📧</a>
-                    <a href="#" class="social-link">🌐</a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" title="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" title="YouTube">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.94C18.88 4 12 4 12 4s-6.88 0-8.6.48a2.78 2.78 0 0 0-1.94 1.94A29 29 0 0 0 1 11.75a29 29 0 0 0 .48 5.33A2.78 2.78 0 0 0 3.4 19c1.72.48 8.6.48 8.6.48s6.88 0 8.6-.48a2.78 2.78 0 0 0 1.94-1.94 29 29 0 0 0 .48-5.33 29 29 0 0 0-.48-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">

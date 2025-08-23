@@ -465,8 +465,8 @@ body {
     width: 115%;
     height: 115%;
     object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--secondary-color);
+    /* border-radius: 50%;
+    border: 3px solid var(--secondary-color); */
     transition: all 0.3s ease;
     margin: -7.5%;
 }
@@ -739,27 +739,28 @@ body {
     align-items: center;
 }
 
-.world-map {
+.earth-image {
     width: 200px;
     height: 200px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
     position: relative;
-    animation: pulse 3s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.world-map::before {
-    content: '🌍';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4rem;
+.earth-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+.earth-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
 }
 
 /* 联系我们 */
@@ -793,6 +794,23 @@ body {
 .contact-icon {
     font-size: 2rem;
     color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.contact-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.contact-icon svg:hover {
+    stroke: var(--accent-color);
+    transform: scale(1.1);
 }
 
 .contact-item h4 {
@@ -929,24 +947,33 @@ body {
 }
 
 .social-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     background: var(--bg-primary);
     border: 2px solid var(--border-color);
     border-radius: 50%;
-    text-align: center;
-    line-height: 36px;
-    font-size: 1.2rem;
     color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-secondary);
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
     background: var(--secondary-color);
-    color: var(--bg-primary);
     border-color: var(--secondary-color);
     transform: translateY(-3px);
+}
+
+.social-link:hover svg {
+    stroke: var(--bg-primary);
 }
 
 .footer-bottom {

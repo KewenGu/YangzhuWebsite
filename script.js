@@ -307,6 +307,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 添加页面加载动画
     document.body.classList.add('loaded');
+    
+    // 页面内容加载完成后立即滚动到顶部
+    window.scrollTo({
+        top: 0,
+        behavior: 'instant'
+    });
 
     // 添加CSS动画样式
     const style = document.createElement('style');
@@ -424,6 +430,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+});
+
+// 页面加载完成后自动滚动到顶部
+window.addEventListener('load', () => {
+    // 自动滚动到页面顶部
+    window.scrollTo({
+        top: 0,
+        behavior: 'instant' // 使用instant避免动画效果
+    });
 });
 
 // 添加一些额外的交互效果
