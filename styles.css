@@ -574,6 +574,59 @@ body {
     margin-bottom: 1rem;
 }
 
+/* 法会卡片网格样式 */
+.ceremonies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.ceremony-card {
+    background: var(--bg-secondary);
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 5px 20px var(--shadow-color);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.ceremony-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px var(--shadow-color);
+    border-color: var(--secondary-color);
+}
+
+.ceremony-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.ceremony-card h3 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.ceremony-year {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.ceremony-card p:not(.ceremony-year) {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
 .ceremony-info p {
     color: var(--text-secondary);
     line-height: 1.6;
