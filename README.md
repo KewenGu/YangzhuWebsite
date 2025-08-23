@@ -134,8 +134,8 @@ php -S localhost:8000
 ## 联系信息
 
 如需技术支持或有任何问题，请联系：
-- 邮箱: info@yangzhutaoist.org
-- 电话: +1 (212) XXX-XXXX
+- 邮箱: office@yangzhu.org
+- 电话: 已隐藏
 
 ## 许可证
 

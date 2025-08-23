@@ -754,6 +754,20 @@ body {
     color: var(--text-secondary);
 }
 
+/* 邮箱链接样式 */
+.contact-item a[href^="mailto:"] {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.contact-item a[href^="mailto:"]:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
 .contact-form h3 {
     font-size: 1.5rem;
     color: var(--secondary-color);
