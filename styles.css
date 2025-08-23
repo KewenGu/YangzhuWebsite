@@ -462,20 +462,20 @@ body {
 
 /* 成员照片样式 */
 .member-photo {
-    width: 115%;
-    height: 115%;
+    /* width: 115%;
+    height: 115%; */
     object-fit: cover;
     /* border-radius: 50%;
     border: 3px solid var(--secondary-color); */
     transition: all 0.3s ease;
-    margin: -7.5%;
+    /* margin: -7.5%; */
 }
 
-.member-photo:hover {
+/* .member-photo:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px var(--shadow-color);
     border-color: var(--accent-color);
-}
+} */
 
 .member-name {
     font-size: 1.5rem;
