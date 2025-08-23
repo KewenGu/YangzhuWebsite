@@ -1089,10 +1089,20 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
     }
     
     .footer-logo {
         align-items: center;
+    }
+    
+    .footer-links {
+        align-items: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+        margin: 0 auto;
     }
 }
 
@@ -1138,6 +1148,25 @@ body {
     .taoist-symbol::before {
         font-size: 5rem;
     }
+    
+    /* 小屏幕页脚样式 */
+    .footer-content {
+        gap: 1.5rem;
+    }
+    
+    .footer-social {
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .social-link svg {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1152,6 +1181,15 @@ body {
     
     .hero-content {
         padding: 0 1rem;
+    }
+    
+    /* 中等屏幕页脚样式 */
+    .footer-content {
+        gap: 1.8rem;
+    }
+    
+    .footer-social {
+        gap: 0.9rem;
     }
 }
 
@@ -1195,7 +1233,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23DAA520" opacity="0.1"/></svg>');
+    /* background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23DAA520" opacity="0.1"/></svg>'); */
     animation: float 20s infinite linear;
 }
 
@@ -1203,6 +1241,7 @@ body {
     font-size: 2.8rem;
     font-weight: 600;
     color: var(--text-primary);
+    margin-top: 20px;
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
@@ -1607,6 +1646,26 @@ body {
         font-size: 2rem;
     }
     
+    /* 移动端页脚样式 */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        align-items: center;
+    }
+    
+    .footer-links {
+        align-items: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
     .about-detail-section,
     .members-detail-section,
     .activities-detail-section,
@@ -1645,6 +1704,25 @@ body {
 @media (max-width: 480px) {
     .page-title {
         font-size: 1.8rem;
+    }
+    
+    /* 小屏幕页脚样式 */
+    .footer-content {
+        gap: 1.5rem;
+    }
+    
+    .footer-social {
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .social-link svg {
+        width: 18px;
+        height: 18px;
     }
     
     .member-title {

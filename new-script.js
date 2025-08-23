@@ -35,6 +35,12 @@ class LanguageManager {
         
         // 更新HTML lang属性
         document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        
+        // 语言切换后滚动到页面顶部
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 使用平滑滚动效果
+        });
     }
 
     updateLanguage() {
