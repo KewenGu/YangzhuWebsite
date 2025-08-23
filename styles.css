@@ -452,12 +452,29 @@ body {
 }
 
 .member-avatar::before {
-    content: '👨‍🦳';
+    /* content: '👨‍🦳'; */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3rem;
+}
+
+/* 成员照片样式 */
+.member-photo {
+    width: 115%;
+    height: 115%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-color);
+    transition: all 0.3s ease;
+    margin: -7.5%;
+}
+
+.member-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px var(--shadow-color);
+    border-color: var(--accent-color);
 }
 
 .member-name {
@@ -509,6 +526,23 @@ body {
 .activity-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+}
+
+/* 活动照片样式 */
+.activity-photo {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    object-position: center bottom;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.activity-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px var(--shadow-color);
 }
 
 .activity-card h3 {
@@ -604,6 +638,23 @@ body {
     font-size: 3rem;
     margin-bottom: 20px;
     display: block;
+}
+
+/* 法会照片样式 */
+.ceremony-photo {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    object-position: center bottom;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.ceremony-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px var(--shadow-color);
 }
 
 .ceremony-card h3 {
