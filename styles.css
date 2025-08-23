@@ -1637,7 +1637,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .page-header {
         padding: 100px 0 40px;
     }
@@ -1679,6 +1679,33 @@ body {
     .ceremony-detail-card {
         padding: 30px 20px;
         margin-bottom: 50px;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* 移动端活动和法会页面 - 文字在前，图片在后 */
+    .activity-detail-card .activity-content,
+    .ceremony-detail-card .ceremony-content {
+        order: 1 !important; /* 文字内容在前 */
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .activity-detail-card .activity-images,
+    .ceremony-detail-card .ceremony-images {
+        order: 2 !important; /* 图片在后 */
+        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .activity-detail-card .activity-image,
+    .ceremony-detail-card .ceremony-image {
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        border-radius: 10px !important;
+        margin-bottom: 0 !important;
     }
     
     .content-block {
