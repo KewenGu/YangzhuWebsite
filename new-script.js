@@ -3,13 +3,15 @@
 // 语言切换功能
 class LanguageManager {
     constructor() {
-        this.currentLang = 'zh';
+        // 从localStorage获取保存的语言设置，如果没有则默认为中文
+        this.currentLang = localStorage.getItem('selectedLanguage') || 'zh';
         this.init();
     }
 
     init() {
         this.bindEvents();
         this.updateLanguage();
+        this.setInitialButtonState();
     }
 
     bindEvents() {
@@ -24,6 +26,9 @@ class LanguageManager {
 
     switchLanguage(lang) {
         this.currentLang = lang;
+        
+        // 保存语言选择到localStorage
+        localStorage.setItem('selectedLanguage', lang);
         
         // 更新按钮状态
         document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -66,6 +71,16 @@ class LanguageManager {
         enElements.forEach(element => {
             element.style.display = this.currentLang === 'en' ? 'block' : 'none';
         });
+    }
+    
+    setInitialButtonState() {
+        // 设置初始按钮状态
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
+        });
+        
+        // 设置初始HTML lang属性
+        document.documentElement.lang = this.currentLang === 'zh' ? 'zh-CN' : 'en';
     }
 }
 
