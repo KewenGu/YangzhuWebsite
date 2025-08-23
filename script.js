@@ -36,6 +36,7 @@ class LanguageManager {
     }
 
     updateLanguage() {
+        // 处理data-zh/data-en属性的元素
         const elements = document.querySelectorAll('[data-zh][data-en]');
         elements.forEach(element => {
             const text = this.currentLang === 'zh' ? element.dataset.zh : element.dataset.en;
@@ -44,6 +45,18 @@ class LanguageManager {
             } else {
                 element.textContent = text;
             }
+        });
+
+        // 处理content-zh/content-en类的元素
+        const zhElements = document.querySelectorAll('.content-zh');
+        const enElements = document.querySelectorAll('.content-en');
+        
+        zhElements.forEach(element => {
+            element.style.display = this.currentLang === 'zh' ? 'block' : 'none';
+        });
+        
+        enElements.forEach(element => {
+            element.style.display = this.currentLang === 'en' ? 'block' : 'none';
         });
     }
 }
@@ -70,8 +83,8 @@ class NavigationManager {
             });
         }
 
-        // 导航链接点击
-        document.querySelectorAll('.nav-link').forEach(link => {
+        // 只处理哈希链接的平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
@@ -283,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 初始化语言管理器
     const languageManager = new LanguageManager();
     
-    // 初始化导航管理器
+    // 初始化导航管理器（修复版本）
     const navigationManager = new NavigationManager();
     
     // 初始化滚动动画

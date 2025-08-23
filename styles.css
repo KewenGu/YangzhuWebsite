@@ -1030,3 +1030,501 @@ body {
         padding: 0 0.5rem;
     }
 }
+
+/* 新增页面样式 */
+
+/* 页面头部 */
+.page-header {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
+    padding: 120px 0 60px;
+    text-align: center;
+    border-bottom: 3px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23DAA520" opacity="0.1"/></svg>');
+    animation: float 20s infinite linear;
+}
+
+.page-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 关于页面详情 */
+.about-detail-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.about-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+.about-images {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-logo, .about-document {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.about-logo:hover, .about-document:hover {
+    transform: scale(1.05);
+}
+
+.about-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content-block {
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.content-zh, .content-en {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.content-zh:last-child, .content-en:last-child {
+    margin-bottom: 0;
+}
+
+/* 成员详情页面 */
+.members-detail-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.member-detail-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 80px;
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.member-photo {
+    text-align: center;
+}
+
+.member-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.member-image:hover {
+    transform: scale(1.05);
+}
+
+.member-title {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.member-name {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.member-description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 活动详情页面 */
+.activities-detail-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.activity-detail-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 60px;
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.activity-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.activity-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.activity-image:hover {
+    transform: scale(1.05);
+}
+
+.activity-title {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.activity-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+/* 法会详情页面 */
+.ceremonies-detail-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.ceremony-detail-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 60px;
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.ceremony-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ceremony-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.ceremony-image:hover {
+    transform: scale(1.05);
+}
+
+.ceremony-title {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.ceremony-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.traditional-ceremonies {
+    margin-top: 80px;
+}
+
+.section-subtitle {
+    font-size: 2.4rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.ceremonies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* 国际联谊页面 */
+.relations-detail-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.intro-text .section-subtitle {
+    margin-bottom: 30px;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-primary);
+}
+
+.congratulations-section, .exchange-section {
+    margin-bottom: 80px;
+}
+
+.relations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.relation-card {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 8px 30px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.relation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px var(--shadow-color);
+}
+
+.relation-image {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.relation-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.relation-title {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.relation-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.exchange-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.exchange-image {
+    text-align: center;
+}
+
+.exchange-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.exchange-title {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.exchange-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+/* 导航链接活动状态 */
+.nav-link.active {
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: var(--secondary-color) !important;
+    transition: all 0.3s ease !important;
+    transform: translateX(-50%) !important;
+}
+
+/* 响应式设计 - 新页面 */
+@media (max-width: 1024px) {
+    .about-content-wrapper,
+    .member-detail-card,
+    .activity-detail-card,
+    .ceremony-detail-card,
+    .exchange-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-images {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .about-logo, .about-document {
+        max-width: 200px;
+    }
+    
+    .page-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 100px 0 40px;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .about-detail-section,
+    .members-detail-section,
+    .activities-detail-section,
+    .ceremonies-detail-section,
+    .relations-detail-section {
+        padding: 60px 0;
+    }
+    
+    .member-detail-card,
+    .activity-detail-card,
+    .ceremony-detail-card {
+        padding: 30px 20px;
+        margin-bottom: 50px;
+    }
+    
+    .content-block {
+        padding: 20px;
+    }
+    
+    .relations-grid,
+    .ceremonies-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .section-subtitle {
+        font-size: 2rem;
+    }
+    
+    .about-images {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .member-title {
+        font-size: 1.5rem;
+    }
+    
+    .member-name {
+        font-size: 1.8rem;
+    }
+    
+    .activity-title,
+    .ceremony-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .content-zh, .content-en {
+        font-size: 1rem;
+    }
+    
+    .activity-description,
+    .ceremony-description {
+        font-size: 1rem;
+    }
+}
