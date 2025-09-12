@@ -7,7 +7,6 @@
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="includes.js"></script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -34,7 +33,7 @@
                 
                 <div class="relations-grid">
                     <!-- 新加坡道教总会贺信 -->
-                    <div class="relation-card">
+                    <div id="singapore-taoist-federation" class="relation-card">
                         <div class="relation-image">
                             <img src="assets/relations/新加坡道教总会贺信/1.jpg" alt="新加坡道教总会贺信" class="relation-img">
                         </div>
@@ -45,7 +44,7 @@
                     </div>
 
                     <!-- 马来西亚道教理事总会贺信 -->
-                    <div class="relation-card">
+                    <div id="malaysian-taoist-council" class="relation-card">
                         <div class="relation-image">
                             <img src="assets/relations/马来西亚道教理事总会贺信/1.jpg" alt="马来西亚道教理事总会贺信" class="relation-img">
                         </div>
@@ -56,7 +55,7 @@
                     </div>
 
                     <!-- 澳大利亚中华道教协会贺信 -->
-                    <div class="relation-card">
+                    <div id="australian-chinese-taoist" class="relation-card">
                         <div class="relation-image">
                             <img src="assets/relations/澳大利亚中华道教协会贺信/1.jpg" alt="澳大利亚中华道教协会贺信" class="relation-img">
                         </div>
@@ -67,7 +66,7 @@
                     </div>
 
                     <!-- 印度尼西亚中华道教协会贺信 -->
-                    <div class="relation-card">
+                    <div id="indonesian-chinese-taoist" class="relation-card">
                         <div class="relation-image">
                             <img src="assets/relations/印度尼西亚中华道教协会贺信/1.jpg" alt="印度尼西亚中华道教协会贺信" class="relation-img">
                         </div>
@@ -78,7 +77,7 @@
                     </div>
 
                     <!-- 泰国道教总会祝贺视频 -->
-                    <div class="relation-card">
+                    <div id="thailand-taoist-federation" class="relation-card">
                         <div class="relation-image">
                             <img src="assets/relations/泰国道教总会祝贺视频/1.jpg" alt="泰国道教总会祝贺视频" class="relation-img">
                         </div>
@@ -89,7 +88,7 @@
                     </div>
 
                     <!-- 越南道教研究协会贺信 -->
-                    <div class="relation-card">
+                    <div id="vietnam-taoist-research" class="relation-card">
                         <div class="relation-image">
                             <img src="assets/relations/越南道教研究协会贺信/1.jpg" alt="越南道教研究协会贺信" class="relation-img">
                         </div>
@@ -100,7 +99,7 @@
                     </div>
 
                     <!-- 斯洛文尼亚道教协会贺信 -->
-                    <div class="relation-card">
+                    <div id="slovenia-taoist-association" class="relation-card">
                         <div class="relation-image">
                             <img src="assets/relations/斯洛文尼亚道教协会贺信/1.png" alt="斯洛文尼亚道教协会贺信" class="relation-img">
                         </div>
@@ -136,6 +135,56 @@
     <div data-include="footer"></div>
         <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="includes.js"></script>
     <script src="new-script.js"></script>
+    
+    <!-- 备用锚点处理脚本 -->
+    <script>
+    // 备用锚点滚动处理 - 等待所有内容加载完成
+    function handleAnchorScroll() {
+        if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                // 计算导航栏高度并滚动到目标位置
+                const navHeight = 100; // 导航栏预估高度
+                const targetTop = target.offsetTop - navHeight;
+                window.scrollTo({
+                    top: targetTop,
+                    behavior: 'smooth'
+                });
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // 多次尝试处理锚点，确保所有动态内容都加载完成
+    window.addEventListener('load', function() {
+        // 立即尝试
+        if (!handleAnchorScroll()) {
+            // 500ms后再试
+            setTimeout(function() {
+                if (!handleAnchorScroll()) {
+                    // 1秒后再试
+                    setTimeout(function() {
+                        if (!handleAnchorScroll()) {
+                            // 2秒后最后一次尝试
+                            setTimeout(handleAnchorScroll, 1000);
+                        }
+                    }, 500);
+                }
+            }, 500);
+        }
+    });
+
+    // 也监听DOMContentLoaded事件
+    document.addEventListener('DOMContentLoaded', function() {
+        // 等待includes.js完成加载（它需要200ms）
+        setTimeout(handleAnchorScroll, 300);
+        
+        // 再多等一点时间确保所有内容都渲染完成
+        setTimeout(handleAnchorScroll, 800);
+    });
+    </script>
 </body>
 </html>
