@@ -96,6 +96,23 @@ class SimpleNavigationManager {
     init() {
         this.bindEvents();
         this.handleScroll();
+        this.handleAnchorOnLoad(); // 处理页面加载时的锚点
+    }
+
+    handleAnchorOnLoad() {
+        // 页面加载时处理URL中的锚点
+        if (window.location.hash) {
+            setTimeout(() => {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80; // 考虑导航栏高度
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100); // 稍微延迟以确保页面完全加载
+        }
     }
 
     bindEvents() {
@@ -107,7 +124,7 @@ class SimpleNavigationManager {
             });
         }
 
-        // 只处理哈希链接的平滑滚动，完全不干扰HTML页面链接
+        // 只处理当前页面内的哈希链接的平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -126,6 +143,22 @@ class SimpleNavigationManager {
                     this.navToggle.classList.remove('active');
                 }
             });
+        });
+
+        // 处理跨页面的锚点链接（如 activities.html#anchor）
+        document.querySelectorAll('a[href*="#"]').forEach(link => {
+            const href = link.getAttribute('href');
+            // 只处理跨页面的锚点链接，不处理纯哈希链接
+            if (href && !href.startsWith('#') && href.includes('#')) {
+                link.addEventListener('click', (e) => {
+                    // 让浏览器正常处理跨页面跳转，不阻止默认行为
+                    // 关闭移动端菜单
+                    if (this.navMenu && this.navToggle) {
+                        this.navMenu.classList.remove('active');
+                        this.navToggle.classList.remove('active');
+                    }
+                });
+            }
         });
 
         // 滚动事件
