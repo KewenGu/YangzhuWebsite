@@ -139,19 +139,50 @@
     
     <!-- 备用锚点处理脚本 -->
     <script>
-    // 备用锚点滚动处理
-    window.addEventListener('load', function() {
+    // 备用锚点滚动处理 - 等待所有内容加载完成
+    function handleAnchorScroll() {
         if (window.location.hash) {
-            setTimeout(function() {
-                const target = document.querySelector(window.location.hash);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }, 100);
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                // 计算导航栏高度并滚动到目标位置
+                const navHeight = 100; // 导航栏预估高度
+                const targetTop = target.offsetTop - navHeight;
+                window.scrollTo({
+                    top: targetTop,
+                    behavior: 'smooth'
+                });
+                return true;
+            }
         }
+        return false;
+    }
+
+    // 多次尝试处理锚点，确保所有动态内容都加载完成
+    window.addEventListener('load', function() {
+        // 立即尝试
+        if (!handleAnchorScroll()) {
+            // 500ms后再试
+            setTimeout(function() {
+                if (!handleAnchorScroll()) {
+                    // 1秒后再试
+                    setTimeout(function() {
+                        if (!handleAnchorScroll()) {
+                            // 2秒后最后一次尝试
+                            setTimeout(handleAnchorScroll, 1000);
+                        }
+                    }, 500);
+                }
+            }, 500);
+        }
+    });
+
+    // 也监听DOMContentLoaded事件
+    document.addEventListener('DOMContentLoaded', function() {
+        // 等待includes.js完成加载（它需要200ms）
+        setTimeout(handleAnchorScroll, 300);
+        
+        // 再多等一点时间确保所有内容都渲染完成
+        setTimeout(handleAnchorScroll, 800);
     });
     </script>
 </body>
