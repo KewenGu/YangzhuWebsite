@@ -101,20 +101,31 @@ class SimpleNavigationManager {
 
     handleAnchorOnLoad() {
         // 页面加载时处理URL中的锚点
-        console.log('Current URL hash:', window.location.hash);
         if (window.location.hash) {
-            setTimeout(() => {
+            // 使用多个时间点尝试滚动，确保页面完全加载
+            const scrollToAnchor = () => {
                 const targetElement = document.querySelector(window.location.hash);
-                console.log('Target element found:', targetElement);
                 if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 80; // 考虑导航栏高度
-                    console.log('Scrolling to:', offsetTop);
+                    const offsetTop = targetElement.offsetTop - 100; // 考虑导航栏高度
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
                     });
+                    return true;
                 }
-            }, 500); // 增加延迟以确保页面完全加载
+                return false;
+            };
+
+            // 立即尝试
+            if (!scrollToAnchor()) {
+                // 如果失败，500ms后再试
+                setTimeout(() => {
+                    if (!scrollToAnchor()) {
+                        // 如果还失败，1秒后再试
+                        setTimeout(scrollToAnchor, 500);
+                    }
+                }, 500);
+            }
         }
     }
 
@@ -148,22 +159,7 @@ class SimpleNavigationManager {
             });
         });
 
-        // 处理跨页面的锚点链接（如 activities.html#anchor）
-        document.querySelectorAll('a[href*="#"]').forEach(link => {
-            const href = link.getAttribute('href');
-            // 只处理跨页面的锚点链接，不处理纯哈希链接
-            if (href && !href.startsWith('#') && href.includes('#')) {
-                link.addEventListener('click', (e) => {
-                    // 让浏览器正常处理跨页面跳转，不阻止默认行为
-                    console.log('Cross-page anchor link clicked:', href);
-                    // 关闭移动端菜单
-                    if (this.navMenu && this.navToggle) {
-                        this.navMenu.classList.remove('active');
-                        this.navToggle.classList.remove('active');
-                    }
-                });
-            }
-        });
+        // 不干扰跨页面锚点链接，让浏览器原生处理
 
         // 滚动事件
         window.addEventListener('scroll', () => {

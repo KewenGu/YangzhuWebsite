@@ -136,5 +136,23 @@
         <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="new-script.js"></script>
+    
+    <!-- 备用锚点处理脚本 -->
+    <script>
+    // 备用锚点滚动处理
+    window.addEventListener('load', function() {
+        if (window.location.hash) {
+            setTimeout(function() {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
+        }
+    });
+    </script>
 </body>
 </html>
