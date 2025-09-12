@@ -1308,6 +1308,31 @@ body {
     box-shadow: 0 2px 8px rgba(218, 165, 32, 0.3);
 }
 
+/* 锚点跳转平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 锚点目标突出显示 */
+.activity-detail-card:target {
+    animation: highlight-fade 3s ease-in-out;
+    border-left: 4px solid var(--secondary-color);
+}
+
+@keyframes highlight-fade {
+    0% {
+        background-color: rgba(255, 215, 0, 0.2);
+        transform: scale(1.02);
+    }
+    50% {
+        background-color: rgba(255, 215, 0, 0.1);
+    }
+    100% {
+        background-color: transparent;
+        transform: scale(1);
+    }
+}
+
 /* 移动端特色活动样式 */
 @media (max-width: 768px) {
     .featured-event::before,
