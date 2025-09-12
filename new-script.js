@@ -101,17 +101,20 @@ class SimpleNavigationManager {
 
     handleAnchorOnLoad() {
         // 页面加载时处理URL中的锚点
+        console.log('Current URL hash:', window.location.hash);
         if (window.location.hash) {
             setTimeout(() => {
                 const targetElement = document.querySelector(window.location.hash);
+                console.log('Target element found:', targetElement);
                 if (targetElement) {
                     const offsetTop = targetElement.offsetTop - 80; // 考虑导航栏高度
+                    console.log('Scrolling to:', offsetTop);
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
                     });
                 }
-            }, 100); // 稍微延迟以确保页面完全加载
+            }, 500); // 增加延迟以确保页面完全加载
         }
     }
 
@@ -152,6 +155,7 @@ class SimpleNavigationManager {
             if (href && !href.startsWith('#') && href.includes('#')) {
                 link.addEventListener('click', (e) => {
                     // 让浏览器正常处理跨页面跳转，不阻止默认行为
+                    console.log('Cross-page anchor link clicked:', href);
                     // 关闭移动端菜单
                     if (this.navMenu && this.navToggle) {
                         this.navMenu.classList.remove('active');
