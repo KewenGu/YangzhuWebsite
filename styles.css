@@ -600,9 +600,10 @@ body {
     font-size: 0.9rem;
     margin: 0.5rem 0;
     padding: 0.5rem;
-    background: rgba(255, 215, 0, 0.1);
+    background: rgba(255, 248, 220, 0.8);
     border-radius: 8px;
     border-left: 3px solid var(--secondary-color);
+    box-shadow: 0 1px 5px rgba(218, 165, 32, 0.2);
 }
 
 /* 协会法会 */
@@ -1242,9 +1243,10 @@ body {
 .event-details {
     margin: 1.5rem 0;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     border-left: 4px solid var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .event-info {
@@ -1281,9 +1283,10 @@ body {
 .ceremony-program li {
     margin: 0.5rem 0;
     padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
     border-left: 3px solid var(--secondary-color);
+    color: var(--text-color);
 }
 
 .ceremony-program li::before {
@@ -1296,11 +1299,12 @@ body {
 .event-note {
     margin-top: 1.5rem;
     padding: 1rem;
-    background: rgba(218, 165, 32, 0.1);
+    background: rgba(255, 248, 220, 0.9);
     border-radius: 8px;
-    border: 1px solid rgba(218, 165, 32, 0.3);
+    border: 1px solid rgba(218, 165, 32, 0.5);
     font-weight: 500;
     color: var(--text-color);
+    box-shadow: 0 2px 8px rgba(218, 165, 32, 0.1);
 }
 
 /* 移动端特色活动样式 */
