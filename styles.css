@@ -950,7 +950,7 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -989,6 +989,85 @@ body {
 
 .footer-links a:hover {
     color: var(--secondary-color);
+}
+
+/* 邮件订阅样式 */
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-newsletter h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.footer-newsletter p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-input-group {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-input-group input {
+    flex: 1;
+    padding: 0.7rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px 0 0 5px;
+    font-size: 0.9rem;
+    background: var(--bg-primary);
+    color: var(--text-color);
+}
+
+.newsletter-input-group input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.newsletter-input-group input::placeholder {
+    color: var(--text-light);
+}
+
+.newsletter-btn {
+    padding: 0.7rem 1rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    background: var(--primary-color);
+}
+
+.newsletter-message {
+    font-size: 0.8rem;
+    min-height: 1.2rem;
+    margin-top: 0.3rem;
+}
+
+.newsletter-message.success {
+    color: #28a745;
+}
+
+.newsletter-message.error {
+    color: #dc3545;
 }
 
 .footer-social {
@@ -1966,5 +2045,20 @@ html {
     .activity-description,
     .ceremony-description {
         font-size: 1rem;
+    }
+    
+    /* 移动端邮件订阅样式 */
+    .footer-newsletter {
+        text-align: center;
+    }
+    
+    .newsletter-input-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .newsletter-input-group input,
+    .newsletter-btn {
+        border-radius: 5px;
     }
 }

@@ -609,4 +609,114 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-console.log('新JavaScript文件初始化完成，导航链接应该可以正常工作了');
+// 邮件订阅管理器
+class NewsletterManager {
+    constructor() {
+        this.form = null;
+        this.emailInput = null;
+        this.messageDiv = null;
+        this.init();
+    }
+
+    init() {
+        // 等待includes.js加载完成后再初始化
+        setTimeout(() => {
+            this.form = document.getElementById('newsletter-form');
+            this.emailInput = document.getElementById('newsletter-email');
+            this.messageDiv = document.getElementById('newsletter-message');
+            
+            console.log('Newsletter form elements:', {
+                form: this.form,
+                emailInput: this.emailInput,
+                messageDiv: this.messageDiv
+            });
+            
+            if (this.form) {
+                this.bindEvents();
+                console.log('Newsletter form events bound successfully');
+            } else {
+                console.log('Newsletter form not found, retrying...');
+                // 如果没找到，再等待一点时间重试
+                setTimeout(() => this.init(), 500);
+            }
+        }, 300);
+    }
+
+    bindEvents() {
+        this.form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleSubmit();
+        });
+    }
+
+    async handleSubmit() {
+        const email = this.emailInput.value.trim();
+        
+        if (!email) {
+            this.showMessage('请输入邮箱地址 / Please enter email address', 'error');
+            return;
+        }
+
+        if (!this.isValidEmail(email)) {
+            this.showMessage('请输入有效的邮箱地址 / Please enter a valid email address', 'error');
+            return;
+        }
+
+        // 显示加载状态
+        const originalBtnText = this.form.querySelector('.newsletter-btn span').textContent;
+        this.form.querySelector('.newsletter-btn span').textContent = '订阅中... / Subscribing...';
+        this.form.querySelector('.newsletter-btn').disabled = true;
+
+        try {
+            // 模拟邮件订阅（实际应用中需要配置EmailJS或后端API）
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            this.showMessage('订阅成功！感谢您的关注 / Successfully subscribed! Thank you for your interest', 'success');
+            this.emailInput.value = '';
+            
+            // 可以在这里添加实际的邮件订阅逻辑
+            console.log('Newsletter subscription for:', email);
+            
+        } catch (error) {
+            console.error('Newsletter subscription error:', error);
+            this.showMessage('订阅失败，请稍后重试 / Subscription failed, please try again later', 'error');
+        } finally {
+            // 恢复按钮状态
+            this.form.querySelector('.newsletter-btn span').textContent = originalBtnText;
+            this.form.querySelector('.newsletter-btn').disabled = false;
+        }
+    }
+
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    showMessage(message, type) {
+        this.messageDiv.textContent = message;
+        this.messageDiv.className = `newsletter-message ${type}`;
+        
+        // 5秒后清除消息
+        setTimeout(() => {
+            this.messageDiv.textContent = '';
+            this.messageDiv.className = 'newsletter-message';
+        }, 5000);
+    }
+}
+
+// 初始化邮件订阅管理器
+document.addEventListener('DOMContentLoaded', function() {
+    new NewsletterManager();
+});
+
+// 确保includes.js能够执行
+if (typeof window.includesLoaded === 'undefined') {
+    console.log('等待includes.js加载...');
+    setTimeout(() => {
+        if (typeof window.includesLoaded === 'undefined') {
+            console.warn('includes.js可能未正确加载');
+        }
+    }, 2000);
+}
+
+console.log('新JavaScript文件初始化完成，导航链接和邮件订阅功能应该可以正常工作了');

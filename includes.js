@@ -1,5 +1,23 @@
 // 页面组件包含系统
-document.addEventListener('DOMContentLoaded', function() {
+console.log('includes.js loaded');
+window.includesLoaded = true;
+
+// 立即执行测试
+console.log('includes.js 开始执行');
+
+// 立即执行函数，不等待DOMContentLoaded
+(function() {
+    console.log('includes.js 立即执行函数开始');
+    
+    // 如果DOM还没准备好，等待一下
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadIncludes);
+    } else {
+        loadIncludes();
+    }
+    
+    function loadIncludes() {
+        console.log('includes.js loadIncludes 函数执行');
     
     // 导航栏HTML
     const navigationHTML = `
@@ -102,6 +120,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="activities.html" data-zh="活动安排" data-en="Activities">活动安排</a>
                     <a href="#contact" data-zh="联系方式" data-en="Contact">联系方式</a>
                 </div>
+                <div class="footer-newsletter">
+                    <h4 data-zh="邮件订阅" data-en="Newsletter Subscription">邮件订阅</h4>
+                    <p data-zh="订阅我们的邮件，获取最新活动和法会信息" data-en="Subscribe to our newsletter for latest activities and ceremony updates">订阅我们的邮件，获取最新活动和法会信息</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" id="newsletter-email" placeholder="输入您的邮箱 / Enter your email" required>
+                            <button type="submit" class="newsletter-btn">
+                                <span data-zh="订阅" data-en="Subscribe">订阅</span>
+                            </button>
+                        </div>
+                        <div class="newsletter-message" id="newsletter-message"></div>
+                    </form>
+                </div>
                 <div class="footer-social">
                     <a href="#" class="social-link" title="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -143,8 +174,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 替换页脚
     const footerElements = document.querySelectorAll('[data-include="footer"]');
+    console.log('Found footer elements:', footerElements.length);
     footerElements.forEach(element => {
         element.outerHTML = footerHTML;
+        console.log('Footer replaced successfully');
     });
 
     // 设置当前页面的导航高亮
@@ -170,4 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.initializeMobileMenu();
         }
     }, 200);
-});
+    
+    console.log('includes.js execution completed');
+    }
+})();
