@@ -41,6 +41,20 @@ class LanguageManager {
         // 更新HTML lang属性
         document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
         
+        // 额外确保订阅表单被更新（延迟执行以确保DOM已更新）
+        setTimeout(() => {
+            const newsletterInput = document.getElementById('newsletter-email');
+            if (newsletterInput) {
+                if (!newsletterInput.dataset.zh) {
+                    newsletterInput.setAttribute('data-zh', '输入您的邮箱');
+                }
+                if (!newsletterInput.dataset.en) {
+                    newsletterInput.setAttribute('data-en', 'Enter your email');
+                }
+                newsletterInput.placeholder = lang === 'zh' ? newsletterInput.dataset.zh : newsletterInput.dataset.en;
+            }
+        }, 50);
+        
         // 语言切换后滚动到页面顶部
         window.scrollTo({
             top: 0,
@@ -71,6 +85,12 @@ class LanguageManager {
         enElements.forEach(element => {
             element.style.display = this.currentLang === 'en' ? 'block' : 'none';
         });
+        
+        // 特别处理订阅表单（确保更新）
+        const newsletterInput = document.getElementById('newsletter-email');
+        if (newsletterInput && newsletterInput.dataset.zh && newsletterInput.dataset.en) {
+            newsletterInput.placeholder = this.currentLang === 'zh' ? newsletterInput.dataset.zh : newsletterInput.dataset.en;
+        }
     }
     
     setInitialButtonState() {
@@ -182,11 +202,11 @@ class SimpleNavigationManager {
 class FormManager {
     constructor() {
         this.contactForm = document.querySelector('.contact-form form');
-        // EmailJS配置 - 请参考 EMAILJS_CONFIG.md 文件进行配置
+        // EmailJS配置
         this.emailjsConfig = {
-            serviceId: 'YOUR_SERVICE_ID', // 替换为您的 EmailJS Service ID
-            templateId: 'YOUR_TEMPLATE_ID', // 替换为您的 EmailJS Template ID
-            publicKey: 'YOUR_PUBLIC_KEY' // 替换为您的 EmailJS Public Key
+            serviceId: 'service_rof5hxf',
+            templateId: 'template_b3ehhvq',
+            publicKey: 'Gz67fXq0iOr1tz24f'
         };
         
         // 邮件设置
@@ -298,13 +318,8 @@ class FormManager {
             
             // 检查EmailJS是否可用
             if (typeof emailjs === 'undefined') {
+                console.error('EmailJS library not loaded');
                 throw new Error('EmailJS library not loaded');
-            }
-            
-            // 检查配置是否已设置
-            if (this.emailjsConfig.serviceId === 'YOUR_SERVICE_ID') {
-                console.warn('EmailJS配置未设置，使用模拟模式');
-                return this.simulateSubmit(data);
             }
             
             // 准备邮件模板参数
@@ -438,13 +453,12 @@ class FormManager {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('新JavaScript文件已加载');
     
-    // 初始化EmailJS（如果可用）
+    // 初始化EmailJS
     if (typeof emailjs !== 'undefined') {
-        // 注意：需要替换为您的实际Public Key
-        emailjs.init('YOUR_PUBLIC_KEY');
+        emailjs.init('Gz67fXq0iOr1tz24f');
         console.log('EmailJS已初始化');
     } else {
-        console.warn('EmailJS未加载，将使用模拟模式');
+        console.warn('EmailJS未加载');
     }
     
     // 初始化语言管理器
@@ -666,13 +680,23 @@ class NewsletterManager {
     async handleSubmit() {
         const email = this.emailInput.value.trim();
         
+        // 获取当前语言
+        const currentLang = window.languageManager ? window.languageManager.currentLang : 'zh';
+        const isZh = currentLang === 'zh';
+        
         if (!email) {
-            this.showMessage('请输入邮箱地址 / Please enter email address', 'error');
+            this.showMessage(
+                isZh ? '请输入邮箱地址' : 'Please enter email address',
+                'error'
+            );
             return;
         }
 
         if (!this.isValidEmail(email)) {
-            this.showMessage('请输入有效的邮箱地址 / Please enter a valid email address', 'error');
+            this.showMessage(
+                isZh ? '请输入有效的邮箱地址' : 'Please enter a valid email address',
+                'error'
+            );
             return;
         }
 
@@ -680,7 +704,7 @@ class NewsletterManager {
         if (!this.mailchimpConfig.listId || this.mailchimpConfig.listId === 'YOUR_LIST_ID') {
             console.warn('Mailchimp List ID 未配置');
             this.showMessage(
-                '⚠️ Mailchimp List ID 未配置。请在 new-script.js 第 627 行填入您的 List ID。 / Mailchimp List ID not configured. Please fill in your List ID at line 627 in new-script.js.',
+                isZh ? '⚠️ Mailchimp 配置未完成' : '⚠️ Mailchimp configuration incomplete',
                 'error'
             );
             return;
@@ -688,18 +712,24 @@ class NewsletterManager {
 
         // 显示加载状态
         const originalBtnText = this.form.querySelector('.newsletter-btn span').textContent;
-        this.form.querySelector('.newsletter-btn span').textContent = '订阅中... / Subscribing...';
+        this.form.querySelector('.newsletter-btn span').textContent = isZh ? '订阅中...' : 'Subscribing...';
         this.form.querySelector('.newsletter-btn').disabled = true;
 
         try {
-            // 使用 Mailchimp JSONP API（适用于静态网站）
+            // 使用 Mailchimp API
             const result = await this.subscribeViaMailchimp(email);
 
             if (result.success) {
                 if (result.alreadySubscribed) {
-                    this.showMessage('该邮箱已订阅！感谢您的关注 / Email already subscribed! Thank you for your interest', 'success');
+                    this.showMessage(
+                        isZh ? '该邮箱已订阅！感谢您的关注' : 'Email already subscribed! Thank you for your interest',
+                        'success'
+                    );
                 } else {
-                    this.showMessage('订阅成功！感谢您的关注 / Successfully subscribed! Thank you for your interest', 'success');
+                    this.showMessage(
+                        isZh ? '订阅成功！感谢您的关注' : 'Successfully subscribed! Thank you for your interest',
+                        'success'
+                    );
                 }
                 this.emailInput.value = '';
                 
@@ -711,7 +741,10 @@ class NewsletterManager {
             
         } catch (error) {
             console.error('Newsletter subscription error:', error);
-            this.showMessage('订阅失败，请稍后重试 / Subscription failed, please try again later', 'error');
+            this.showMessage(
+                isZh ? '订阅失败，请稍后重试' : 'Subscription failed, please try again later',
+                'error'
+            );
         } finally {
             // 恢复按钮状态
             this.form.querySelector('.newsletter-btn span').textContent = originalBtnText;
@@ -898,7 +931,15 @@ class NewsletterManager {
 
 // 初始化邮件订阅管理器
 document.addEventListener('DOMContentLoaded', function() {
-    new NewsletterManager();
+    // 延迟初始化，确保 includes.js 已加载完成
+    setTimeout(() => {
+        new NewsletterManager();
+        
+        // 确保订阅表单的 placeholder 也被语言管理器更新
+        if (window.languageManager) {
+            window.languageManager.updateLanguage();
+        }
+    }, 500);
 });
 
 // 确保includes.js能够执行

@@ -96,10 +96,10 @@ console.log('includes.js 开始执行');
                 <div class="contact-form">
                     <h3 data-zh="留言咨询" data-en="Send Message">留言咨询</h3>
                     <form>
-                        <input type="text" placeholder="姓名 / Name" required disabled>
-                        <input type="email" placeholder="邮箱 / Email" required disabled>
-                        <textarea placeholder="留言内容 / Message" rows="5" required disabled></textarea>
-                        <button type="submit" data-zh="发送留言" data-en="Send Message" disabled>发送留言</button>
+                        <input type="text" name="name" data-zh="姓名" data-en="Name" placeholder="姓名" required>
+                        <input type="email" name="email" data-zh="邮箱" data-en="Email" placeholder="邮箱" required>
+                        <textarea name="message" data-zh="留言内容" data-en="Message" placeholder="留言内容" rows="5" required></textarea>
+                        <button type="submit" data-zh="发送留言" data-en="Send Message">发送留言</button>
                     </form>
                 </div>
             </div>
@@ -125,7 +125,7 @@ console.log('includes.js 开始执行');
                     <p data-zh="订阅我们的邮件，获取最新活动和法会信息" data-en="Subscribe to our newsletter for latest activities and ceremony updates">订阅我们的邮件，获取最新活动和法会信息</p>
                     <form class="newsletter-form" id="newsletter-form">
                         <div class="newsletter-input-group">
-                            <input type="email" id="newsletter-email" placeholder="输入您的邮箱 / Enter your email" required>
+                            <input type="email" id="newsletter-email" data-zh="输入您的邮箱" data-en="Enter your email" placeholder="输入您的邮箱" required>
                             <button type="submit" class="newsletter-btn">
                                 <span data-zh="订阅" data-en="Subscribe">订阅</span>
                             </button>
@@ -201,6 +201,12 @@ console.log('includes.js 开始执行');
         }
         if (typeof window.initializeMobileMenu === 'function') {
             window.initializeMobileMenu();
+        }
+        
+        // 通知 LanguageManager 更新语言（包括新加载的元素）
+        if (window.languageManager) {
+            console.log('includes.js: 触发语言更新');
+            window.languageManager.updateLanguage();
         }
     }, 200);
     
