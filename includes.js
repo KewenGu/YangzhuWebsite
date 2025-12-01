@@ -134,14 +134,14 @@ console.log('includes.js 开始执行');
                     </form>
                 </div>
                 <div class="footer-social">
-                    <a href="#" class="social-link" title="Instagram">
+                    <a href="https://www.instagram.com/yangzhusect/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                         </svg>
                     </a>
-                    <a href="#" class="social-link" title="Facebook">
+                    <a href="https://www.facebook.com/p/Yangzhu-Taoist-Association-of-America-%E7%BE%8E%E5%9B%BD%E9%98%B3%E7%BF%A5%E9%81%93%E6%95%99%E5%8D%8F%E4%BC%9A-61562619520276/" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                         </svg>
