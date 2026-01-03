@@ -362,8 +362,8 @@ body {
     }
     
     .donation-btn {
-        padding: 0.5rem 1.1rem;
-        font-size: 0.9rem;
+        padding: 0.55rem 1.2rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -373,13 +373,13 @@ body {
     }
     
     .lang-toggle {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.8rem;
+        padding: 0.45rem 0.7rem;
+        font-size: 0.85rem;
     }
     
     .donation-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
     }
     
     .donation-modal-content {
