@@ -36,9 +36,11 @@ console.log('includes.js 开始执行');
                 <a href="relations.html" class="nav-link" data-zh="国际联谊" data-en="Relations">国际联谊</a>
                 <a href="#contact" class="nav-link" data-zh="联系我们" data-en="Contact">联系我们</a>
             </div>
-            <div class="nav-language">
-                <button class="lang-btn active" data-lang="zh">中</button>
-                <button class="lang-btn" data-lang="en">EN</button>
+            <div class="nav-buttons">
+                <button class="lang-toggle" id="langToggle" title="切换语言 / Switch Language">
+                    <span class="lang-toggle-text">中/EN</span>
+                </button>
+                <button class="donation-btn" id="donationBtn" data-zh="捐助" data-en="Donate">捐助</button>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -46,7 +48,18 @@ console.log('includes.js 开始执行');
                 <span></span>
             </div>
         </div>
-    </nav>`;
+    </nav>
+    
+    <!-- 捐助弹窗 -->
+    <div class="donation-modal" id="donationModal">
+        <div class="donation-modal-overlay"></div>
+        <div class="donation-modal-content">
+            <button class="donation-modal-close" id="donationModalClose">&times;</button>
+            <h3 data-zh="扫码捐助" data-en="Scan to Donate">扫码捐助</h3>
+            <img src="assets/donation/zelle_qr.jpg" alt="Zelle QR Code" class="donation-qr-img">
+            <p data-zh="感谢您对美国阳翥道教协会的支持！" data-en="Thank you for supporting Yangzhu Taoist Association of America!">感谢您对美国阳翥道教协会的支持！</p>
+        </div>
+    </div>`;
 
     // 联系我们部分HTML
     const contactHTML = `
@@ -208,8 +221,84 @@ console.log('includes.js 开始执行');
             console.log('includes.js: 触发语言更新');
             window.languageManager.updateLanguage();
         }
+        
+        // 初始化语言切换按钮
+        initLangToggle();
+        
+        // 初始化捐助弹窗
+        initDonationModal();
     }, 200);
     
     console.log('includes.js execution completed');
+    }
+    
+    // 初始化语言切换按钮
+    function initLangToggle() {
+        const langToggle = document.getElementById('langToggle');
+        if (!langToggle) return;
+        
+        langToggle.addEventListener('click', function() {
+            // 切换语言
+            if (window.languageManager) {
+                const newLang = window.languageManager.currentLang === 'zh' ? 'en' : 'zh';
+                window.languageManager.switchLanguage(newLang);
+                updateLangToggleDisplay(newLang);
+            }
+        });
+        
+        // 设置初始显示状态
+        const currentLang = localStorage.getItem('selectedLanguage') || 'zh';
+        updateLangToggleDisplay(currentLang);
+    }
+    
+    function updateLangToggleDisplay(lang) {
+        const langToggle = document.getElementById('langToggle');
+        if (!langToggle) return;
+        
+        const textSpan = langToggle.querySelector('.lang-toggle-text');
+        if (textSpan) {
+            // 高亮当前语言
+            if (lang === 'zh') {
+                textSpan.innerHTML = '<span class="lang-active">中</span>/<span class="lang-inactive">EN</span>';
+            } else {
+                textSpan.innerHTML = '<span class="lang-inactive">中</span>/<span class="lang-active">EN</span>';
+            }
+        }
+    }
+    
+    // 捐助弹窗功能
+    function initDonationModal() {
+        const donationBtn = document.getElementById('donationBtn');
+        const donationModal = document.getElementById('donationModal');
+        const donationModalClose = document.getElementById('donationModalClose');
+        const donationModalOverlay = document.querySelector('.donation-modal-overlay');
+        
+        if (!donationBtn || !donationModal) return;
+        
+        // 打开弹窗
+        donationBtn.addEventListener('click', function() {
+            donationModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // 关闭弹窗 - 点击关闭按钮
+        donationModalClose.addEventListener('click', function() {
+            donationModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // 关闭弹窗 - 点击遮罩层
+        donationModalOverlay.addEventListener('click', function() {
+            donationModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // 关闭弹窗 - 按ESC键
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && donationModal.classList.contains('active')) {
+                donationModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     }
 })();

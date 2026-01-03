@@ -9,19 +9,8 @@ class LanguageManager {
     }
 
     init() {
-        this.bindEvents();
         this.updateLanguage();
-        this.setInitialButtonState();
-    }
-
-    bindEvents() {
-        const langBtns = document.querySelectorAll('.lang-btn');
-        langBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const lang = e.target.dataset.lang;
-                this.switchLanguage(lang);
-            });
-        });
+        this.updateLangToggleDisplay();
     }
 
     switchLanguage(lang) {
@@ -29,14 +18,12 @@ class LanguageManager {
         
         // 保存语言选择到localStorage
         localStorage.setItem('selectedLanguage', lang);
-        
-        // 更新按钮状态
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
 
         // 更新页面语言
         this.updateLanguage();
+        
+        // 更新切换按钮显示
+        this.updateLangToggleDisplay();
         
         // 更新HTML lang属性
         document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
@@ -93,13 +80,21 @@ class LanguageManager {
         }
     }
     
-    setInitialButtonState() {
-        // 设置初始按钮状态
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
-        });
+    updateLangToggleDisplay() {
+        const langToggle = document.getElementById('langToggle');
+        if (!langToggle) return;
         
-        // 设置初始HTML lang属性
+        const textSpan = langToggle.querySelector('.lang-toggle-text');
+        if (textSpan) {
+            // 高亮当前语言
+            if (this.currentLang === 'zh') {
+                textSpan.innerHTML = '<span class="lang-active">中</span>/<span class="lang-inactive">EN</span>';
+            } else {
+                textSpan.innerHTML = '<span class="lang-inactive">中</span>/<span class="lang-active">EN</span>';
+            }
+        }
+        
+        // 设置HTML lang属性
         document.documentElement.lang = this.currentLang === 'zh' ? 'zh-CN' : 'en';
     }
 }
