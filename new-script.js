@@ -41,12 +41,6 @@ class LanguageManager {
                 newsletterInput.placeholder = lang === 'zh' ? newsletterInput.dataset.zh : newsletterInput.dataset.en;
             }
         }, 50);
-        
-        // 语言切换后滚动到页面顶部
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // 使用平滑滚动效果
-        });
     }
 
     updateLanguage() {

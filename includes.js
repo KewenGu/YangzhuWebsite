@@ -34,6 +34,7 @@ console.log('includes.js 开始执行');
                 <a href="activities.html" class="nav-link" data-zh="协会活动" data-en="Activities">协会活动</a>
                 <a href="ceremonies.html" class="nav-link" data-zh="协会法会" data-en="Ceremonies">协会法会</a>
                 <a href="relations.html" class="nav-link" data-zh="国际联谊" data-en="Relations">国际联谊</a>
+                <a href="https://shop.yangzhu.org" class="nav-link" target="_blank" rel="noopener noreferrer" data-zh="商店" data-en="Shop">商店</a>
                 <a href="#contact" class="nav-link" data-zh="联系我们" data-en="Contact">联系我们</a>
             </div>
             <div class="nav-buttons">
@@ -131,6 +132,7 @@ console.log('includes.js 开始执行');
                 <div class="footer-links">
                     <a href="about.html" data-zh="关于我们" data-en="About Us">关于我们</a>
                     <a href="activities.html" data-zh="活动安排" data-en="Activities">活动安排</a>
+                    <a href="https://shop.yangzhu.org" target="_blank" rel="noopener noreferrer" data-zh="在线商店" data-en="Shop">在线商店</a>
                     <a href="#contact" data-zh="联系方式" data-en="Contact">联系方式</a>
                 </div>
                 <div class="footer-newsletter">

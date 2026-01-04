@@ -1001,6 +1001,44 @@ body {
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
 }
 
+/* 在线商店 */
+.shop-section {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+}
+
+.shop-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.shop-text p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.shop-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.4);
+}
+
+.shop-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(218, 165, 32, 0.5);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
 /* 联系我们 */
 .contact-section {
     padding: 6rem 0;
