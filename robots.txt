@@ -1,0 +1,12 @@
+# Robots.txt for yangzhu.org
+# 美国阳翥道教协会
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yangzhu.org/sitemap.xml
+
+# Crawl-delay (optional, for politeness)
+Crawl-delay: 1
+
