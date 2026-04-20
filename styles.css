@@ -1899,6 +1899,15 @@ html {
     transform: scale(1.05);
 }
 
+video.activity-image {
+    display: block;
+    background: #000;
+}
+
+video.activity-image:hover {
+    transform: none;
+}
+
 .activity-title {
     font-size: 2rem;
     color: var(--secondary-color);
