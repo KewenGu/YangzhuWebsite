@@ -83,6 +83,8 @@ html[lang=en] .text-link{font-size:19px}
 .header-actions button{font-family:system-ui,-apple-system,'PingFang SC',sans-serif;line-height:1.9;color:var(--ink)}
 .header-actions #language-switch{color:var(--gold)}
 
+.feature-story > .text-link{font-family:var(--serif);font-size:23px}
 @media(max-width:760px){
+ .feature-story > .text-link{font-size:21px}
  .activity-layout > .story-list{border-top:1px solid var(--line);padding-top:30px}
 }
