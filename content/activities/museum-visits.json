@@ -1,0 +1,24 @@
+{
+  "id": "museum-visits",
+  "title": "参观大都会博物馆",
+  "title_en": "Visit to the Metropolitan Museum",
+  "order": 80,
+  "published": true,
+  "body": "组织参观大都会博物馆，深化对亚洲灵性艺术和历史文物中道教影响的理解。",
+  "body_en": "Organized group visit to the Metropolitan Museum of Art, deepening our understanding of Asian spiritual art and Taoist influences in historical artifacts.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/activities/参观大都会博物馆/2.jpg",
+      "alt": "参观大都会博物馆",
+      "poster": ""
+    },
+    {
+      "kind": "image",
+      "src": "assets/activities/参观大都会博物馆/1.jpg",
+      "alt": "参观大都会博物馆",
+      "poster": ""
+    }
+  ],
+  "featured": true
+}

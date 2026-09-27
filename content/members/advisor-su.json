@@ -1,0 +1,19 @@
+{
+  "id": "advisor-su",
+  "title": "苏大道",
+  "title_en": "Su Dadao",
+  "order": 50,
+  "published": true,
+  "body": "苏大道，中华法箓道派掌门宗主，社团法人中华道教经箓文化教育学会创会理事长。",
+  "body_en": "Su Dadao, Grandmaster of the Zhonghua Falu Taoist Lineage, and Founding Chairman of the Chinese Taoist Scriptural and Registers Cultural Education Association.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/members/director3/sudadao.png",
+      "alt": "蘇大道",
+      "poster": ""
+    }
+  ],
+  "role": "顾问",
+  "role_en": "Advisor"
+}

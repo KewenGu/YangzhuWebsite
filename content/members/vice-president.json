@@ -1,0 +1,19 @@
+{
+  "id": "vice-president",
+  "title": "胡源明",
+  "title_en": "Jacob M. Bressman",
+  "order": 20,
+  "published": true,
+  "body": "Jacob M. Bressman（道号：胡源明）是正一道净明派的正式道士，现为美国阳翥道教协会成员。他毕业于美国乔治·华盛顿大学艾略特国际事务学院，主修亚洲研究与中文语言文学，中文水平极高，能够流利使用普通话。他曾在北京大学学习，并在中国生活和工作多年。\n\nJacob自幼便开始接触和修习道教，至今已有23年。他于2012年在中国上海皈依正一派，并于2025年接受传度，正式成为道士。他曾多次前往中国各大著名道教圣地朝圣，包括北京白云观和四川青城山。除了正一道的系统学习外，他还曾深入学习全真龙门派的教义与修行法门。他的主要修持领域包括天医、符咒及道教科仪等方面，具备扎实的理论基础与实际法务经验。",
+  "body_en": "Jacob M. Bressman (Taoist name: Hu Yuanming) is an ordained Taoist priest of the Zhengyi Jingming lineage and currently a member of the Yangzhu Taoist Association of America. He graduated from the Elliott School of International Affairs at George Washington University, majoring in Asian Studies and Chinese Language and Literature. His Chinese proficiency is extremely high, and he speaks fluent Mandarin. He studied at Peking University and lived and worked in China for many years.\n\nJacob began his exposure to and practice of Taoism from childhood and has been practicing for 23 years. He formally converted to the Zhengyi school in Shanghai, China in 2012, and received ordination in 2025, officially becoming a Taoist priest. He has made multiple pilgrimages to famous Taoist sacred sites in China, including the White Cloud Temple in Beijing and Mount Qingcheng in Sichuan. In addition to systematic study of Zhengyi Taoism, he has also deeply studied the teachings and cultivation methods of the Quanzhen Longmen lineage. His main areas of practice include celestial medicine, talismanic arts, and Taoist ritual ceremonies, possessing solid theoretical foundations and practical ceremonial experience.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/members/vice_president/huyuanming.jpg",
+      "alt": "胡源明",
+      "poster": ""
+    }
+  ],
+  "role": "副会长",
+  "role_en": "Vice President"
+}

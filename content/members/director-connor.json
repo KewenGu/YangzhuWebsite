@@ -1,0 +1,19 @@
+{
+  "id": "director-connor",
+  "title": "黄法诚",
+  "title_en": "Connor Mankit Darigo",
+  "order": 30,
+  "published": true,
+  "body": "Connor Mankit Darigo，道号黄法诚，是全真龙门的道教居士。\n\n他信仰道教并研习已有八年，对道教的科仪、教义、修持和教育抱有浓厚的热情。\n\n康纳曾经参与过《道藏》部分典籍的翻译工作，目前正致力于完成《云笈七签》的全本英译。",
+  "body_en": "Connor Mankit Darigo (Taoist name: Huang Facheng) is a Quanzhen Longmen Taoist layperson.\n\nHe has been practicing and studying Taoism for eight years, with deep passion for Taoist rituals, teachings, cultivation, and education.\n\nConnor has participated in the translation of parts of the Taoist Canon and is currently dedicated to completing a full English translation of the 'Seven Tablets in a Cloudy Satchel' (Yunji Qiqian).",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/members/director1/huangfacheng.jpg",
+      "alt": "黄法成",
+      "poster": ""
+    }
+  ],
+  "role": "理事",
+  "role_en": "Director"
+}

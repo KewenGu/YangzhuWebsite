@@ -1,0 +1,18 @@
+{
+  "id": "vietnam-taoist-research",
+  "title": "越南道教研究协会贺信",
+  "title_en": "Vietnam Taoist Research Association Congratulatory Letter",
+  "order": 60,
+  "published": true,
+  "body": "越南道教研究协会发来贺信，期待未来在道教研究与文化交流方面的深度合作。",
+  "body_en": "The Vietnam Taoist Research Association sent congratulations, looking forward to future deep cooperation in Taoist research and cultural exchange.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/relations/越南道教研究协会贺信/1.jpg",
+      "alt": "越南道教研究协会贺信",
+      "poster": ""
+    }
+  ],
+  "category": "letter"
+}

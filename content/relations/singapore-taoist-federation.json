@@ -1,0 +1,18 @@
+{
+  "id": "singapore-taoist-federation",
+  "title": "新加坡道教总会贺信",
+  "title_en": "Singapore Taoist Federation Congratulatory Letter",
+  "order": 10,
+  "published": true,
+  "body": "新加坡道教总会发来贺信，祝贺美国阳翥道教协会成立，并表达合作交流的愿望。",
+  "body_en": "The Singapore Taoist Federation sent a congratulatory letter celebrating the establishment of the Yangzhu Taoist Association of America and expressing their desire for cooperation and exchange.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/relations/新加坡道教总会贺信/1.jpg",
+      "alt": "新加坡道教总会贺信",
+      "poster": ""
+    }
+  ],
+  "category": "letter"
+}

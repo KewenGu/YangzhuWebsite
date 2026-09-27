@@ -1,0 +1,23 @@
+{
+  "id": "jiachen-year-end",
+  "title": "甲辰年年终祈福酬神法会",
+  "title_en": "Jiachen Year Year-End Prayer and Divine Thanksgiving Ceremony",
+  "order": 50,
+  "published": true,
+  "body": "年终举行祈福酬神法会，感谢神明护佑，祈求新年平安吉祥，体现道教感恩与祈愿的精神传统。",
+  "body_en": "Held year-end prayer and divine thanksgiving ceremonies to express gratitude for divine protection and pray for peace and prosperity in the new year, embodying Taoist traditions of gratitude and aspiration.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/ceremonies/甲辰年年终祈福酬神法会/1.jpg",
+      "alt": "甲辰年年终祈福酬神法会",
+      "poster": ""
+    },
+    {
+      "kind": "image",
+      "src": "assets/ceremonies/甲辰年年终祈福酬神法会/2.jpg",
+      "alt": "甲辰年年终祈福酬神法会",
+      "poster": ""
+    }
+  ]
+}

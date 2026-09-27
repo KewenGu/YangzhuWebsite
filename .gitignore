@@ -65,3 +65,10 @@ venv.bak/
 *.bak
 *.backup
 *.old
+
+# CMS auth local secrets and worker cache
+.dev.vars
+.dev.vars.*
+.wrangler/
+# Generated editor renderer (source: scripts/content.mjs)
+admin/content.mjs

@@ -1,0 +1,24 @@
+{
+  "id": "ecosoc-youth-forum",
+  "title": "联合国ECOSOC青年论坛2026",
+  "title_en": "UN ECOSOC Youth Forum 2026",
+  "order": 10,
+  "published": true,
+  "body": "美国阳翥道教协会会长吉法新，作为首个且唯一一位道教代表受邀参加联合国ECOSOC Youth Forum 2026会议，并发表讲话。标志着道教思想首次在该国际青年治理平台上进行直接表达，将传统道家理念正式引入联合国可持续发展与全球议题的讨论之中。",
+  "body_en": "President Ji Faxin of the Yangzhu Taoist Association of America, as the first and only Taoist representative ever invited, attended the United Nations ECOSOC Youth Forum 2026 and delivered a speech. This marked the first time Taoist thought has been directly expressed on this international youth governance platform, formally bringing traditional Taoist ideals into the United Nations' discussions on sustainable development and global affairs.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/activities/联合国ECOSOC青年论坛/1.png",
+      "alt": "联合国ECOSOC青年论坛2026",
+      "poster": ""
+    },
+    {
+      "kind": "video",
+      "src": "assets/activities/联合国ECOSOC青年论坛/speech.mp4",
+      "alt": "联合国ECOSOC青年论坛2026",
+      "poster": "assets/activities/联合国ECOSOC青年论坛/2.png"
+    }
+  ],
+  "featured": false
+}

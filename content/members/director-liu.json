@@ -1,0 +1,19 @@
+{
+  "id": "director-liu",
+  "title": "刘愈伟",
+  "title_en": "Liu Yuwei",
+  "order": 40,
+  "published": true,
+  "body": "刘愈伟，正一天师派三十三代弟子，12岁开始学习道教各项科仪，系统研习符箓、经忏、斋醮等正一道传统法门。\n\n2014年赴美弘扬道教文化，现常驻美国宾夕法尼亚州，致力于向海外华人及国际社会传播中华道教的思想与仪式文化。\n\n秉承正一道教清静、济世的宗旨，刘愈伟以弘扬道教智慧、服务信众福祉为使命，推动传统道文化在当代社会的延续与发展。",
+  "body_en": "Liu Yuwei, 33rd generation disciple of the Zhengyi Tianshi lineage, began learning various Taoist rituals at age 12, systematically studying traditional Zhengyi practices including talismanic arts, liturgies, and ceremonial offerings.\n\nIn 2014, he came to the United States to promote Taoist culture. He now resides in Pennsylvania and is dedicated to spreading Chinese Taoist philosophy and ritual culture to overseas Chinese and the international community.\n\nUpholding the Zhengyi Taoist principles of purity and serving the world, Liu Yuwei's mission is to promote Taoist wisdom and serve the welfare of believers, advancing the continuation and development of traditional Taoist culture in contemporary society.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/members/director2/liuyuwei.jpg",
+      "alt": "刘愈伟",
+      "poster": ""
+    }
+  ],
+  "role": "理事",
+  "role_en": "Director"
+}

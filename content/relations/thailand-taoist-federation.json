@@ -1,0 +1,18 @@
+{
+  "id": "thailand-taoist-federation",
+  "title": "泰国道教总会祝贺视频",
+  "title_en": "Thailand Taoist Federation Congratulatory Video",
+  "order": 50,
+  "published": true,
+  "body": "泰国道教总会制作祝贺视频，以视频形式表达对协会成立的热烈祝贺与美好祝愿。",
+  "body_en": "The Thailand Taoist Federation produced a congratulatory video, expressing warm congratulations and best wishes for the association's establishment through video format.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/relations/泰国道教总会祝贺视频/1.jpg",
+      "alt": "泰国道教总会祝贺视频",
+      "poster": ""
+    }
+  ],
+  "category": "letter"
+}

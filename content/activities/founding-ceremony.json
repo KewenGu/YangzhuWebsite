@@ -1,0 +1,18 @@
+{
+  "id": "founding-ceremony",
+  "title": "美国阳翥道教协会成立仪式",
+  "title_en": "Yangzhu Taoist Association of America Founding Ceremony",
+  "order": 50,
+  "published": true,
+  "body": "2025年9月21日，美国阳翥道教协会于纽约法拉盛安桥酒店隆重举行成立仪式。经过一年的筹备与社区活动，协会正式宣告成立，旨在弘扬道教文化，服务社区精神福祉，促进跨宗教与跨文化交流，并为社会公益事业贡献力量。仪式包括协会介绍、嘉宾致辞、道教知识与文化分享，以及未来发展方向的展示。",
+  "body_en": "On September 21, 2025, the Yangzhu Taoist Association of America held its grand founding ceremony at the Anqiao Hotel in Flushing, New York. After a year of preparation and community activities, the Association was officially established, aiming to promote Taoist culture, serve community spiritual well-being, foster inter-religious and cross-cultural exchanges, and contribute to social welfare causes. The ceremony included an introduction of the Association, guest speeches, Taoist knowledge and cultural sharing, and a presentation of future development directions.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/activities/美国阳翥道教协会成立仪式/1.jpg",
+      "alt": "协会成立仪式",
+      "poster": ""
+    }
+  ],
+  "featured": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "malaysian-taoist-council",
+  "title": "马来西亚道教理事总会贺信",
+  "title_en": "Malaysian Taoist General Council Congratulatory Letter",
+  "order": 20,
+  "published": true,
+  "body": "马来西亚道教理事总会致函祝贺，期望加强两国道教组织间的友好合作关系。",
+  "body_en": "The Malaysian Taoist General Council sent congratulations, hoping to strengthen friendly cooperation between Taoist organizations in both countries.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/relations/马来西亚道教理事总会贺信/1.jpg",
+      "alt": "马来西亚道教理事总会贺信",
+      "poster": ""
+    }
+  ],
+  "category": "letter"
+}

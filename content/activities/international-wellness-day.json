@@ -1,0 +1,24 @@
+{
+  "id": "international-wellness-day",
+  "title": "首届国际健康日活动",
+  "title_en": "First International Wellness Day",
+  "order": 20,
+  "published": true,
+  "body": "2026年4月17日，美国阳翥道教协会会长、纽约州道教信仰领袖吉法新，受邀参加由尼泊尔常驻联合国代表团与尼泊尔驻纽约总领事馆联合主办、世界卫生组织合办的\"首届国际健康日活动\"，于联合国总部（UNHQ）举行。",
+  "body_en": "On April 17, 2026, President Ji Faxin of the Yangzhu Taoist Association of America, a Taoist faith leader of New York State, was invited to attend the 'First International Wellness Day,' jointly hosted by the Permanent Mission of Nepal to the UN and the Consulate General of Nepal in New York, and co-organized with the World Health Organization, held at the United Nations Headquarters (UNHQ) in New York.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/activities/首届国际健康日/1.png",
+      "alt": "首届国际健康日活动",
+      "poster": ""
+    },
+    {
+      "kind": "image",
+      "src": "assets/activities/首届国际健康日/2.png",
+      "alt": "首届国际健康日活动",
+      "poster": ""
+    }
+  ],
+  "featured": false
+}

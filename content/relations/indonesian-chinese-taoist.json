@@ -1,0 +1,18 @@
+{
+  "id": "indonesian-chinese-taoist",
+  "title": "印度尼西亚中华道教协会贺信",
+  "title_en": "Indonesian Chinese Taoist Association Congratulatory Letter",
+  "order": 40,
+  "published": true,
+  "body": "印度尼西亚中华道教协会致函祝贺，表达对国际道教合作的支持与期许。",
+  "body_en": "The Indonesian Chinese Taoist Association sent congratulations, expressing support and expectations for international Taoist cooperation.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/relations/印度尼西亚中华道教协会贺信/1.jpg",
+      "alt": "印度尼西亚中华道教协会贺信",
+      "poster": ""
+    }
+  ],
+  "category": "letter"
+}

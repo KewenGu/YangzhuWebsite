@@ -1,0 +1,24 @@
+{
+  "id": "nianhua-event",
+  "title": "新春年画结缘活动",
+  "title_en": "Chinese New Year Print Cultural Exchange Event",
+  "order": 40,
+  "published": true,
+  "body": "2026年2月1日，美国阳翥道教协会于纽约法拉盛举办新春\"结缘年画\"文化活动，作为 World Interfaith Harmony Week（世界跨宗教和谐周）期间的首项道教活动。活动以传统年画为载体，向社区民众介绍道教文化中关于天人合一、祈福纳祥、顺应天时的思想内涵。通过现场讲解与文化交流，展示道教所承载的和平、吉庆与和谐理念。本次活动吸引了来自不同文化与宗教背景的参与者，使更多民众在跨文化交流中了解道教传统，感受中国新年的文化魅力与精神价值。",
+  "body_en": "On February 1, 2026, the Yangzhu Taoist Association of America hosted a Chinese New Year 'Nianhua Print Exchange' cultural event in Flushing, New York, as the first Taoist activity during World Interfaith Harmony Week. Using traditional New Year prints as a medium, the event introduced Taoist cultural concepts of harmony between heaven and humanity, blessings, and following the natural order. Through on-site explanations and cultural exchanges, the event showcased the Taoist ideals of peace, celebration, and harmony. The event attracted participants from diverse cultural and religious backgrounds, enabling more people to learn about Taoist traditions and experience the cultural charm and spiritual values of Chinese New Year through cross-cultural exchange.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/activities/新春年画结缘活动/1.png",
+      "alt": "新春年画结缘活动",
+      "poster": ""
+    },
+    {
+      "kind": "image",
+      "src": "assets/activities/新春年画结缘活动/2.png",
+      "alt": "新春年画结缘活动",
+      "poster": ""
+    }
+  ],
+  "featured": true
+}

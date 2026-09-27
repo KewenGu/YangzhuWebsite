@@ -1,3 +1,13 @@
+## 内容发布后台（本机开发已接入）
+
+会长使用 `/admin/` 管理活动、法会、成员和国际联谊，GitHub 登录后自行预览发布。
+
+- 管理员首次启用步骤见 [ADMIN_SETUP.md](ADMIN_SETUP.md)，会长指南在 `/admin/guide.html`。
+- OAuth 服务已接入。会长账号需在允许登录名单中，并接受仓库协作邀请。
+- 日常内容源文件为 `content/`；使用 `npm run build` 生成 `dist/`，GitHub Pages 使用 Actions 发布，校验通过后部署生成结果。
+- 本机启动：先 `npm run build`，再 `npm run cms:proxy`，另开终端运行 `python3 -m http.server 8766 --bind 127.0.0.1 --directory dist`。
+- 自动校验：`npm test`。本机编辑保存后重新构建即可预览；不会推送官网。
+
 ## 2026-09 白金主题更新
 
 全站已使用 E「静穆宣言」视觉方向，包含首页、协会介绍、主要成员、协会活动、协会法会及国际联谊。
@@ -7,7 +17,7 @@
 - 订阅通过 Mailchimp 公开表单打开确认页，不在客户端使用 Marketing API 密钥，也不提前宣告订阅成功。
 - 已移除旧前端私密 API 密钥。该密钥曾暴露，仍须由账户持有人在 Mailchimp 后台撤销；历史版本中可能留存。
 - 留言只有收到 EmailJS 成功响应才清空；失败保留输入，超时提示结果未确认。不会将留言或订阅邮箱保存到 localStorage。
-- 表单逻辑测试：`node --test tests/forms.test.cjs`。未向真实收件箱发送测试或创建实际订阅。
+- 表单逻辑测试：`node --test tests/forms.test.cjs`。真实测试已取得 Mailchimp 订阅确认与 EmailJS 发送成功响应；收件箱实际入箱由协会确认。
 - `styles.css` 与 `script.js` 为未加载的旧版本；现有正式页面已不再引用它们。
 
 以下为原项目说明，其中旧主题和旧配置位置仅供历史参考。

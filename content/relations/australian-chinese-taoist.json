@@ -1,0 +1,18 @@
+{
+  "id": "australian-chinese-taoist",
+  "title": "澳大利亚中华道教协会贺信",
+  "title_en": "Australian Chinese Taoist Association Congratulatory Letter",
+  "order": 30,
+  "published": true,
+  "body": "澳大利亚中华道教协会发来贺信，祝愿协会蓬勃发展，促进道教文化在海外的传播。",
+  "body_en": "The Australian Chinese Taoist Association sent congratulations, wishing the association prosperity and promoting the spread of Taoist culture overseas.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/relations/澳大利亚中华道教协会贺信/1.jpg",
+      "alt": "澳大利亚中华道教协会贺信",
+      "poster": ""
+    }
+  ],
+  "category": "letter"
+}

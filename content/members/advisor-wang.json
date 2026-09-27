@@ -1,0 +1,19 @@
+{
+  "id": "advisor-wang",
+  "title": "王天沛",
+  "title_en": "Wang Tianpei",
+  "order": 60,
+  "published": true,
+  "body": "王天沛，法名：王静德，道号：云清子。湖北中医药大学博士。中华道教法师联合总会理事、中华台湾道教协会全国总会执行长、中华道教经箓文化教育学会执行长、国际华山丹道研究学会执行长、中华道教祝由道派掌门宗主。",
+  "body_en": "Wang Tianpei, Dharma Name: Wang Jingde, Taoist Name: Yunqingzi. PhD from Hubei University of Chinese Medicine. Director of the United Association of Chinese Taoist Masters, Executive Director of the Chinese Taoist Association National Federation (Taiwan), Executive Director of the Chinese Taoist Registers and Cultural Education Association, Executive Director of the International Huashan Inner Alchemy Research Association, and Grandmaster of the Chinese Taoist Zhu You School.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/members/advisor/wangtianpei.jpg",
+      "alt": "王天沛",
+      "poster": ""
+    }
+  ],
+  "role": "顾问",
+  "role_en": "Advisor"
+}

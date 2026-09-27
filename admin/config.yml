@@ -1,0 +1,619 @@
+{
+  "backend": {
+    "name": "github",
+    "repo": "KewenGu/YangzhuWebsite",
+    "branch": "main",
+    "auth_endpoint": "auth",
+    "commit_messages": {
+      "create": "content: 新增 {{collection}} — {{slug}}",
+      "update": "content: 更新 {{collection}} — {{slug}}"
+    }
+  },
+  "publish_mode": "editorial_workflow",
+  "locale": "zh_Hans",
+  "site_url": "https://yangzhu.org",
+  "display_url": "https://yangzhu.org",
+  "logo_url": "/assets/about/official_logo.png",
+  "media_folder": "assets/uploads",
+  "public_folder": "/assets/uploads",
+  "collections": [
+    {
+      "name": "activities",
+      "label": "活动与交流",
+      "label_singular": "活动",
+      "folder": "content/activities",
+      "create": true,
+      "delete": false,
+      "format": "json",
+      "extension": "json",
+      "identifier_field": "title",
+      "slug": "{{id}}",
+      "summary": "{{title}}",
+      "sortable_fields": [
+        "order",
+        "title"
+      ],
+      "view_filters": [
+        {
+          "label": "网站展示中",
+          "field": "published",
+          "pattern": true
+        },
+        {
+          "label": "已下架",
+          "field": "published",
+          "pattern": false
+        }
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "label": "条目标识",
+          "widget": "entry-id"
+        },
+        {
+          "name": "title",
+          "label": "标题",
+          "widget": "string",
+          "pattern": [
+            "^.{1,200}$",
+            "请填写不超过200字的标题"
+          ]
+        },
+        {
+          "name": "title_en",
+          "label": "英文标题",
+          "widget": "string",
+          "required": false,
+          "hint": "暂未填写英文时，英文页面会显示中文内容。"
+        },
+        {
+          "name": "date",
+          "label": "日期",
+          "widget": "datetime",
+          "required": false,
+          "date_format": "YYYY-MM-DD",
+          "time_format": false,
+          "format": "YYYY-MM-DD",
+          "picker_utc": true
+        },
+        {
+          "name": "location",
+          "label": "地点",
+          "widget": "string",
+          "required": false
+        },
+        {
+          "name": "location_en",
+          "label": "英文地点",
+          "widget": "string",
+          "required": false
+        },
+        {
+          "name": "body",
+          "label": "中文介绍",
+          "widget": "text",
+          "hint": "像写邮件一样输入正文，空一行即可分段。请勿粘贴网页代码。"
+        },
+        {
+          "name": "body_en",
+          "label": "英文介绍",
+          "widget": "text",
+          "required": false
+        },
+        {
+          "name": "media",
+          "label": "图片与视频",
+          "widget": "list",
+          "required": false,
+          "default": [],
+          "summary": "{{fields.alt}}",
+          "fields": [
+            {
+              "name": "kind",
+              "label": "素材类型",
+              "widget": "select",
+              "options": [
+                {
+                  "label": "图片",
+                  "value": "image"
+                },
+                {
+                  "label": "视频",
+                  "value": "video"
+                }
+              ],
+              "default": "image"
+            },
+            {
+              "name": "src",
+              "label": "选择或上传文件",
+              "widget": "file",
+              "choose_url": false,
+              "media_library": {
+                "config": {
+                  "max_file_size": 20000000
+                }
+              },
+              "hint": "图片支持 JPG / PNG / WebP / GIF；视频支持 MP4 / WebM。单个文件不超过20MB。"
+            },
+            {
+              "name": "alt",
+              "label": "图片或视频说明",
+              "widget": "string"
+            },
+            {
+              "name": "poster",
+              "label": "视频封面",
+              "widget": "image",
+              "required": false,
+              "choose_url": false
+            }
+          ]
+        },
+        {
+          "name": "order",
+          "label": "显示顺序",
+          "widget": "number",
+          "default": 0,
+          "value_type": "int",
+          "min": 0,
+          "hint": "数字越小越靠前。新活动可填0；成员可用10、20、30排列。"
+        },
+        {
+          "name": "featured",
+          "label": "在首页展示",
+          "widget": "boolean",
+          "default": false,
+          "hint": "首页最多显示4条，按照显示顺序排列。"
+        },
+        {
+          "name": "published",
+          "label": "在网站上显示",
+          "widget": "boolean",
+          "default": true,
+          "hint": "关闭后再发布，即可下架；内容仍保留，可随时恢复。"
+        }
+      ]
+    },
+    {
+      "name": "ceremonies",
+      "label": "协会法会",
+      "label_singular": "法会",
+      "folder": "content/ceremonies",
+      "create": true,
+      "delete": false,
+      "format": "json",
+      "extension": "json",
+      "identifier_field": "title",
+      "slug": "{{id}}",
+      "summary": "{{title}}",
+      "sortable_fields": [
+        "order",
+        "title"
+      ],
+      "view_filters": [
+        {
+          "label": "网站展示中",
+          "field": "published",
+          "pattern": true
+        },
+        {
+          "label": "已下架",
+          "field": "published",
+          "pattern": false
+        }
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "label": "条目标识",
+          "widget": "entry-id"
+        },
+        {
+          "name": "title",
+          "label": "标题",
+          "widget": "string",
+          "pattern": [
+            "^.{1,200}$",
+            "请填写不超过200字的标题"
+          ]
+        },
+        {
+          "name": "title_en",
+          "label": "英文标题",
+          "widget": "string",
+          "required": false,
+          "hint": "暂未填写英文时，英文页面会显示中文内容。"
+        },
+        {
+          "name": "date",
+          "label": "日期",
+          "widget": "datetime",
+          "required": false,
+          "date_format": "YYYY-MM-DD",
+          "time_format": false,
+          "format": "YYYY-MM-DD",
+          "picker_utc": true
+        },
+        {
+          "name": "location",
+          "label": "地点",
+          "widget": "string",
+          "required": false
+        },
+        {
+          "name": "location_en",
+          "label": "英文地点",
+          "widget": "string",
+          "required": false
+        },
+        {
+          "name": "body",
+          "label": "中文介绍",
+          "widget": "text",
+          "hint": "像写邮件一样输入正文，空一行即可分段。请勿粘贴网页代码。"
+        },
+        {
+          "name": "body_en",
+          "label": "英文介绍",
+          "widget": "text",
+          "required": false
+        },
+        {
+          "name": "media",
+          "label": "图片与视频",
+          "widget": "list",
+          "required": false,
+          "default": [],
+          "summary": "{{fields.alt}}",
+          "fields": [
+            {
+              "name": "kind",
+              "label": "素材类型",
+              "widget": "select",
+              "options": [
+                {
+                  "label": "图片",
+                  "value": "image"
+                },
+                {
+                  "label": "视频",
+                  "value": "video"
+                }
+              ],
+              "default": "image"
+            },
+            {
+              "name": "src",
+              "label": "选择或上传文件",
+              "widget": "file",
+              "choose_url": false,
+              "media_library": {
+                "config": {
+                  "max_file_size": 20000000
+                }
+              },
+              "hint": "图片支持 JPG / PNG / WebP / GIF；视频支持 MP4 / WebM。单个文件不超过20MB。"
+            },
+            {
+              "name": "alt",
+              "label": "图片或视频说明",
+              "widget": "string"
+            },
+            {
+              "name": "poster",
+              "label": "视频封面",
+              "widget": "image",
+              "required": false,
+              "choose_url": false
+            }
+          ]
+        },
+        {
+          "name": "order",
+          "label": "显示顺序",
+          "widget": "number",
+          "default": 0,
+          "value_type": "int",
+          "min": 0,
+          "hint": "数字越小越靠前。新活动可填0；成员可用10、20、30排列。"
+        },
+        {
+          "name": "published",
+          "label": "在网站上显示",
+          "widget": "boolean",
+          "default": true,
+          "hint": "关闭后再发布，即可下架；内容仍保留，可随时恢复。"
+        }
+      ]
+    },
+    {
+      "name": "members",
+      "label": "主要成员",
+      "label_singular": "成员",
+      "folder": "content/members",
+      "create": true,
+      "delete": false,
+      "format": "json",
+      "extension": "json",
+      "identifier_field": "title",
+      "slug": "{{id}}",
+      "summary": "{{title}}",
+      "sortable_fields": [
+        "order",
+        "title"
+      ],
+      "view_filters": [
+        {
+          "label": "网站展示中",
+          "field": "published",
+          "pattern": true
+        },
+        {
+          "label": "已下架",
+          "field": "published",
+          "pattern": false
+        }
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "label": "条目标识",
+          "widget": "entry-id"
+        },
+        {
+          "name": "title",
+          "label": "姓名",
+          "widget": "string",
+          "pattern": [
+            "^.{1,200}$",
+            "请填写不超过200字的标题"
+          ]
+        },
+        {
+          "name": "title_en",
+          "label": "英文姓名",
+          "widget": "string",
+          "required": false,
+          "hint": "暂未填写英文时，英文页面会显示中文内容。"
+        },
+        {
+          "name": "role",
+          "label": "职务",
+          "widget": "string"
+        },
+        {
+          "name": "role_en",
+          "label": "英文职务",
+          "widget": "string",
+          "required": false
+        },
+        {
+          "name": "body",
+          "label": "中文介绍",
+          "widget": "text",
+          "hint": "像写邮件一样输入正文，空一行即可分段。请勿粘贴网页代码。"
+        },
+        {
+          "name": "body_en",
+          "label": "英文介绍",
+          "widget": "text",
+          "required": false
+        },
+        {
+          "name": "media",
+          "label": "图片与视频",
+          "widget": "list",
+          "required": false,
+          "default": [],
+          "summary": "{{fields.alt}}",
+          "fields": [
+            {
+              "name": "kind",
+              "label": "素材类型",
+              "widget": "select",
+              "options": [
+                {
+                  "label": "图片",
+                  "value": "image"
+                },
+                {
+                  "label": "视频",
+                  "value": "video"
+                }
+              ],
+              "default": "image"
+            },
+            {
+              "name": "src",
+              "label": "选择或上传文件",
+              "widget": "file",
+              "choose_url": false,
+              "media_library": {
+                "config": {
+                  "max_file_size": 20000000
+                }
+              },
+              "hint": "图片支持 JPG / PNG / WebP / GIF；视频支持 MP4 / WebM。单个文件不超过20MB。"
+            },
+            {
+              "name": "alt",
+              "label": "图片或视频说明",
+              "widget": "string"
+            },
+            {
+              "name": "poster",
+              "label": "视频封面",
+              "widget": "image",
+              "required": false,
+              "choose_url": false
+            }
+          ]
+        },
+        {
+          "name": "order",
+          "label": "显示顺序",
+          "widget": "number",
+          "default": 0,
+          "value_type": "int",
+          "min": 0,
+          "hint": "数字越小越靠前。新活动可填0；成员可用10、20、30排列。"
+        },
+        {
+          "name": "published",
+          "label": "在网站上显示",
+          "widget": "boolean",
+          "default": true,
+          "hint": "关闭后再发布，即可下架；内容仍保留，可随时恢复。"
+        }
+      ]
+    },
+    {
+      "name": "relations",
+      "label": "国际联谊",
+      "label_singular": "联谊条目",
+      "folder": "content/relations",
+      "create": true,
+      "delete": false,
+      "format": "json",
+      "extension": "json",
+      "identifier_field": "title",
+      "slug": "{{id}}",
+      "summary": "{{title}}",
+      "sortable_fields": [
+        "order",
+        "title"
+      ],
+      "view_filters": [
+        {
+          "label": "网站展示中",
+          "field": "published",
+          "pattern": true
+        },
+        {
+          "label": "已下架",
+          "field": "published",
+          "pattern": false
+        }
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "label": "条目标识",
+          "widget": "entry-id"
+        },
+        {
+          "name": "title",
+          "label": "标题",
+          "widget": "string",
+          "pattern": [
+            "^.{1,200}$",
+            "请填写不超过200字的标题"
+          ]
+        },
+        {
+          "name": "title_en",
+          "label": "英文标题",
+          "widget": "string",
+          "required": false,
+          "hint": "暂未填写英文时，英文页面会显示中文内容。"
+        },
+        {
+          "name": "category",
+          "label": "条目类别",
+          "widget": "select",
+          "options": [
+            {
+              "label": "贺信与祝贺",
+              "value": "letter"
+            },
+            {
+              "label": "联谊与交流",
+              "value": "exchange"
+            }
+          ],
+          "default": "exchange"
+        },
+        {
+          "name": "body",
+          "label": "中文介绍",
+          "widget": "text",
+          "hint": "像写邮件一样输入正文，空一行即可分段。请勿粘贴网页代码。"
+        },
+        {
+          "name": "body_en",
+          "label": "英文介绍",
+          "widget": "text",
+          "required": false
+        },
+        {
+          "name": "media",
+          "label": "图片与视频",
+          "widget": "list",
+          "required": false,
+          "default": [],
+          "summary": "{{fields.alt}}",
+          "fields": [
+            {
+              "name": "kind",
+              "label": "素材类型",
+              "widget": "select",
+              "options": [
+                {
+                  "label": "图片",
+                  "value": "image"
+                },
+                {
+                  "label": "视频",
+                  "value": "video"
+                }
+              ],
+              "default": "image"
+            },
+            {
+              "name": "src",
+              "label": "选择或上传文件",
+              "widget": "file",
+              "choose_url": false,
+              "media_library": {
+                "config": {
+                  "max_file_size": 20000000
+                }
+              },
+              "hint": "图片支持 JPG / PNG / WebP / GIF；视频支持 MP4 / WebM。单个文件不超过20MB。"
+            },
+            {
+              "name": "alt",
+              "label": "图片或视频说明",
+              "widget": "string"
+            },
+            {
+              "name": "poster",
+              "label": "视频封面",
+              "widget": "image",
+              "required": false,
+              "choose_url": false
+            }
+          ]
+        },
+        {
+          "name": "order",
+          "label": "显示顺序",
+          "widget": "number",
+          "default": 0,
+          "value_type": "int",
+          "min": 0,
+          "hint": "数字越小越靠前。新活动可填0；成员可用10、20、30排列。"
+        },
+        {
+          "name": "published",
+          "label": "在网站上显示",
+          "widget": "boolean",
+          "default": true,
+          "hint": "关闭后再发布，即可下架；内容仍保留，可随时恢复。"
+        }
+      ]
+    }
+  ]
+}

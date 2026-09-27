@@ -1,0 +1,23 @@
+{
+  "id": "yisi-consecration",
+  "title": "乙巳年小开光法会",
+  "title_en": "Yisi Year Minor Consecration Ceremony",
+  "order": 40,
+  "published": true,
+  "body": "举行传统道教开光仪式，为道教法器和符印开光加持，弘扬正统道教科仪传承。",
+  "body_en": "Conducted traditional Taoist consecration rituals to bless Taoist ritual implements and talismans, promoting authentic Taoist ceremonial traditions.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/ceremonies/乙巳年小开光法会/1.jpg",
+      "alt": "乙巳年小开光法会",
+      "poster": ""
+    },
+    {
+      "kind": "image",
+      "src": "assets/ceremonies/乙巳年小开光法会/2.jpg",
+      "alt": "乙巳年小开光法会",
+      "poster": ""
+    }
+  ]
+}

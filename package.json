@@ -1,0 +1,16 @@
+{
+  "name": "yangzhu-website",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.cjs tests/*.test.mjs",
+    "cms:proxy": "BIND_HOST=127.0.0.1 decap-server"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "cheerio": "1.2.0",
+    "decap-server": "3.11.3"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "slovenia-taoist-association",
+  "title": "斯洛文尼亚道教协会贺信",
+  "title_en": "Slovenia Taoist Association Congratulatory Letter",
+  "order": 70,
+  "published": true,
+  "body": "斯洛文尼亚道教协会致函祝贺，展现了道教在欧洲地区的影响力与国际联系。",
+  "body_en": "The Slovenia Taoist Association sent congratulations, demonstrating Taoism's influence and international connections in the European region.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "assets/relations/斯洛文尼亚道教协会贺信/1.png",
+      "alt": "斯洛文尼亚道教协会贺信",
+      "poster": ""
+    }
+  ],
+  "category": "letter"
+}
