@@ -4,6 +4,7 @@ class LanguageManager {
     constructor() {
         try { this.currentLang = localStorage.getItem('selectedLanguage') === 'en' ? 'en' : 'zh'; }
         catch { this.currentLang = 'zh'; }
+        if (document.documentElement.dataset.pageLanguage) this.currentLang = document.documentElement.dataset.pageLanguage;
         this.updateLanguage();
     }
     switchLanguage(lang) {

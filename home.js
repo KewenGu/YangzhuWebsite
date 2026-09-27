@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         language.setAttribute('aria-label', english ? '切换至中文' : 'Switch to English');
         const title = document.querySelector('.page-title');
         const name = english ? 'Yangzhu Taoist Association of America' : '美国阳翥道教协会';
-        document.title = title && title.textContent !== name ? title.textContent + ' — ' + name : name;
+        if (!document.documentElement.dataset.pageLanguage) document.title = title && title.textContent !== name ? title.textContent + ' — ' + name : name;
     }
     language.addEventListener('click', () => {
+        const destination = document.documentElement.dataset.languageUrl;
+        if(destination) { location.href = destination + location.hash; return; }
         window.languageManager.switchLanguage(window.languageManager.currentLang === 'zh' ? 'en' : 'zh');
         syncLanguage();
     });

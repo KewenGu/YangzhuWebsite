@@ -1,4 +1,5 @@
 import {load} from 'cheerio';
+import {optimize,sitemap} from './seo.mjs';
 import {readFile,writeFile,readdir,cp,mkdir,rm,access,stat} from 'node:fs/promises';
 import {types,validateEntry,renderEntry,safeMediaPath,escapeHTML as esc} from './content.mjs';
 import path from 'node:path';
@@ -22,6 +23,8 @@ export async function readEntries(root='content'){
 }
 export async function build(){
  const all=await readEntries();
+ const shared=await readFile('includes.js','utf8');
+ const components=JSON.parse(shared.match(/const components = (.*);/)[1]);
  // Only explicit public files are deployed. Source data and draft content stay out of the website.
  await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true});
  for(const name of ['assets','admin','home.css','home.js','includes.js','new-script.js','robots.txt','sitemap.xml','CNAME'])await cp(name,path.join('dist',name),{recursive:true});
@@ -46,8 +49,11 @@ export async function build(){
    if(featured.length){const image=featured[0].media.find(m=>m.kind==='image');$('.feature-story').html((image?`<a href="activities.html#${esc(featured[0].id)}"><img src="${esc(safeMediaPath(image.src))}" alt="${esc(image.alt)}" loading="lazy"></a>`:'')+story(featured[0]));$('.story-list').html(featured.slice(1).map(e=>`<article>${story(e)}</article>`).join(''));}
    else $('.activity-layout').html('<p data-zh="最新活动即将更新。" data-en="New activities will be announced soon.">最新活动即将更新。</p>');
   }
-  await writeFile(`dist/${page}.html`,$.html());
+  await writeFile(`dist/${page}.html`,optimize($.html(),page,'zh',components));
+  await mkdir('dist/en',{recursive:true});
+  await writeFile(`dist/en/${page}.html`,optimize($.html(),page,'en',components));
  }
+ await writeFile('dist/sitemap.xml',sitemap());
  await writeFile('dist/admin/build.json',JSON.stringify({builtAt:new Date().toISOString(),revision:process.env.GITHUB_SHA||'local'}));
  console.log('Built website:',Object.fromEntries(types.map(t=>[t,all[t].filter(e=>e.published).length])));
 }
