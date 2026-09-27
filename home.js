@@ -97,6 +97,51 @@ document.addEventListener('DOMContentLoaded', () => {
             viewer.querySelector('a').href = img.src; viewer.showModal();
         });
     });
+    // Progressive enhancement: without JavaScript, every photograph stays accessible.
+    document.querySelectorAll('.activity-images,.ceremony-images').forEach(gallery => {
+        const slides = [...gallery.children];
+        if (slides.length < 2) return;
+        gallery.classList.add('media-slider');
+        gallery.setAttribute('role', 'region');
+        gallery.setAttribute('aria-label', '活动相册 / Event gallery');
+        const stage = document.createElement('div'); stage.className = 'slider-stage';
+        slides.forEach(slide => stage.append(slide));
+        const controls = document.createElement('div'); controls.className = 'slider-controls';
+        const previous = document.createElement('button'); previous.type = 'button'; previous.textContent = '←';
+        previous.setAttribute('aria-label', '上一张 / Previous slide');
+        const next = document.createElement('button'); next.type = 'button'; next.textContent = '→';
+        next.setAttribute('aria-label', '下一张 / Next slide');
+        const counter = document.createElement('span'); counter.setAttribute('aria-live', 'polite'); counter.setAttribute('aria-atomic', 'true');
+        controls.append(previous, counter, next); gallery.append(stage, controls);
+        let current = 0;
+        function show(index) {
+            slides[current].querySelectorAll('video').forEach(video => video.pause());
+            if (slides[current].tagName === 'VIDEO') slides[current].pause();
+            current = (index + slides.length) % slides.length;
+            slides.forEach((slide, i) => { slide.hidden = i !== current; });
+            counter.textContent = `${current + 1} / ${slides.length}`;
+        }
+        previous.addEventListener('click', () => show(current - 1));
+        next.addEventListener('click', () => show(current + 1));
+        gallery.addEventListener('keydown', event => {
+            if (event.target.closest('video') || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
+            event.preventDefault(); show(current + (event.key === 'ArrowRight' ? 1 : -1));
+        });
+        let start = null, swiped = false;
+        stage.addEventListener('touchstart', event => {
+            swiped = false;
+            start = event.touches.length === 1 && !event.target.closest('video') ? {x:event.touches[0].clientX,y:event.touches[0].clientY} : null;
+        }, {passive:true});
+        stage.addEventListener('touchend', event => {
+            if (!start) return;
+            const dx = event.changedTouches[0].clientX - start.x, dy = event.changedTouches[0].clientY - start.y;
+            start = null;
+            if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) { swiped = true; show(current + (dx < 0 ? 1 : -1)); }
+        }, {passive:true});
+        stage.addEventListener('touchcancel', () => { start = null; }, {passive:true});
+        stage.addEventListener('click', event => { if(swiped) { event.preventDefault(); event.stopPropagation(); swiped = false; } }, true);
+        show(0);
+    });
     const top = document.createElement('a'); top.href = '#main'; top.className = 'to-top';
     top.dataset.zh = '返回顶部 ↑'; top.dataset.en = 'Back to top ↑'; top.textContent = top.dataset.zh;
     document.querySelector('.footer .container').append(top);
