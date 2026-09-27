@@ -33,8 +33,8 @@
     <link rel="apple-touch-icon" href="images/logo.png">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500&family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Structured Data / JSON-LD -->
     <script type="application/ld+json">
@@ -60,257 +60,122 @@
     }
     </script>
 </head>
-<body>
-    <!-- 导航栏 -->
-    <div data-include="navigation"></div>
+<body class="home-page">
+<a class="skip-link" href="#main">跳至正文 / Skip to content</a>
+<div data-include="navigation"></div>
+<main id="main" tabindex="-1">
+<section class="statement wrap" aria-labelledby="statement-title">
+<p class="opening" lang="en">A living tradition. A shared future.</p>
+<h1 id="statement-title">
+<span data-zh="道通天地" data-en="Rooted in the Tao">道通天地</span>
+<span data-zh="和合共生" data-en="United in harmony">和合共生</span>
+</h1>
+<p class="statement-summary" data-zh="传承道教智慧，促进文化交流，服务当代社会。" data-en="Preserving Taoist wisdom, connecting cultures, and serving our communities.">传承道教智慧，促进文化交流，服务当代社会。</p>
+<a class="text-link" href="about.html">
+<span data-zh="了解协会" data-en="Discover Yangzhu">了解协会</span>
+<span aria-hidden="true">↗</span>
+</a>
+</section>
+<figure class="hero-photo wrap">
+<img src="assets/design/heritage-hero.png" alt="窗边的古籍与绿意 / Books and greenery beside a sunlit window" width="1800" height="600" fetchpriority="high">
+<figcaption>
+<span data-zh="文化意象" data-en="A cultural illustration">文化意象</span>
+</figcaption>
+</figure>
+<section class="mission wrap spacious" id="about">
+<h2 class="center-heading" data-zh="传承 · 对话 · 共生" data-en="Tradition. Dialogue. Shared humanity.">传承 · 对话 · 共生</h2>
+<div class="mission-copy">
+<p data-zh="美国阳翥道教协会成立于2025年，总部设于纽约。我们致力于弘扬道教文化、促进国际道教交流、服务社区大众，让传统智慧在当代社会中延续。" data-en="Founded in 2025 and based in New York, the Yangzhu Taoist Association of America promotes Taoist culture, international exchange, and community service, bringing a living tradition into the contemporary world.">美国阳翥道教协会成立于2025年，总部设于纽约。我们致力于弘扬道教文化、促进国际道教交流、服务社区大众，让传统智慧在当代社会中延续。</p>
+<a class="text-link" href="about.html">
+<span data-zh="我们的使命与传承" data-en="Our mission and heritage">我们的使命与传承</span>
+<span aria-hidden="true">↗</span>
+</a>
+</div>
+</section>
+<section class="activities-section wrap spacious" id="activities">
+<div class="section-top">
+<h2 data-zh="与道同行，与人相遇" data-en="A tradition lived together">与道同行，与人相遇</h2>
+<a class="text-link" href="activities.html">
+<span data-zh="全部活动" data-en="All activities">全部活动</span>
+<span aria-hidden="true">↗</span>
+</a>
+</div>
+<div class="activity-layout">
+<article class="feature-story">
+<a href="activities.html#tao-te-ching-competition">
+<img src="assets/activities/道德经诵经比赛/1.jpg" alt="道德经诵经比赛 / Tao Te Ching recitation" loading="lazy" width="900" height="620">
+<h3 data-zh="在诵读中，聆听经典" data-en="Listening to the classics">在诵读中，聆听经典</h3>
+</a>
+<p data-zh="国际道教日举行道德经诵经比赛，吸引各国道教爱好者参加。" data-en="Taoist enthusiasts from different countries come together for a Tao Te Ching recitation competition on International Taoism Day.">国际道教日举行道德经诵经比赛，吸引各国道教爱好者参加。</p>
+</article>
+<div class="story-list">
+<article>
+<a class="text-link" href="activities.html#interfaith-harmony-week">
+<span data-zh="跨越文化的对话" data-en="Dialogue across cultures">跨越文化的对话</span>
+<span aria-hidden="true">↗</span>
+</a>
+<p data-zh="参与世界跨信仰和谐周闭幕庆典。" data-en="Taking part in the closing celebration of World Interfaith Harmony Week.">参与世界跨信仰和谐周闭幕庆典。</p>
+</article>
+<article>
+<a class="text-link" href="activities.html#museum-visits">
+<span data-zh="走近艺术与文化" data-en="Encountering art and culture">走近艺术与文化</span>
+<span aria-hidden="true">↗</span>
+</a>
+<p data-zh="协会会员参访大都会博物馆。" data-en="Association members visit the Metropolitan Museum of Art.">协会会员参访大都会博物馆。</p>
+</article>
+<article>
+<a class="text-link" href="activities.html#nianhua-event">
+<span data-zh="以年画传递新春祝福" data-en="Sharing New Year traditions">以年画传递新春祝福</span>
+<span aria-hidden="true">↗</span>
+</a>
+<p data-zh="新春年画结缘活动。" data-en="Connecting with the community through traditional New Year prints.">新春年画结缘活动。</p>
+</article>
+</div>
+</div>
+</section>
+<section class="heritage-section spacious" id="ceremonies">
+<div class="wrap heritage-layout">
+<img src="assets/activities/美国阳翥道教协会成立仪式/1.jpg" alt="传统道教科仪 / Traditional Taoist ritual" width="640" height="800" loading="lazy">
+<div>
+<p class="heritage-motto" data-zh="承法旌阳，道翥西土" data-en="From Jingyang, carrying the Tao westward">承法旌阳，道翥西土</p>
+<h2 data-zh="在传承中，生生不息" data-en="A living spiritual heritage">在传承中，生生不息</h2>
+<p data-zh="经诵、科仪与修行，是道教传统的日常实践。协会秉承传统法脉，组织法会与文化活动，让信仰连接生活。" data-en="Scripture recitation, ritual, and cultivation are living expressions of Taoist tradition. The Association carries this heritage forward through ceremonies and cultural activities.">经诵、科仪与修行，是道教传统的日常实践。协会秉承传统法脉，组织法会与文化活动，让信仰连接生活。</p>
+<a class="text-link" href="ceremonies.html">
+<span data-zh="了解协会法会" data-en="Explore our ceremonies">了解协会法会</span>
+<span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<section class="wrap spacious exchange" id="international">
+<div class="section-top">
+<h2 data-zh="以开放之心，连接世界" data-en="An open heart to the world">以开放之心，连接世界</h2>
+<a class="text-link" href="relations.html">
+<span data-zh="国际联谊" data-en="International relations">国际联谊</span>
+<span aria-hidden="true">↗</span>
+</a>
+</div>
+<p class="exchange-copy" data-zh="积极联络道教团体与学术机构，搭建跨文化交流的桥梁，在相互尊重中增进理解。" data-en="We connect with Taoist organizations and academic institutions, building bridges across cultures through mutual respect and understanding.">积极联络道教团体与学术机构，搭建跨文化交流的桥梁，在相互尊重中增进理解。</p>
+<figure>
+<img src="assets/activities/联合国世界跨信仰和谐周闭幕庆典/1.png" alt="跨信仰活动参与者合影 / Participants at an interfaith gathering" width="1024" height="581" loading="lazy">
+<figcaption>
+<span data-zh="世界跨信仰和谐周闭幕庆典 · 活动回顾" data-en="World Interfaith Harmony Week closing celebration · Event reflection">世界跨信仰和谐周闭幕庆典 · 活动回顾</span>
+</figcaption>
+</figure>
+</section>
+</main>
+<div data-include="contact">
+</div>
+<div data-include="footer">
+</div>
 
-    <!-- 首页 -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title" data-zh="美国阳翥道教协会" data-en="Yangzhu Taoist Association of America"></h1>
-                <p class="hero-subtitle" data-zh="承法旌阳，道翥西土" data-en="Inheriting the Dharma of Jingyang, and letting the Dao soar across the Western land"></p>
-                <p class="hero-description" data-zh="弘扬道教文化，促进国际交流，服务社区大众" data-en="Promoting Daoist culture, fostering international exchange, and serving the wider community"></p>
-            </div>
-            <div class="hero-image">
-                <div class="taoist-symbol"></div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
-
-    <!-- 协会介绍 -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title" data-zh="协会介绍" data-en="About Us"></h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 data-zh="使命与愿景" data-en="Mission & Vision"></h3>
-                    <p data-zh="美国阳翥道教协会成立于2025年，总部设于纽约。协会以弘扬道教文化、促进国际道教交流、服务社区大众为宗旨，致力于在当代社会中传承和发展道教的精神价值与修行智慧。" data-en="The Yangzhu Taoist Association of America, founded in 2025 and headquartered in New York, is dedicated to promoting Taoist culture, fostering international exchange, and serving the wider community. The Association's mission is to preserve and develop the spiritual values and practices of Daoism in today's society.">美国阳翥道教协会成立于2025年，总部设于纽约。协会以弘扬道教文化、促进国际道教交流、服务社区大众为宗旨，致力于在当代社会中传承和发展道教的精神价值与修行智慧。</p>
-                    <p data-zh="本协会秉承&ldquo;承法旌阳，道翥西土&rdquo;的理念，组织经诵、讲座、文化活动及公益事业，推动传统道教经典、符箓法脉、养生修炼与现代社会的结合。" data-en="Upholding the principle of &quot;Inheriting the Dharma of Jingyang, and letting the Dao soar across the Western land&quot;, the Association organizes scripture recitations, lectures, cultural programs, and charitable activities. It seeks to integrate traditional Taoist classics, ritual lineages, talismanic practices, and methods of self-cultivation with modern life.">本协会秉承"承法旌阳，道翥西土"的理念，组织经诵、讲座、文化活动及公益事业，推动传统道教经典、符箓法脉、养生修炼与现代社会的结合。</p>
-                    <p data-zh="阳翥，寓意旭日东升、扶摇直上，象征道教精神的光明与生生不息。美国阳翥道教协会愿与社会各界携手，弘扬道教优秀传统文化，推动道教智慧服务人类心灵与世界和平。" data-en="The name Yangzhu symbolizes the rising sun and the soaring flight of vitality, representing the brightness and ever-renewing spirit of Daoism. The Yangzhu Taoist Association of America aspires to join hands with all sectors of society to promote Taoist heritage and to share Taoist wisdom for the well-being of humanity and the peace of the world.">阳翥，寓意旭日东升、扶摇直上，象征道教精神的光明与生生不息。美国阳翥道教协会愿与社会各界携手，弘扬道教优秀传统文化，推动道教智慧服务人类心灵与世界和平。</p>
-                </div>
-                <div class="about-image">
-                    <div class="about-symbol"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 主要成员 -->
-    <section id="members" class="members-section">
-        <div class="container">
-            <h2 class="section-title" data-zh="主要成员" data-en="Key Members"></h2>
-            <div class="members-grid">
-                <a href="members.html#president" class="member-card" style="text-decoration: none; color: inherit;">
-                    <div class="member-avatar">
-                        <img src="assets/members/president/jifaxin_no_bg.png" alt="吉法新会长" class="homepage-member-photo">
-                    </div>
-                    <h3 class="member-name" data-zh="会长" data-en="President"></h3>
-                    <p class="member-title" data-zh="吉法新" data-en="Ji Faxin"></p>
-                    <p class="member-desc" data-zh="净明祖庭西山万寿宫传度道士，擅长道教科仪法事、符箓及经典解读" data-en="Ordained priest from Xishan Wanshou Palace, skilled in Taoist rituals, talismanic practices and scripture interpretation"></p>
-                </a>
-                <a href="members.html#vice-president" class="member-card" style="text-decoration: none; color: inherit;">
-                    <div class="member-avatar">
-                        <img src="assets/members/vice_president/huyuanming_no_bg.png" alt="胡源明副会长" class="homepage-member-photo">
-                    </div>
-                    <h3 class="member-name" data-zh="副会长" data-en="Vice President"></h3>
-                    <p class="member-title" data-zh="胡源明 (Jacob M. Bressman)" data-en="Jacob M. Bressman (Hu Yuanming)"></p>
-                    <p class="member-desc" data-zh="正一道净明派正式道士，修习道教23年，精通天医、符咒及道教科仪" data-en="Ordained Zhengyi Jingming priest, 23 years of Taoist practice, expert in celestial medicine, talismans and rituals"></p>
-                </a>
-                <a href="members.html#director-connor" class="member-card" style="text-decoration: none; color: inherit;">
-                    <div class="member-avatar">
-                        <img src="assets/members/director1/huangfacheng_no_bg.png" alt="黄法成理事" class="homepage-member-photo">
-                    </div>
-                    <h3 class="member-name" data-zh="理事" data-en="Director"></h3>
-                    <p class="member-title" data-zh="黄法诚 (Connor Mankit Darigo)" data-en="Connor Mankit Darigo"></p>
-                    <p class="member-desc" data-zh="全真龙门道教居士，致力于道教经典翻译工作" data-en="Quanzhen Longmen Taoist layperson, dedicated to Taoist scripture translation work"></p>
-                </a>
-                <a href="members.html#director-liu" class="member-card" style="text-decoration: none; color: inherit;">
-                    <div class="member-avatar">
-                        <img src="assets/members/director2/liuyuwei_no_bg.png" alt="刘愈伟理事" class="homepage-member-photo">
-                    </div>
-                    <h3 class="member-name" data-zh="理事" data-en="Director"></h3>
-                    <p class="member-title" data-zh="刘愈伟" data-en="Liu Yuwei"></p>
-                    <p class="member-desc" data-zh="正一天师派三十三代弟子，致力于海外道教文化传播" data-en="33rd generation disciple of Zhengyi Tianshi lineage, dedicated to spreading Taoist culture overseas"></p>
-                </a>
-                <a href="members.html#advisor-su" class="member-card" style="text-decoration: none; color: inherit;">
-                    <div class="member-avatar">
-                        <img src="assets/members/director3/sudadao.png" alt="苏大道顾问" class="homepage-member-photo">
-                    </div>
-                    <h3 class="member-name" data-zh="顾问" data-en="Advisor"></h3>
-                    <p class="member-title" data-zh="苏大道" data-en="Su Dadao"></p>
-                    <p class="member-desc" data-zh="中华法箓道派掌门宗主，中华道教经箓文化教育学会创会理事长" data-en="Grandmaster of Zhonghua Falu Taoist Lineage, Founding Chairman of Chinese Taoist Registers Cultural Education Association"></p>
-                </a>
-                <a href="members.html#advisor-wang" class="member-card" style="text-decoration: none; color: inherit;">
-                    <div class="member-avatar">
-                        <img src="assets/members/advisor/wangtianpei_no_bg.png" alt="王天沛顾问" class="homepage-member-photo">
-                    </div>
-                    <h3 class="member-name" data-zh="顾问" data-en="Advisor"></h3>
-                    <p class="member-title" data-zh="王天沛" data-en="Wang Tianpei"></p>
-                    <p class="member-desc" data-zh="湖北中医药大学博士，中华道教法师联合总会理事，多个道教组织执行长" data-en="PhD from Hubei University of Chinese Medicine, Director of United Association of Chinese Taoist Masters, Executive Director of multiple Taoist organizations"></p>
-                </a>
-                <a href="members.html" class="member-card" style="text-decoration: none; color: inherit;">
-                    <div class="member-avatar"></div>
-                    <h3 class="member-name" data-zh="更多成员" data-en="More Members"></h3>
-                    <p class="member-title" data-zh="点击查看" data-en="Click to View"></p>
-                    <p class="member-desc" data-zh="访问成员页面了解协会全体核心成员信息" data-en="Visit the members page to learn about all core members of the association"></p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 协会活动 -->
-    <section id="activities" class="activities-section">
-        <div class="container">
-            <h2 class="section-title" data-zh="协会活动" data-en="Activities"></h2>
-            <div class="activities-grid">
-                <a href="activities.html#interfaith-harmony-week" class="activity-card" style="text-decoration: none; color: inherit;">
-                    <div class="activity-icon">
-                        <img src="assets/activities/联合国世界跨信仰和谐周闭幕庆典/1.png" alt="联合国世界跨信仰和谐周闭幕庆典" class="activity-photo">
-                    </div>
-                    <h3 data-zh="联合国世界跨信仰和谐周" data-en="UN Interfaith Harmony Week"></h3>
-                    <p data-zh="作为首个且唯一受邀的道教代表组织，出席联合国世界跨信仰和谐周闭幕庆典" data-en="As the first and only invited Taoist organization, attended the UN World Interfaith Harmony Week closing ceremony">作为首个且唯一受邀的道教代表组织，出席联合国世界跨信仰和谐周闭幕庆典</p>
-                </a>
-                <a href="activities.html#nianhua-event" class="activity-card" style="text-decoration: none; color: inherit;">
-                    <div class="activity-icon">
-                        <img src="assets/activities/新春年画结缘活动/1.png" alt="新春年画结缘活动" class="activity-photo">
-                    </div>
-                    <h3 data-zh="新春年画结缘活动" data-en="New Year Print Exchange"></h3>
-                    <p data-zh="以传统年画为载体，向社区民众介绍道教文化，展示和平与和谐理念" data-en="Using traditional New Year prints to introduce Taoist culture and showcase ideals of peace and harmony">以传统年画为载体，向社区民众介绍道教文化，展示和平与和谐理念</p>
-                </a>
-                <a href="activities.html#founding-ceremony" class="activity-card" style="text-decoration: none; color: inherit;">
-                    <div class="activity-icon">
-                        <img src="assets/activities/美国阳翥道教协会成立仪式/1.jpg" alt="协会成立仪式" class="activity-photo">
-                    </div>
-                    <h3 data-zh="协会成立仪式" data-en="Association Founding Ceremony"></h3>
-                    <p data-zh="2025年9月，美国阳翥道教协会于纽约法拉盛隆重举行成立仪式，协会正式宣告成立" data-en="In September 2025, the Association held its grand founding ceremony in Flushing, New York">2025年9月，美国阳翥道教协会于纽约法拉盛隆重举行成立仪式，协会正式宣告成立</p>
-                </a>
-                <a href="activities.html#tao-te-ching-competition" class="activity-card" style="text-decoration: none; color: inherit;">
-                    <div class="activity-icon">
-                        <img src="assets/activities/道德经诵经比赛/1.jpg" alt="道德经诵经比赛" class="activity-photo">
-                    </div>
-                    <h3 data-zh="道德经诵经比赛" data-en="Tao Te Ching Recitation Competition"></h3>
-                    <p data-zh="国际道教日举行道德经诵经比赛，吸引各国道教爱好者参加" data-en="Held Tao Te Ching recitation competition on International Taoism Day, attracting participants from various countries">国际道教日举行道德经诵经比赛，吸引各国道教爱好者参加</p>
-                </a>
-                <a href="activities.html" class="activity-card" style="text-decoration: none; color: inherit;">
-                    <div class="activity-icon">➕</div>
-                    <h3 data-zh="查看更多活动" data-en="View More Activities"></h3>
-                    <p data-zh="点击访问活动页面，了解协会的全部活动详情" data-en="Click to visit the activities page and learn about all association activities">点击访问活动页面，了解协会的全部活动详情</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 协会法会 -->
-    <section id="ceremonies" class="ceremonies-section">
-        <div class="container">
-            <h2 class="section-title" data-zh="协会法会" data-en="Ceremonies"></h2>
-            <div class="ceremonies-grid">
-                <a href="ceremonies.html#xutianshi-birthday" class="ceremony-card" style="text-decoration: none; color: inherit;">
-                    <div class="ceremony-icon">
-                        <img src="assets/ceremonies/许天师圣诞祝寿祈福法事/1.png" alt="许天师圣诞祝寿祈福法事" class="ceremony-photo">
-                    </div>
-                    <h3 data-zh="许天师圣诞祝寿祈福法事" data-en="Xu Tianshi Birthday Prayer Ceremony"></h3>
-                    <p class="ceremony-year" data-zh="2026年3月15日" data-en="March 15, 2026">2026年3月15日</p>
-                    <p data-zh="恭祝净明祖师许天师圣诞，依科设坛，上表启奏，祈福消灾" data-en="Celebrating Patriarch Xu Tianshi's birthday with orthodox ritual prayers for blessings">恭祝净明祖师许天师圣诞，依科设坛，上表启奏，祈福消灾</p>
-                </a>
-                <a href="ceremonies.html#jingming-disciple" class="ceremony-card" style="text-decoration: none; color: inherit;">
-                    <div class="ceremony-icon">
-                        <img src="assets/ceremonies/净明收徒仪式/1.png" alt="净明忠孝道收徒仪式" class="ceremony-photo">
-                    </div>
-                    <h3 data-zh="净明忠孝道收徒仪式" data-en="Jingming Discipleship Ceremony"></h3>
-                    <p class="ceremony-year" data-zh="丙午年正月十九" data-en="19th of 1st Lunar Month">丙午年正月十九</p>
-                    <p data-zh="会长吉法新喜收净明忠孝道第二十七代弟子胡源明，为首位美国净明弟子" data-en="President Ji Faxin accepted Hu Yuanming as the 27th generation Jingming disciple, the first American Jingming disciple">会长吉法新喜收净明忠孝道第二十七代弟子胡源明，为首位美国净明弟子</p>
-                </a>
-                <a href="ceremonies.html#zhengyi-initiation" class="ceremony-card" style="text-decoration: none; color: inherit;">
-                    <div class="ceremony-icon">
-                        <img src="assets/ceremonies/正一皈依法会/1.png" alt="正一皈依法会" class="ceremony-photo">
-                    </div>
-                    <h3 data-zh="正一皈依法会" data-en="Zhengyi Initiation Ceremony"></h3>
-                    <p class="ceremony-year" data-zh="2026年1月11日" data-en="January 11, 2026">2026年1月11日</p>
-                    <p data-zh="依循正统科仪举行皈依法会，多国信众正式归入道门" data-en="Initiation ceremony following orthodox rituals, devotees from multiple countries formally entered the Taoist faith">依循正统科仪举行皈依法会，多国信众正式归入道门</p>
-                </a>
-                <a href="ceremonies.html" class="ceremony-card" style="text-decoration: none; color: inherit;">
-                    <div class="ceremony-icon">➕</div>
-                    <h3 data-zh="查看更多法会" data-en="View More Ceremonies"></h3>
-                    <p class="ceremony-year" data-zh="更多内容" data-en="More Content">更多内容</p>
-                    <p data-zh="点击了解协会举办的全部宗教仪式和传统法会" data-en="Click to learn about all religious rituals and traditional ceremonies">点击了解协会举办的全部宗教仪式和传统法会</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 国际联谊 -->
-    <section id="international" class="international-section">
-        <div class="container">
-            <h2 class="section-title" data-zh="国际联谊" data-en="International Relations"></h2>
-            <div class="international-content">
-                <div class="international-text">
-                    <h3 data-zh="全球道教交流" data-en="Global Taoist Exchange"></h3>
-                    <p data-zh="协会积极联络全球道教团体与学术机构，搭建跨文化的交流桥梁，展现道教在全球多元文化格局中的独特价值。" data-en="The Association actively connects with Taoist organizations and academic institutions worldwide, building intercultural bridges and demonstrating the unique value of Taoism in the global multicultural landscape.">协会积极联络全球道教团体与学术机构，搭建跨文化的交流桥梁，展现道教在全球多元文化格局中的独特价值。</p>
-                    <div class="partners">
-                        <h4 data-zh="国际贺信组织" data-en="International Congratulatory Organizations">国际贺信组织</h4>
-                        <ul>
-                            <li><a href="relations.html#singapore-taoist-federation" style="text-decoration: none; color: inherit;">
-                                <span data-zh="新加坡道教总会" data-en="Singapore Taoist Federation">新加坡道教总会</span>
-                            </a></li>
-                            <li><a href="relations.html#malaysian-taoist-council" style="text-decoration: none; color: inherit;">
-                                <span data-zh="马来西亚道教理事总会" data-en="Malaysian Taoist General Council">马来西亚道教理事总会</span>
-                            </a></li>
-                            <li><a href="relations.html#australian-chinese-taoist" style="text-decoration: none; color: inherit;">
-                                <span data-zh="澳大利亚中华道教协会" data-en="Australian Chinese Taoist Association">澳大利亚中华道教协会</span>
-                            </a></li>
-                            <li><a href="relations.html#indonesian-chinese-taoist" style="text-decoration: none; color: inherit;">
-                                <span data-zh="印度尼西亚中华道教协会" data-en="Indonesian Chinese Taoist Association">印度尼西亚中华道教协会</span>
-                            </a></li>
-                            <li><a href="relations.html#thailand-taoist-federation" style="text-decoration: none; color: inherit;">
-                                <span data-zh="泰国道教总会" data-en="Thailand Taoist Federation">泰国道教总会</span>
-                            </a></li>
-                            <li><a href="relations.html#vietnam-taoist-research" style="text-decoration: none; color: inherit;">
-                                <span data-zh="越南道教研究协会" data-en="Vietnam Taoist Research Association">越南道教研究协会</span>
-                            </a></li>
-                            <li><a href="relations.html#slovenia-taoist-association" style="text-decoration: none; color: inherit;">
-                                <span data-zh="斯洛文尼亚道教协会" data-en="Slovenia Taoist Association">斯洛文尼亚道教协会</span>
-                            </a></li>
-                            <li><a href="relations.html" style="text-decoration: none; color: var(--secondary-color); font-weight: 600;">
-                                <span data-zh="➕ 查看更多国际联谊" data-en="➕ View More International Relations">➕ 查看更多国际联谊</span>
-                            </a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="international-image">
-                    <div class="earth-image">
-                        <img src="images/Rotating_earth_animated_transparent.gif" alt="地球" class="earth-photo">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 在线商店 -->
-    <section id="shop" class="shop-section">
-        <div class="container">
-            <div class="shop-content">
-                <h2 class="shop-title" data-zh="在线商店" data-en="Online Shop"></h2>
-                <div class="shop-text">
-                    <p data-zh="美国阳翥道教协会在线商店现已开放！我们提供精心挑选的道教文化商品，包括传统符箓、开光法器、道教书籍等。您的每一次购买都将支持协会的文化传播事业。" data-en="The Yangzhu Taoist Association Online Shop is now open! We offer carefully curated Taoist cultural products including traditional talismans, consecrated ritual implements, and Taoist books. Every purchase supports our mission to spread Taoist culture."></p>
-                    <a href="https://shop.yangzhu.org" target="_blank" rel="noopener noreferrer" class="shop-btn" data-zh="访问商店" data-en="Visit Shop">访问商店</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系我们 -->
-    <div data-include="contact"></div>
-    <!-- 页脚 -->
-    <div data-include="footer"></div>
-
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="includes.js?v=2"></script>
-    <script src="new-script.js?v=2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script src="includes.js?v=3">
+</script>
+<script src="new-script.js?v=3">
+</script>
+<script src="home.js?v=3">
+</script>
 </body>
 </html>
