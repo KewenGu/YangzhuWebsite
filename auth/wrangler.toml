@@ -9,3 +9,6 @@ AUTH_ORIGIN = "https://yangzhu-cms-auth.kewen-gu.workers.dev"
 # ALLOWED_USERS is managed in the Cloudflare dashboard; preserve it on deployment.
 # Configure GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET with wrangler secret put.
 # Never put the secret in this file or the public admin folder.
+
+[ai]
+binding = "AI"

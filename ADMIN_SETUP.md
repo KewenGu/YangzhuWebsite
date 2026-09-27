@@ -64,3 +64,13 @@ python3 -m http.server 8766 --bind 127.0.0.1 --directory dist
 - https://decapcms.org/docs/editorial-workflows/
 - https://decapcms.org/docs/decap-proxy/
 - https://decapcms.org/docs/registering-events/
+
+## 一键补齐英文（Cloudflare Workers AI）
+
+1. Cloudflare → Workers & Pages → `yangzhu-cms-auth` → Edit code。用 `auth/worker.mjs` 的完整内容替换 Worker 代码，点击 Deploy。保留现有 GitHub 登录相关变量和 Secret。
+2. 在该 Worker 的 Bindings → Add binding 中选择 Workers AI，变量名填写 `AI`，保存并部署。Wrangler 部署已在 `auth/wrangler.toml` 配置 `[ai] binding = "AI"`。
+3. 刷新网站后台，打开一篇草稿并填写中文。点击英文标题上方的“一键补齐英文”。生成后检查右侧英文预览，再保存与发布。
+
+翻译使用 `@cf/meta/llama-3.3-70b-instruct-fp8-fast`。无需在网页或仓库配置 AI API key。请求使用当前 Decap GitHub 会话，Worker 每次核验允许账号和仓库写权限；仅允许官网来源。一次最多6000个源文字字符，短字段最多200字。Cloudflare AI 额度和计费以该账号套餐为准；本功能不主动开通付费套餐。
+
+已有英文不会被覆盖；翻译途中修改原文、手动填写英文或切换条目时，不会把旧译文写入新内容。服务不可用或超时时会显示提示并保留已填写的内容。生成译文不等于已保存或已发布。登录会话存储键与 Decap 3.16.3 保持一致，升级 Decap 时需复核。
