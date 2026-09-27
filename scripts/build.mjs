@@ -1,4 +1,5 @@
 import {load} from 'cheerio';
+import {createHash} from 'node:crypto';
 import {optimize,sitemap} from './seo.mjs';
 import {readFile,writeFile,readdir,cp,mkdir,rm,access,stat} from 'node:fs/promises';
 import {types,validateEntry,renderEntry,safeMediaPath,escapeHTML as esc} from './content.mjs';
@@ -23,6 +24,8 @@ export async function readEntries(root='content'){
 }
 export async function build(){
  const all=await readEntries();
+ const versions={};
+ for(const asset of ['home.css','home.js','includes.js','new-script.js']) versions[asset]=createHash('sha256').update(await readFile(asset)).digest('hex').slice(0,12);
  const shared=await readFile('includes.js','utf8');
  const components=JSON.parse(shared.match(/const components = (.*);/)[1]);
  // Only explicit public files are deployed. Source data and draft content stay out of the website.
@@ -45,10 +48,14 @@ export async function build(){
   }
   if(page==='index'){
    const featured=all.activities.filter(e=>e.published&&e.featured).slice(0,4);
-   const story=e=>`<a class="text-link" href="activities.html#${esc(e.id)}"><span data-zh="${esc(e.title)}" data-en="${esc(e.title_en||e.title)}">${esc(e.title)}</span><svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></a><p data-zh="${esc(e.body.split('\n\n')[0])}" data-en="${esc((e.body_en||e.body).split('\n\n')[0])}">${esc(e.body.split('\n\n')[0])}</p>`;
+   const story=e=>`<a class="text-link" href="activities.html#${esc(e.id)}"><span data-zh="${esc(e.title)}" data-en="${esc(e.title_en||e.title)}">${esc(e.title)}</span><svg class="link-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></a><p data-zh="${esc(e.body.split('\n\n')[0])}" data-en="${esc((e.body_en||e.body).split('\n\n')[0])}">${esc(e.body.split('\n\n')[0])}</p>`;
    if(featured.length){const image=featured[0].media.find(m=>m.kind==='image');$('.feature-story').html((image?`<a href="activities.html#${esc(featured[0].id)}"><img src="${esc(safeMediaPath(image.src))}" alt="${esc(image.alt)}" loading="lazy"></a>`:'')+story(featured[0]));$('.story-list').html(featured.slice(1).map(e=>`<article>${story(e)}</article>`).join(''));}
    else $('.activity-layout').html('<p data-zh="最新活动即将更新。" data-en="New activities will be announced soon.">最新活动即将更新。</p>');
   }
+  $('link[href],script[src]').each((_,element)=>{
+   const attr=$(element).is('script')?'src':'href';const original=$(element).attr(attr);const name=original?.split('?')[0];
+   if(versions[name]) $(element).attr(attr,name+'?v='+versions[name]);
+  });
   await writeFile(`dist/${page}.html`,optimize($.html(),page,'zh',components));
   await mkdir('dist/en',{recursive:true});
   await writeFile(`dist/en/${page}.html`,optimize($.html(),page,'en',components));
