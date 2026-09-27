@@ -71,3 +71,7 @@ html[lang=en] .text-link{font-size:19px}
 .slider-controls button{background:transparent;border:1px solid var(--line);width:46px;height:46px;font:24px/1 Georgia,serif;color:var(--gold)}
 .slider-controls button:hover{background:#f6f7f5;border-color:var(--gold)}
 .slider-controls span{min-width:55px;text-align:center;font:14px/1.5 system-ui;font-variant-numeric:tabular-nums}
+
+/* Keep decorative arrows identical to the Chinese interface in both languages. */
+.text-link > span[aria-hidden="true"]{font-family:system-ui,-apple-system,'PingFang SC',sans-serif;font-size:16px;font-weight:400;line-height:1.6}
+.story-list .text-link > span[aria-hidden="true"]{font-size:20px}
