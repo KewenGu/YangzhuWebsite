@@ -1,0 +1,47 @@
+/* Component-label selectors are tied to the pinned Decap version, never its CSS hashes. */
+.cms-view-switch{display:none}
+[class*="-ToolbarContainer"] [class*="-BackCollection"],
+[class*="-ToolbarContainer"] [class*="-BackStatus"],
+[class*="-ToolbarContainer"] [class*="-PreviewButton"]{white-space:nowrap}
+@media(max-width:1100px){
+ [class*="-EditorContainer"]{min-width:0!important;width:100%;display:flex!important;flex-direction:column;padding-top:0!important}
+ [class*="-EditorContainer"]>[class*="-Editor "]{flex:1;min-height:0;height:auto!important;position:relative;width:100%!important}
+ [class*="-ToolbarContainer"]{position:relative!important;min-width:0!important;width:100%;height:auto!important;flex:none;display:flex;flex-wrap:wrap;align-items:center;background:#fff}
+ [class*="-ToolbarSectionBackLink"]{order:0;flex:1 1 250px;min-width:0;height:auto!important;min-height:64px;padding:10px 16px!important;border-right:0!important}
+ [class*="-ToolbarSectionBackLink"]>div:last-child{min-width:0}
+ [class*="-BackCollection"]{overflow:hidden;text-overflow:ellipsis;max-width:100%;line-height:1.5}
+ [class*="-BackStatus"]{line-height:1.5;margin-top:3px}
+ [class*="-ToolbarSectionMeta"]{order:1;flex:0 0 auto;height:64px!important;padding:0 12px!important;border:0!important}
+ [class*="-ToolbarSectionMain"]{order:2;flex:1 0 100%!important;min-width:0;height:auto!important;padding:10px 16px!important;gap:12px;flex-wrap:wrap;border-top:1px solid #dedfd9}
+ [class*="-ToolbarSubSectionFirst"]{min-width:0;flex-wrap:wrap;gap:8px;margin:0!important}
+ [class*="-ToolbarSubSectionFirst"]>*{flex-shrink:0;margin:0!important}
+ [class*="-ToolbarSubSectionLast"]{margin-left:auto!important}
+ [class*="-ToolbarContainer"] button,[class*="-ToolbarContainer"] [role="button"]{min-height:44px;white-space:nowrap;height:auto;display:inline-flex;align-items:center;justify-content:center}
+ [class*="-PreviewButtonContainer"]{flex-shrink:0;min-width:max-content}
+ [class*="-PreviewButton"]{min-width:max-content;line-height:1.5}
+ [class*="-ToolbarContainer"] [role="menu"]{max-width:calc(100vw - 32px)}
+}
+@media(max-width:900px){
+ .cms-view-switch{order:3;display:flex;flex:1 0 100%;padding:0 16px;gap:24px;border-top:1px solid #dedfd9}
+ .cms-view-switch button{border:0;border-bottom:3px solid transparent;border-radius:0;background:transparent;color:#5b6058;padding:10px 0;font:600 14px/1.5 system-ui;cursor:pointer}
+ .cms-view-switch button[aria-pressed="true"]{color:#806528;border-bottom-color:#806528}
+ [data-cms-view] .SplitPane>.Pane{width:100%!important;flex:1 1 100%!important;min-width:0}
+ [data-cms-view="edit"] .SplitPane>.Pane2,
+ [data-cms-view="preview"] .SplitPane>.Pane1,
+ [data-cms-view] .SplitPane>.Resizer,
+ [data-cms-view] [class*="-ViewControls"]{display:none!important}
+ [data-cms-view] [class*="-ControlPaneContainer"]{min-width:0;width:100%;padding-left:16px;padding-right:16px}
+ [data-cms-view] input,[data-cms-view] textarea{max-width:100%}
+}
+@media(max-width:480px){
+ [class*="-ToolbarSectionBackLink"]{flex-basis:180px;padding-left:12px!important;padding-right:8px!important}
+ [class*="-ToolbarSectionMeta"]>a{display:none}
+ [class*="-ToolbarSectionMain"]{padding:8px 12px!important;gap:8px}
+ [class*="-ToolbarSubSectionFirst"]{gap:6px}
+ [class*="-ToolbarSubSectionLast"]{margin-left:0!important}
+ .cms-view-switch{padding:0 12px}
+}
+@media(max-width:480px){
+ [class*="-ToolbarSectionMeta"] a{display:none}
+ [data-cms-view] [aria-label="datetime field"] button{white-space:nowrap;flex-shrink:0;min-width:44px}
+}

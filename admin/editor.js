@@ -1,3 +1,4 @@
+import {installEditorLayout} from './editor-layout.js';
 import {registerTranslationWidgets} from './translation.mjs';
 import {validateEntry,renderEntry} from './content.mjs';
 const message=document.getElementById('setup-error');
@@ -35,5 +36,5 @@ try{
  CMS.registerEventListener({name:'preSave',handler:({entry})=>{const data=entry.get('data');validateEntry(data.toJS(),entry.get('collection'));return data;}});
  CMS.registerEventListener({name:'postPublish',handler:()=>{document.getElementById('publish-feedback')?.remove();const p=document.createElement('p');p.id='publish-feedback';p.setAttribute('role','status');p.textContent=local?'已保存到本机。重新生成网站后可查看结果。':'发布请求已提交，网站正在更新。请稍后刷新官网确认；如长时间未更新，请联系网站管理员。';Object.assign(p.style,{position:'fixed',bottom:'16px',left:'16px',right:'16px',padding:'16px',background:'#fff5cf',color:'#55430b',zIndex:'100'});p.addEventListener('click',()=>p.remove());document.body.append(p);}});
  registerTranslationWidgets(CMS,config,{authBaseUrl:settings.authBaseUrl,local});
- message.remove();CMS.init({config:{...config,load_config_file:false}});
+ message.remove();CMS.init({config:{...config,load_config_file:false}});installEditorLayout();
 }catch(error){message.textContent=error.message||'暂时无法加载，请刷新后重试。';const a=document.createElement('a');a.href='index.html';a.textContent=' 返回发布台';message.append(a);}
