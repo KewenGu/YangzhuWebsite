@@ -72,4 +72,4 @@ html[lang=en] .text-link{font-size:19px}
 .slider-controls button:hover{background:#f6f7f5;border-color:var(--gold)}
 .slider-controls span{min-width:55px;text-align:center;font:14px/1.5 system-ui;font-variant-numeric:tabular-nums}
 
-.link-arrow{display:block;width:22px;height:22px;flex:0 0 22px;color:var(--gold)}
+.link-arrow{display:block;flex:0 0 auto;color:var(--gold);font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:400;line-height:1;font-variant-emoji:text}
