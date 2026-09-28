@@ -1,19 +1,19 @@
 {
-  "id": "director-connor",
-  "title": "黄法诚",
-  "title_en": "Connor Mankit Darigo",
-  "order": 30,
-  "published": true,
-  "body": "Connor Mankit Darigo，道号黄法诚，是全真龙门的道教居士。\n\n他信仰道教并研习已有八年，对道教的科仪、教义、修持和教育抱有浓厚的热情。\n\n康纳曾经参与过《道藏》部分典籍的翻译工作，目前正致力于完成《云笈七签》的全本英译。",
-  "body_en": "Connor Mankit Darigo (Taoist name: Huang Facheng) is a Quanzhen Longmen Taoist layperson.\n\nHe has been practicing and studying Taoism for eight years, with deep passion for Taoist rituals, teachings, cultivation, and education.\n\nConnor has participated in the translation of parts of the Taoist Canon and is currently dedicated to completing a full English translation of the 'Seven Tablets in a Cloudy Satchel' (Yunji Qiqian).",
+  "body": "Connor Mankit Darigo，道号黄源杰，师承吉法新道长，为净明派第二十六代弟子。\n\n黄源杰信仰并研习道教已有八年，对道教经典、教义思想、科仪传统与修持实践有着浓厚兴趣，并长期关注道教文化在英语语境中的传播与教育。\n\n他致力于道教经典及相关文献的英文翻译与整理，希望通过准确、易于理解的英文表达，帮助更多英语使用者认识和了解道教的信仰体系、思想传统与宗教文化，为道教在英语世界的传播与交流贡献力量。",
   "media": [
     {
       "kind": "image",
-      "src": "assets/members/director1/huangfacheng.jpg",
+      "src": "/assets/uploads/e82aa484cb78f9a6cd46e76028be9224.jpg",
       "alt": "黄法成",
       "poster": ""
     }
   ],
+  "body_en": "Connor Mankit Darigo, Taoist name Huang Yuanjie, is a 26th-generation disciple of the Jingming Taoist tradition under the guidance of Dpr. Zhouxinyu Ji.\n\nHe has practiced and studied Taoism for eight years and has a strong interest in Taoist scriptures, teachings, ritual traditions, and cultivation practices. He is also deeply interested in the communication and education of Taoist culture in the English-speaking world.\n\nConnor is dedicated to the English translation and study of Taoist scriptures and related texts. Through accurate and accessible translations, he hopes to help more English-speaking audiences understand Taoist beliefs, philosophy, traditions, and religious culture, contributing to the broader communication and understanding of Taoism in the English-speaking world.",
+  "published": true,
+  "order": 30,
+  "title_en": "Connor Mankit Darigo",
+  "role_en": "Director",
   "role": "理事",
-  "role_en": "Director"
+  "title": "黄法诚",
+  "id": "director-connor"
 }
