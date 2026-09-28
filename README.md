@@ -2,8 +2,8 @@
 
 美国阳翥道教协会的双语静态网站，展示协会介绍、成员、活动、法会和国际联谊内容。
 
-- 官网：[https://yangzhu.org](https://yangzhu.org)
-- 内容发布后台：[https://yangzhu.org/admin/](https://yangzhu.org/admin/)
+- 官网
+- 内容发布后台
 - 中文页面使用根路径，英文页面位于 `/en/`，例如 `/en/about.html`
 
 ## 项目如何工作
