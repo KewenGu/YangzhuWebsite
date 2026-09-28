@@ -83,6 +83,10 @@ html[lang=en] .text-link{font-size:19px}
 .header-actions #language-switch{color:var(--gold)}
 
 .feature-story > .text-link{font-family:var(--serif);font-size:23px}
+.relation-content,.exchange-content{text-align:center}
+.relations-detail-section .section-subtitle{text-align:center}
+.relations-detail-section .intro-text{margin-bottom:100px}
+.congratulations-section > .section-subtitle,.exchange-section > .section-subtitle{font-weight:500}
 .image-viewer .dialog-close{top:6px;right:10px;width:32px;height:32px;padding:0;display:grid;place-items:center;font:26px/1 system-ui,sans-serif;color:var(--gold);appearance:none}
 .image-viewer .dialog-close:focus-visible{outline-offset:2px}
 @media(max-width:760px){
