@@ -1,314 +1,120 @@
-## 内容发布后台（本机开发已接入）
+# 美国阳翥道教协会网站
 
-会长使用 `/admin/` 管理活动、法会、成员和国际联谊，GitHub 登录后自行预览发布。
+美国阳翥道教协会的双语静态网站，展示协会介绍、成员、活动、法会和国际联谊内容。
 
-- 管理员首次启用步骤见 [ADMIN_SETUP.md](ADMIN_SETUP.md)，会长指南在 `/admin/guide.html`。
-- OAuth 服务已接入。会长账号需在允许登录名单中，并接受仓库协作邀请。
-- 日常内容源文件为 `content/`；使用 `npm run build` 生成 `dist/`，GitHub Pages 使用 Actions 发布，校验通过后部署生成结果。
-- 本机启动：先 `npm run build`，再 `npm run cms:proxy`，另开终端运行 `python3 -m http.server 8766 --bind 127.0.0.1 --directory dist`。
-- 自动校验：`npm test`。本机编辑保存后重新构建即可预览；不会推送官网。
+- 官网：[https://yangzhu.org](https://yangzhu.org)
+- 内容发布后台：[https://yangzhu.org/admin/](https://yangzhu.org/admin/)
+- 中文页面使用根路径，英文页面位于 `/en/`，例如 `/en/about.html`
 
-## 2026-09 白金主题更新
+## 项目如何工作
 
-全站已使用 E「静穆宣言」视觉方向，包含首页、协会介绍、主要成员、协会活动、协会法会及国际联谊。
+网站内容保存在 `content/` 下的 JSON 文件中。构建脚本读取这些内容，生成中文和英文页面，并把网站资源复制到 `dist/`。推送 `main` 分支后，GitHub Actions 会自动执行测试、构建并发布到 GitHub Pages。
 
-- 共用样式：`home.css`；共用页眉、联系与页脚：`includes.js`。
-- 语言及留言逻辑：`new-script.js`；菜单、图片查看器、页内目录与捐助对话框：`home.js`。
-- 订阅通过 Mailchimp 公开表单打开确认页，不在客户端使用 Marketing API 密钥，也不提前宣告订阅成功。
-- 已移除旧前端私密 API 密钥。该密钥曾暴露，仍须由账户持有人在 Mailchimp 后台撤销；历史版本中可能留存。
-- 留言只有收到 EmailJS 成功响应才清空；失败保留输入，超时提示结果未确认。不会将留言或订阅邮箱保存到 localStorage。
-- 表单逻辑测试：`node --test tests/forms.test.cjs`。真实测试已取得 Mailchimp 订阅确认与 EmailJS 发送成功响应；收件箱实际入箱由协会确认。
-- `styles.css` 与 `script.js` 为未加载的旧版本；现有正式页面已不再引用它们。
+内容后台使用 Decap CMS。管理员通过 GitHub 登录后编辑内容；保存并发布会提交内容变更，随后由同一套构建流程更新官网。
 
-以下为原项目说明，其中旧主题和旧配置位置仅供历史参考。
+## 本地开发
 
-# 美国阳翥道教协会官方网站
-
-> 承法旌阳，道翥西土  
-> *Inheriting the Dharma of Jingyang, and letting the Dao soar across the Western land*
-
----
-
-## 🌟 项目简介
-
-美国阳翥道教协会官方网站，采用庄严肃穆的设计风格，体现道教文化的深厚底蕴。网站致力于弘扬道教文化、促进国际道教交流、服务社区大众。
-
-**网站地址**: [yangzhu.org](https://yangzhu.org)
-
----
-
-## ✨ 功能特性
-
-### 🌐 多语言支持
-- 中文（简体）和英文双语切换
-- 实时语言切换，所有内容自动适配
-- 语言选择自动保存
-
-### 📱 响应式设计
-- 完美适配桌面端、平板、手机
-- 移动端优化的导航菜单
-- 现代化的用户体验
-
-### 🎨 设计风格
-- 深色主题配色，庄严肃穆
-- 金色装饰元素，突显道教特色
-- 道教文化符号点缀
-- 优雅的滚动动画和交互效果
-
-### 📧 互动功能
-- **邮件订阅**（Mailchimp）- 页脚订阅表单，自动同步到邮件列表
-- **留言咨询**（EmailJS）- 联系表单，留言直接发送到邮箱
-- 表单验证和友好的用户反馈
-- 支持中英文双语提示
-
----
-
-## 📋 网站内容
-
-| 页面 | 描述 |
-|------|------|
-| **首页** | 协会简介、核心理念、主要成员预览 |
-| **协会介绍** | 使命愿景、成立背景、发展历程 |
-| **主要成员** | 会长、副会长、理事、顾问详细介绍 |
-| **协会活动** | 经典诵读、文化讲座、博物馆参访、公益活动 |
-| **协会法会** | 传统道教仪式和法会安排 |
-| **国际联谊** | 全球道教组织交流与合作 |
-| **联系我们** | 联系方式、留言表单、邮件订阅 |
-
----
-
-## 🏗️ 技术架构
-
-### 前端技术栈
-- **HTML5** - 语义化标签结构
-- **CSS3** - 现代特性（Grid、Flexbox、动画）
-- **JavaScript ES6+** - 模块化、面向对象设计
-- **响应式设计** - 移动优先理念
-
-### 第三方服务
-- **Mailchimp** - 邮件订阅和营销
-- **EmailJS** - 表单邮件发送
-- **Google Fonts** - Noto Serif 字体
-
-### 核心模块
-```javascript
-LanguageManager      // 语言切换管理
-NavigationManager    // 导航和滚动管理
-FormManager         // 留言表单处理（EmailJS）
-NewsletterManager   // 订阅表单处理（Mailchimp）
-```
-
----
-
-## 📁 文件结构
-
-```
-YangzhuWebsite/
-├── index.html              # 首页
-├── about.html              # 协会介绍
-├── members.html            # 主要成员
-├── activities.html         # 协会活动
-├── ceremonies.html         # 协会法会
-├── relations.html          # 国际联谊
-│
-├── styles.css              # 全局样式
-├── script.js               # 旧版脚本（保留）
-├── new-script.js           # 新版主脚本
-├── includes.js             # 页面组件（导航、页脚）
-│
-├── images/                 # 网站图片
-│   ├── logo.png
-│   ├── logo.svg
-│   └── Rotating_earth_animated_transparent.gif
-│
-├── assets/                 # 内容资源
-│   ├── about/              # 协会介绍内容
-│   ├── members/            # 成员信息和照片
-│   │   ├── president/      # 会长
-│   │   ├── vice_president/ # 副会长
-│   │   ├── director1/      # 理事1
-│   │   ├── director2/      # 理事2
-│   │   └── advisor/        # 顾问
-│   ├── activities/         # 活动资料
-│   ├── ceremonies/         # 法会照片
-│   └── relations/          # 国际联谊资料
-│
-└── README.md               # 项目说明
-```
-
----
-
-## 🚀 快速开始
-
-### 本地运行
+环境要求：Node.js 22 或更高版本，以及 npm。
 
 ```bash
-# 使用 Python
-python -m http.server 8000
-# 或
-python3 -m http.server 8000
-
-# 使用 Node.js
-npx serve .
-
-# 使用 PHP
-php -S localhost:8000
+npm ci
+npm test
+npm run build
+python3 -m http.server 8766 --bind 127.0.0.1 --directory dist
 ```
 
-然后访问：`http://localhost:8000/index.html`
+然后打开：
 
-### 部署到 GitHub Pages
+- 中文首页：`http://127.0.0.1:8766/`
+- 英文首页：`http://127.0.0.1:8766/en/`
 
-1. 推送代码到 GitHub 仓库
-2. 进入仓库设置 → Pages
-3. 选择分支（通常是 main）
-4. 保存，等待部署完成
-5. 访问生成的网址
+构建会重新生成 `dist/`，所以请预览构建结果，不要直接修改 `dist/`。`dist/` 是生成目录，已被 Git 忽略。
 
----
+### 本机内容编辑预览
 
-## ⚙️ 配置说明
+需要测试 CMS 编辑流程时，先构建网站，再在另一个终端启动本地代理：
 
-### Mailchimp 邮件订阅
-
-**配置位置**: `new-script.js` (第 620-630 行)
-
-已配置的信息：
-- 数据中心：us20
-- API Key：已配置
-- List ID：已配置
-- User ID：已配置
-
-**功能**：访客在页脚输入邮箱订阅，自动同步到 Mailchimp 列表。
-
-### EmailJS 留言功能
-
-**配置位置**: `new-script.js` (第 206-210 行)
-
-已配置的信息：
-- Service ID：service_rof5hxf
-- Template ID：template_b3ehhvq
-- Public Key：已配置
-
-**功能**：访客填写联系表单，留言直接发送到您的邮箱。
-
----
-
-## 🎨 自定义配置
-
-### 修改颜色主题
-
-编辑 `styles.css` 中的 CSS 变量：
-
-```css
-:root {
-    --primary-color: #8B4513;      /* 主色调：棕色 */
-    --secondary-color: #DAA520;    /* 次要色调：金色 */
-    --accent-color: #CD853F;       /* 强调色：浅棕 */
-    --text-primary: #F5F5DC;       /* 主要文字：米色 */
-    --text-secondary: #DEB887;     /* 次要文字：小麦色 */
-    --bg-primary: #1a1a1a;         /* 主背景：深黑 */
-    --bg-secondary: #2d2d2d;       /* 次要背景：灰黑 */
-}
+```bash
+npm run build
+npm run cms:proxy
+python3 -m http.server 8766 --bind 127.0.0.1 --directory dist
 ```
 
-### 添加或修改内容
+本机预览不会发布到官网。完整使用说明见 [`admin/guide.html`](admin/guide.html)。
 
-1. 编辑对应的 HTML 文件
-2. 使用 `data-zh` 和 `data-en` 属性添加双语内容
-3. 图片和资源文件放在 `assets/` 目录
+## 内容发布
 
-### 添加新成员
+第一次使用后台前，需要接受管理员发出的 GitHub 协作邀请。登录后台后，可以管理以下栏目：
 
-1. 在 `assets/members/` 创建新目录
-2. 添加所需文件：
-   - `title_zh.txt` / `title_en.txt` - 职位
-   - `body_zh.txt` / `body_en.txt` - 介绍
-   - `照片.jpg` / `照片_no_bg.png` - 照片
-3. 更新 `index.html`（首页卡片）
-4. 更新 `members.html`（详细页面）
+- 活动
+- 协会法会
+- 主要成员
+- 国际联谊
 
----
+常用发布流程是：填写中文内容，上传图片或视频，使用“一键补齐英文”填充缺失的英文栏位，检查人名、日期和译文，先保存草稿，再发布。
 
-## 🌍 浏览器兼容性
+正文中空一行即可分段，不需要输入 HTML。上传素材支持 JPG、PNG、WebP、GIF、MP4 和 WebM，单个文件不超过 20MB。`order` 数字越小越靠前；关闭“在网站上显示”可以下架内容。仓库目前公开，请勿上传身份证件、私人联系方式或未获许可公开的资料。
 
-| 浏览器 | 最低版本 |
-|--------|----------|
-| Chrome | 60+ |
-| Firefox | 55+ |
-| Safari | 12+ |
-| Edge | 79+ |
-| 移动端浏览器 | ✅ 完全支持 |
+## 内容与资源目录
 
----
+```text
+content/
+├── activities/     # 协会活动
+├── ceremonies/     # 协会法会
+├── members/        # 主要成员
+└── relations/      # 国际联谊
 
-## 📊 性能优化
+assets/             # 图片、视频和其他公开资源
+assets/uploads/     # CMS 上传的媒体文件
+admin/              # CMS 后台、编辑器和发布指南
+auth/               # GitHub OAuth / Cloudflare Worker 配置
+scripts/            # 内容读取、SEO、CMS 配置和构建脚本
+tests/              # 内容、表单、翻译和 SEO 测试
+```
 
-- ✅ 图片优化和懒加载
-- ✅ CSS 和 JavaScript 模块化
-- ✅ 字体优化加载（Google Fonts）
-- ✅ 响应式图片处理
-- ✅ 缓存控制（版本号参数）
+页面源文件是根目录中的 `index.html`、`about.html`、`members.html`、`activities.html`、`ceremonies.html` 和 `relations.html`。共用前端代码主要位于 `home.css`、`home.js`、`includes.js` 和 `new-script.js`。
 
----
+## 构建与部署
 
-## 🔧 维护指南
+本地提交前建议运行：
 
-### 定期更新
-- 更新活动和法会信息
-- 维护联系信息
-- 检查外部链接有效性
+```bash
+npm test
+npm run build
+```
 
-### 内容管理
-- 保持中英文内容同步
-- 使用统一的命名规范
-- 定期备份照片和资源文件
+GitHub Actions 配置位于 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)，触发条件是向 `main` 推送、创建针对 `main` 的 Pull Request，或手动运行工作流。
 
-### 技术维护
-- 检查表单功能正常
-- 验证 Mailchimp 和 EmailJS 配置
-- 更新第三方库版本
+工作流使用 Node.js 22，安装依赖后运行测试和构建，并将 `dist/` 发布到 GitHub Pages。若 CMS 刚提交了内容，先同步远程 `main` 再推送自己的代码，避免覆盖远程提交：
 
----
+```bash
+git pull --rebase origin main
+git push origin main
+```
 
-## 🐛 故障排查
+## SEO 与分享信息
 
-### 表单无法输入？
-**原因**：浏览器缓存  
-**解决**：清除缓存或使用无痕窗口
+SEO 由 [`scripts/seo.mjs`](scripts/seo.mjs) 和构建流程统一生成。公开页面包含页面标题、描述、canonical、中文/英文 `hreflang`、社交分享图片和结构化数据；站点地图同时列出两种语言，`robots.txt` 指向站点地图。
 
-### 语言切换不生效？
-**原因**：浏览器缓存  
-**解决**：强制刷新（Ctrl+Shift+R）或清除缓存
+具体规则和验证方式见 [`SEO.md`](SEO.md)。部署后可检查 `/en/about.html`、语言切换和 `/sitemap.xml`，并在 Google Search Console 提交 `https://yangzhu.org/sitemap.xml`。部署不会自动提交 Search Console，也不保证立即收录或排名。
 
-### 订阅/留言提交失败？
-**检查**：
-1. 浏览器控制台错误信息
-2. Mailchimp/EmailJS 配置是否正确
-3. 网络连接是否正常
+## 安全与配置
 
----
+公开前端不应包含 Mailchimp、EmailJS、GitHub OAuth 或 Cloudflare 的私密密钥。OAuth 和部署相关配置放在 Cloudflare / GitHub 的 secrets 中；[`auth/wrangler.toml`](auth/wrangler.toml) 只保存非敏感配置和变量名。
 
-## 📞 联系方式
+如果发现密钥曾经出现在历史提交中，应立即在对应服务后台撤销并重新生成，而不是只从当前文件删除。
 
-**美国阳翥道教协会**
-- 邮箱：office@yangzhu.org
-- 地址：纽约市曼哈顿区
-- 网站：yangzhu.org
+## 常见检查
 
----
+```bash
+# 检查工作区和待提交文件
+git status
 
-## 📄 许可证
+# 运行全部项目测试
+npm test
 
-本项目为美国阳翥道教协会专用，保留所有权利。
+# 重新生成本地网站
+npm run build
+```
 
----
-
-## 🙏 致谢
-
-感谢所有为道教文化传播做出贡献的成员和支持者。
-
----
-
-**美国阳翥道教协会** © 2025  
-*Yangzhu Taoist Association of America*
+如果网站没有反映最新内容，先确认构建工作流是否成功，再等待 GitHub Pages 更新并刷新浏览器缓存。CMS 的登录、媒体、发布和冲突处理说明集中在 [`admin/guide.html`](admin/guide.html)。
