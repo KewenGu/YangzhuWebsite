@@ -22,7 +22,8 @@ export function optimize(html,page,lang,components){
  const image='https://yangzhu.org/assets/about/official_logo.png';
  for(const [key,value] of Object.entries({type:'website',title,description,url,image,'image:alt':'Yangzhu Taoist Association of America — official seal',site_name:'美国阳翥道教协会 · Yangzhu Taoist Association of America',locale:english?'en_US':'zh_CN','locale:alternate':english?'zh_CN':'en_US'}))meta('og:'+key,value,true);
  for(const [key,value] of Object.entries({card:'summary',title,description,image,'image:alt':'Yangzhu Taoist Association of America — official seal'}))meta('twitter:'+key,value);
- $('link[rel="icon"],link[rel="apple-touch-icon"]').attr('href','/assets/about/official_logo.png');
+ $('link[rel="icon"]').attr('href','/assets/about/favicon-gold.svg').attr('type','image/svg+xml');
+ $('link[rel="apple-touch-icon"]').attr('href','/assets/about/official_logo.png');
  const org={'@type':'Organization','@id':'https://yangzhu.org/#organization',name:'美国阳翥道教协会',alternateName:'Yangzhu Taoist Association of America',url:'https://yangzhu.org/',logo:image,foundingDate:'2025',email:'office@yangzhu.org',address:{'@type':'PostalAddress',addressLocality:'New York',addressRegion:'NY',addressCountry:'US'}};
  const data={'@context':'https://schema.org','@graph':[org,{'@type':'WebSite','@id':'https://yangzhu.org/#website',url:'https://yangzhu.org/',name:org.alternateName,inLanguage:['zh-Hans','en'],publisher:{'@id':org['@id']}},{'@type':page==='about'?'AboutPage':page==='index'?'WebPage':'CollectionPage','@id':url+'#webpage',url,name:title,description,inLanguage:english?'en':'zh-Hans',isPartOf:{'@id':'https://yangzhu.org/#website'},about:{'@id':org['@id']}}]};
  $('head').append($('<script type="application/ld+json">').text(JSON.stringify(data).replace(/</g,'\\u003c')));

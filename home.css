@@ -84,6 +84,9 @@ html[lang=en] .text-link{font-size:19px}
 
 .feature-story > .text-link{font-family:var(--serif);font-size:23px}
 .relation-content,.exchange-content{text-align:center}
+.contact-section .section-title{text-align:left;margin-bottom:30px}
+.contact-section .section-title,.contact-section .contact-form h3{font-family:var(--serif);font-size:clamp(28px,2.5vw,38px);font-weight:400;line-height:1.55;letter-spacing:0}
+.contact-content{align-items:start}
 .relations-detail-section .section-subtitle{text-align:center}
 .relations-detail-section .intro-text{margin-bottom:100px}
 .congratulations-section > .section-subtitle,.exchange-section > .section-subtitle{font-weight:500}
