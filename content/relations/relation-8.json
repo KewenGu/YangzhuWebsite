@@ -1,11 +1,5 @@
 {
-  "id": "relation-8",
-  "title": "与美国青云道院联谊",
-  "title_en": "Fellowship with Qingyun Taoist Temple in America",
-  "order": 80,
-  "published": true,
   "body": "与美国青云道院建立友好联谊关系，共同促进道教文化在美国的传播与发展。",
-  "body_en": "Established friendly fellowship with Qingyun Taoist Temple in America, jointly promoting the spread and development of Taoist culture in the United States.",
   "media": [
     {
       "kind": "image",
@@ -14,5 +8,11 @@
       "poster": ""
     }
   ],
+  "body_en": "Established friendly fellowship with Qingyun Taoist Temple in America, jointly promoting the spread and development of Taoist culture in the United States.",
+  "published": false,
+  "order": 80,
+  "title_en": "Fellowship with Qingyun Taoist Temple in America",
+  "title": "与美国青云道院联谊",
+  "id": "relation-8",
   "category": "exchange"
 }
