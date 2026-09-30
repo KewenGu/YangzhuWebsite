@@ -1,11 +1,5 @@
 {
-  "id": "tao-te-ching-competition",
-  "title": "道德经诵经比赛",
-  "title_en": "Tao Te Ching Recitation Competition",
-  "order": 60,
-  "published": true,
   "body": "国际道教日举行道德经诵经比赛，吸引各国道教爱好者参加。",
-  "body_en": "On International Taoism Day, we held a Tao Te Ching recitation competition, attracting Taoist enthusiasts from various countries to participate.",
   "media": [
     {
       "kind": "image",
@@ -20,5 +14,11 @@
       "poster": ""
     }
   ],
-  "featured": true
+  "body_en": "On International Taoism Day, we held a Tao Te Ching recitation competition, attracting Taoist enthusiasts from various countries to participate.",
+  "featured": false,
+  "published": true,
+  "order": 60,
+  "title_en": "Tao Te Ching Recitation Competition",
+  "title": "道德经诵经比赛",
+  "id": "tao-te-ching-competition"
 }
