@@ -1,6 +1,7 @@
 name = "yangzhu-cms-auth"
 main = "worker.mjs"
-compatibility_date = "2026-09-01"
+compatibility_date = "2026-09-27"
+preview_urls = false
 keep_vars = true
 # Before deployment, set AUTH_ORIGIN to the exact Worker HTTPS origin.
 [vars]
@@ -12,3 +13,10 @@ AUTH_ORIGIN = "https://yangzhu-cms-auth.kewen-gu.workers.dev"
 
 [ai]
 binding = "AI"
+
+# Preserve the production diagnostics configured in Cloudflare.
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
