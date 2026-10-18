@@ -4,6 +4,8 @@ const IMAGE_MODEL = 'gpt-image-2.5-sunburst';
 const IMAGE_ENDPOINT = 'https://api.openai.com/v1/images/edits';
 const MAX_IMAGE_BYTES = 6 * 1024 * 1024;
 const MAX_IMAGE_RESPONSE_BYTES = 12 * 1024 * 1024;
+const MAX_IMAGE_ERROR_BYTES = 16 * 1024;
+const IMAGE_ERROR_CODES = new Set(['invalid_api_key', 'model_not_found', 'insufficient_quota', 'billing_hard_limit_reached', 'organization_verification_required', 'permission_denied', 'rate_limit_exceeded', 'invalid_request_error']);
 const INPUT_LIMITS = {title: 200, title_en: 200, body: 6000, category: 100, details: 4000, facts: 4000};
 export const COPY_LIMITS = {
   title_en: 200, summary: 500, summary_en: 800, body: 10000, body_en: 16000,
@@ -135,6 +137,24 @@ async function createCopy(product, env) {
   return {draft, review_required: true};
 }
 
+async function imageProviderError(response) {
+  let code;
+  try {
+    const data = await boundedJSON(response, MAX_IMAGE_ERROR_BYTES);
+    code = [data?.error?.code, data?.error?.type].find(value => typeof value === 'string' && IMAGE_ERROR_CODES.has(value));
+  } catch { /* Malformed or oversized errors reveal only the upstream HTTP status. */ }
+  let reason;
+  if (code === 'invalid_api_key' || response.status === 401) reason = '图片服务密钥无效，请管理员检查 OpenAI API key。';
+  else if (code === 'organization_verification_required') reason = '图片服务需要完成组织验证，请管理员检查 OpenAI 账号。';
+  else if (code === 'model_not_found' || response.status === 404) reason = '图片模型不存在或当前账号不可用，请管理员检查模型配置与权限。';
+  else if (code === 'insufficient_quota' || code === 'billing_hard_limit_reached') reason = '图片服务额度不足，请管理员检查 OpenAI 余额和用量限制。';
+  else if (code === 'permission_denied' || response.status === 403) reason = '图片服务权限不足，请管理员检查模型访问权限和组织验证。';
+  else if (code === 'rate_limit_exceeded' || response.status === 429) reason = '图片服务请求过于频繁或额度不足，请稍后重试或联系管理员。';
+  else if (response.status === 400) reason = '图片服务拒绝了请求参数，请管理员检查模型和图片设置。';
+  else reason = '图片服务暂时不可用，请稍后重试或联系管理员。';
+  return new RequestError(`${reason}（上游 HTTP ${response.status}${code ? `；${code}` : ''}）`, response.status === 429 ? 429 : 502);
+}
+
 async function createImage(product, image, prompt, env, fetcher) {
   if (!env.OPENAI_API_KEY) throw new RequestError('图片 AI 尚未启用，请管理员在 Cloudflare Worker 设置 OPENAI_API_KEY secret。', 503);
   const model = env.OPENAI_IMAGE_MODEL || IMAGE_MODEL;
@@ -143,7 +163,7 @@ async function createImage(product, image, prompt, env, fetcher) {
   const payload = {model, images: [{image_url: `data:${image.mime};base64,${image.base64}`}], prompt: instructions, n: 1, size: '1024x1024', quality: 'high', output_format: 'webp', output_compression: 90};
   if (model === 'gpt-image-1' || model === 'gpt-image-1.5') payload.input_fidelity = 'high';
   const response = await fetcher(IMAGE_ENDPOINT, {method: 'POST', headers: {Authorization: `Bearer ${env.OPENAI_API_KEY}`, 'Content-Type': 'application/json'}, body: JSON.stringify(payload), signal: AbortSignal.timeout(150000)});
-  if (!response.ok) throw new RequestError(response.status === 429 ? '图片服务繁忙或额度不足，请稍后重试或联系管理员。' : '图片服务暂时不可用，请联系管理员检查图片模型权限。', response.status === 429 ? 429 : 502);
+  if (!response.ok) throw await imageProviderError(response);
   let output;
   try {
     const data = await boundedJSON(response, MAX_IMAGE_RESPONSE_BYTES);

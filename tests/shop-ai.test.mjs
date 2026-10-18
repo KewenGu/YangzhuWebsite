@@ -142,6 +142,55 @@ test('image upstream rejection or malformed response returns a sanitized failure
   }
 });
 
+test('image provider HTTP failures are distinguishable without exposing upstream details', async () => {
+  for (const [status, phrase] of [[400, '请求参数'], [401, '密钥无效'], [403, '权限不足'], [404, '图片模型不存在'], [429, '请求过于频繁'], [500, '暂时不可用']]) {
+    const s = scenario();
+    const output = Response.json({error: {message: 'server-secret https://private.test/request', code: 'unknown-secret-code', type: 'unknown-secret-type'}, secret: 'github-session'}, {status, headers: {'x-request-id': 'private-request-id'}});
+    const response = await shopAI(s.request('image', {product: source, image: png}), s.env, (url, options) => url.includes('openai') ? output : s.fetcher(url, options));
+    assert.equal(response.status, status === 429 ? 429 : 502);
+    const message = (await response.json()).error;
+    assert.match(message, new RegExp(phrase));
+    assert.match(message, new RegExp(`HTTP ${status}`));
+    assert.doesNotMatch(message, /server-secret|github-session|private|unknown-secret|https:/);
+  }
+});
+
+test('image provider exposes only allowlisted error codes and fixed explanations', async () => {
+  for (const [code, phrase] of [['invalid_api_key', '密钥无效'], ['model_not_found', '图片模型不存在'], ['insufficient_quota', '额度不足'], ['billing_hard_limit_reached', '额度不足'], ['organization_verification_required', '组织验证'], ['permission_denied', '权限不足'], ['rate_limit_exceeded', '请求过于频繁'], ['invalid_request_error', '请求参数']]) {
+    const s = scenario();
+    const output = Response.json({error: {code, message: 'server-secret private response', detail: 'private-request-id'}}, {status: 400});
+    const response = await shopAI(s.request('image', {product: source, image: png}), s.env, (url, options) => url.includes('openai') ? output : s.fetcher(url, options));
+    assert.equal(response.status, 502);
+    const message = (await response.json()).error;
+    assert.match(message, new RegExp(phrase));
+    assert.match(message, new RegExp(`HTTP 400；${code}`));
+    assert.doesNotMatch(message, /server-secret|private/);
+  }
+  const s = scenario();
+  const output = Response.json({error: {code: 'unrecognized-secret', type: 'insufficient_quota', message: 'server-secret'}}, {status: 429});
+  const response = await shopAI(s.request('image', {product: source, image: png}), s.env, (url, options) => url.includes('openai') ? output : s.fetcher(url, options));
+  assert.equal(response.status, 429);
+  assert.match((await response.json()).error, /HTTP 429；insufficient_quota/);
+});
+
+test('malformed and oversized image provider error bodies safely fall back to HTTP classification', async () => {
+  let canceled = false;
+  const oversized = new ReadableStream({
+    start(controller) { controller.enqueue(new TextEncoder().encode('server-secret'.repeat(2000))); },
+    cancel() { canceled = true; },
+  });
+  const outputs = [new Response('not JSON server-secret', {status: 403}), new Response(oversized, {status: 403}), new Response('server-secret', {status: 403, headers: {'Content-Length': String(16 * 1024 + 1)}})];
+  for (const output of outputs) {
+    const s = scenario();
+    const response = await shopAI(s.request('image', {product: source, image: png}), s.env, (url, options) => url.includes('openai') ? output : s.fetcher(url, options));
+    assert.equal(response.status, 502);
+    const message = (await response.json()).error;
+    assert.match(message, /权限不足.*HTTP 403/);
+    assert.doesNotMatch(message, /server-secret|JSON|内容过大|413/);
+  }
+  assert.equal(canceled, true);
+});
+
 test('shared rate limiting and per-editor fallback prevent additional provider calls', async () => {
   const denied = scenario({SHOP_AI_RATE_LIMIT: {limit: async () => ({success: false})}});
   assert.equal((await shopAI(denied.request(), denied.env, denied.fetcher)).status, 429);
