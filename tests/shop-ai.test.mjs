@@ -115,6 +115,8 @@ test('image editing sends reference to the fixed official API with a server-only
   const {options} = s.calls.find(call => call.url.includes('openai'));
   assert.equal(options.headers.Authorization, 'Bearer server-secret');
   const body = JSON.parse(options.body);
+  assert.equal(body.model, 'gpt-image-1.5');
+  assert.equal(body.input_fidelity, 'high');
   assert.equal(body.images[0].image_url, `data:image/png;base64,${png.base64}`);
   assert.equal(body.n, 1);
   assert.equal(body.output_format, 'webp');

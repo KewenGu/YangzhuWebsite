@@ -27,7 +27,7 @@
 | `AI` | 已有 Workers AI 绑定，用于中英文商品文案 |
 | `SHOP_COPY_MODEL` | 可选；默认 `@cf/meta/llama-3.3-70b-instruct-fp8-fast` |
 | `OPENAI_API_KEY` | 图片编辑所需的 **Worker secret**，必须有对应图片模型的使用权限和额度 |
-| `OPENAI_IMAGE_MODEL` | 可选；默认 `gpt-image-2.5-sunburst`，也可配置支持的 GPT Image 编辑模型 |
+| `OPENAI_IMAGE_MODEL` | 可选；默认 `gpt-image-1.5`，也可配置账号已开通的 GPT Image 编辑模型 |
 | `SHOP_AI_RATE_LIMIT` | 可选 Cloudflare rate limiter 绑定，提供额外的服务级限流 |
 
 配置图片密钥时，在本项目目录执行：

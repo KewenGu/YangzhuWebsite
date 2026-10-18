@@ -1,6 +1,6 @@
 // Product assistance is a draft-only service. The public site never calls these routes.
 const COPY_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
-const IMAGE_MODEL = 'gpt-image-2.5-sunburst';
+const IMAGE_MODEL = 'gpt-image-1.5';
 const IMAGE_ENDPOINT = 'https://api.openai.com/v1/images/edits';
 const MAX_IMAGE_BYTES = 6 * 1024 * 1024;
 const MAX_IMAGE_RESPONSE_BYTES = 12 * 1024 * 1024;
