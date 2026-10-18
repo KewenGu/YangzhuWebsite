@@ -1,0 +1,29 @@
+{
+  "currency": "USD",
+  "checkout_verified": false,
+  "availability": "inquiry",
+  "published": true,
+  "id": "zhao-gongming-tiger-pendant",
+  "title": "赵公明虎纹挂件",
+  "title_en": "Zhao Gongming & Tiger Pendant",
+  "summary": "赵公明与虎相映，层次丰富的纹样将传统人物形象收于一枚佩饰。",
+  "summary_en": "A richly detailed motif brings Zhao Gongming and the tiger together in a compact pendant.",
+  "body": "照片中的长方形挂件以赵公明与虎为主题，周围配有起伏的装饰线条。深浅相映的纹样，让人物、虎与背景形成鲜明层次，适合细细欣赏。\n\n赵公明在传统信仰中与祈愿丰足的文化主题相联系。本款以这一传统意象表达祝愿；不承诺财富增长或其他具体结果。",
+  "body_en": "This rectangular pendant depicts Zhao Gongming with a tiger, surrounded by flowing decorative lines. The layered motif gives the figure, animal and background a distinct visual rhythm.\n\nThe supplied design identifies Zhao Gongming with a traditional aspiration for prosperity. This is a cultural and devotional meaning, not a promise of financial gain or any particular outcome.",
+  "category": "pendants",
+  "order": 100,
+  "details": "主题：赵公明虎纹挂件\n可见特征：赵公明、虎、装饰纹样\n展示依据：协会提供的商品照片\n材质与尺寸：请联系协会确认\n购买方式：先咨询款式、价格及供货情况",
+  "details_en": "Theme: Zhao Gongming & Tiger Pendant\nVisible features: Zhao Gongming, tiger and decorative motifs\nReference: Product photograph supplied by the Association\nMaterials and dimensions: Confirm with the Association\nOrdering: Inquire about design, price and availability first",
+  "faq": "问：在哪里可以确认尺寸和材质？\n答：请向协会索取该款实物的尺寸、材质及配件信息；图片只供了解外观，不代表未经确认的规格。",
+  "faq_en": "Q: Where can I confirm dimensions and materials?\nA: Ask the Association for the dimensions, materials and included accessories of the actual piece. Photographs show appearance, not unverified specifications.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/zhao-gongming-tiger-pendant.jpg",
+      "thumbnail": "/assets/shop/zhao-gongming-tiger-pendant-thumb.jpg",
+      "alt": "赵公明虎纹挂件原始商品照片，保留图片中的文字与水印",
+      "alt_en": "Original photograph of Zhao Gongming & Tiger Pendant; source lettering and watermark retained",
+      "generated": false
+    }
+  ]
+}

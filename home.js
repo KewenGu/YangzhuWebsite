@@ -13,7 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     language.addEventListener('click', () => {
         const destination = document.documentElement.dataset.languageUrl;
-        if(destination) { location.href = destination + location.hash; return; }
+        if(destination) {
+            const url = new URL(destination, location.href);
+            const variant = document.querySelector('[data-variant-select]')?.value;
+            if(variant && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(variant)) url.searchParams.set('variant', variant);
+            url.hash = location.hash;
+            location.href = url.href;
+            return;
+        }
         window.languageManager.switchLanguage(window.languageManager.currentLang === 'zh' ? 'en' : 'zh');
         syncLanguage();
     });

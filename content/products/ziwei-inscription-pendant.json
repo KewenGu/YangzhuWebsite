@@ -1,0 +1,29 @@
+{
+  "currency": "USD",
+  "checkout_verified": false,
+  "availability": "inquiry",
+  "published": true,
+  "id": "ziwei-inscription-pendant",
+  "title": "紫薇讳纹样挂件",
+  "title_en": "Ziwei Sacred Inscription Pendant",
+  "summary": "红色文字映衬深色底面，简洁而醒目的传统纹样。",
+  "summary_en": "Red inscription against a dark ground gives this traditional motif a clear visual focus.",
+  "body": "照片中的挂件以红色紫薇讳纹样为视觉中心，搭配深色长方形底面与挂绳。鲜明的对比，让书写形态本身成为这款佩饰的主要看点。\n\n原图将纹样与传统护佑寓意联系在一起。此处介绍其文化主题，不承诺具体效果。原图中的「朱砂」文字不作为本页对实际成分的确认，材质需向协会核实。",
+  "body_en": "A red Ziwei sacred inscription forms the focal point of this pendant, set against a dark rectangular face and paired with a cord. The strong contrast directs attention to the written form itself.\n\nThe source image connects the motif with traditional protection symbolism. This page describes the cultural theme without promising an effect. The source's reference to cinnabar is not a verified statement of this item's composition; ask the Association to confirm materials.",
+  "category": "pendants",
+  "order": 140,
+  "details": "主题：紫薇讳纹样挂件\n可见特征：紫薇讳纹样、红色书写装饰\n展示依据：协会提供的商品照片\n材质与尺寸：请联系协会确认\n购买方式：先咨询款式、价格及供货情况",
+  "details_en": "Theme: Ziwei Sacred Inscription Pendant\nVisible features: Ziwei sacred inscription with red accents\nReference: Product photograph supplied by the Association\nMaterials and dimensions: Confirm with the Association\nOrdering: Inquire about design, price and availability first",
+  "faq": "问：在哪里可以确认尺寸和材质？\n答：请向协会索取该款实物的尺寸、材质及配件信息；图片只供了解外观，不代表未经确认的规格。",
+  "faq_en": "Q: Where can I confirm dimensions and materials?\nA: Ask the Association for the dimensions, materials and included accessories of the actual piece. Photographs show appearance, not unverified specifications.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/ziwei-inscription-pendant.jpg",
+      "thumbnail": "/assets/shop/ziwei-inscription-pendant-thumb.jpg",
+      "alt": "紫薇讳纹样挂件原始商品照片，保留图片中的文字与水印",
+      "alt_en": "Original photograph of Ziwei Sacred Inscription Pendant; source lettering and watermark retained",
+      "generated": false
+    }
+  ]
+}

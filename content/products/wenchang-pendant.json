@@ -1,0 +1,29 @@
+{
+  "currency": "USD",
+  "checkout_verified": false,
+  "availability": "inquiry",
+  "published": true,
+  "id": "wenchang-pendant",
+  "title": "文昌帝君挂件",
+  "title_en": "Wenchang Dijun Pendant",
+  "summary": "以文昌帝君图像寄托向学之心，适合作为有文化寓意的赠礼。",
+  "summary_en": "A Wenchang Dijun motif expresses appreciation for learning and thoughtful study.",
+  "body": "这款挂件以文昌帝君坐像为中心，边缘的云纹与人物衣纹构成细致的画面。清楚的人物主题，让它既适合佩戴，也适合作为学习传统文化的契机。\n\n原图以向学主题介绍此款。可以把它视为一份鼓励专注与勤勉的文化心意；它不保证考试成绩、录取或学业结果。",
+  "body_en": "A seated Wenchang Dijun figure is framed by cloud-like decoration and detailed robes. The recognizable subject makes the pendant a small point of connection with traditional imagery.\n\nThe supplied photograph associates this motif with learning. It can express encouragement for attention and diligence, but does not guarantee grades, admission or academic achievement.",
+  "category": "pendants",
+  "order": 130,
+  "details": "主题：文昌帝君挂件\n可见特征：文昌帝君坐像、云纹\n展示依据：协会提供的商品照片\n材质与尺寸：请联系协会确认\n购买方式：先咨询款式、价格及供货情况",
+  "details_en": "Theme: Wenchang Dijun Pendant\nVisible features: Wenchang Dijun figure and cloud motifs\nReference: Product photograph supplied by the Association\nMaterials and dimensions: Confirm with the Association\nOrdering: Inquire about design, price and availability first",
+  "faq": "问：在哪里可以确认尺寸和材质？\n答：请向协会索取该款实物的尺寸、材质及配件信息；图片只供了解外观，不代表未经确认的规格。",
+  "faq_en": "Q: Where can I confirm dimensions and materials?\nA: Ask the Association for the dimensions, materials and included accessories of the actual piece. Photographs show appearance, not unverified specifications.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/wenchang-pendant.jpg",
+      "thumbnail": "/assets/shop/wenchang-pendant-thumb.jpg",
+      "alt": "文昌帝君挂件原始商品照片，保留图片中的文字与水印",
+      "alt_en": "Original photograph of Wenchang Dijun Pendant; source lettering and watermark retained",
+      "generated": false
+    }
+  ]
+}

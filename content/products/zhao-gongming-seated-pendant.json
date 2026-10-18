@@ -1,0 +1,29 @@
+{
+  "currency": "USD",
+  "checkout_verified": false,
+  "availability": "inquiry",
+  "published": true,
+  "id": "zhao-gongming-seated-pendant",
+  "title": "赵公明坐像挂件",
+  "title_en": "Seated Zhao Gongming Pendant",
+  "summary": "以坐像为中心，凝练的构图呈现赵公明主题的另一种表达。",
+  "summary_en": "A centered seated figure offers another expression of the Zhao Gongming motif.",
+  "body": "这款挂件采用以坐像为中心的构图，人物轮廓与下方虎纹相呼应。与细密纹饰款相比，它以更集中的视觉结构呈现传统人物主题。\n\n图片标示赵公明，关联传统祈愿丰足的文化寓意。可作为了解道教人物图像的一件佩饰；寓意属于信仰与文化表达，不代表对财富或生活结果的保证。",
+  "body_en": "A seated figure anchors this pendant, with a tiger motif below. Its concentrated composition offers a different reading of the Zhao Gongming theme from the more densely patterned design.\n\nThe supplied photograph identifies Zhao Gongming and a traditional wish for prosperity. The pendant offers a way to explore Taoist imagery; its symbolism does not guarantee wealth or personal results.",
+  "category": "pendants",
+  "order": 110,
+  "details": "主题：赵公明坐像挂件\n可见特征：赵公明坐像、虎纹\n展示依据：协会提供的商品照片\n材质与尺寸：请联系协会确认\n购买方式：先咨询款式、价格及供货情况",
+  "details_en": "Theme: Seated Zhao Gongming Pendant\nVisible features: Seated Zhao Gongming and tiger motif\nReference: Product photograph supplied by the Association\nMaterials and dimensions: Confirm with the Association\nOrdering: Inquire about design, price and availability first",
+  "faq": "问：在哪里可以确认尺寸和材质？\n答：请向协会索取该款实物的尺寸、材质及配件信息；图片只供了解外观，不代表未经确认的规格。",
+  "faq_en": "Q: Where can I confirm dimensions and materials?\nA: Ask the Association for the dimensions, materials and included accessories of the actual piece. Photographs show appearance, not unverified specifications.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/zhao-gongming-seated-pendant.jpg",
+      "thumbnail": "/assets/shop/zhao-gongming-seated-pendant-thumb.jpg",
+      "alt": "赵公明坐像挂件原始商品照片，保留图片中的文字与水印",
+      "alt_en": "Original photograph of Seated Zhao Gongming Pendant; source lettering and watermark retained",
+      "generated": false
+    }
+  ]
+}

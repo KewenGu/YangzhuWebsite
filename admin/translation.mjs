@@ -53,6 +53,7 @@ export function registerTranslationWidgets(CMS,config,{authBaseUrl,local=false})
  });
  CMS.registerWidget('translation-field',TranslateControl);
  for(const collection of config.collections){
+  if(collection.name==='products'||!Array.isArray(collection.fields))continue; // Products have their own reviewed bilingual AI draft workflow.
   for(const field of collection.fields){
    if(Object.keys(translationPairs).includes(field.name)||Object.values(translationPairs).includes(field.name)){
     field.translationBase=field.widget;field.widget='translation-field';

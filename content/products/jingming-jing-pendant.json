@@ -1,0 +1,29 @@
+{
+  "currency": "USD",
+  "checkout_verified": false,
+  "availability": "inquiry",
+  "published": true,
+  "id": "jingming-jing-pendant",
+  "title": "净明派净字符挂件",
+  "title_en": "Jingming Jing-Symbol Pendant",
+  "summary": "以一个「净」字纹样为中心，让简洁的线条承载对澄明的向往。",
+  "summary_en": "A flowing Jing symbol expresses a quiet appreciation for clarity and reflection.",
+  "body": "这款挂件以原图标示的净明派「净」字符为中心，四角辅以卷云式装饰。舒展的线条与沉静的底色形成对照，呈现一枚以书写形态为主角的佩饰。\n\n「净」的文化意涵为日常提供一个关于澄明与自省的提醒。宗教传统中的意义应与实际商品规格分开理解，图片不代表对材质或任何效果的认证。",
+  "body_en": "The supplied photograph identifies the central motif as the Jing character of the Jingming tradition. Flowing lines are framed by curled corner ornament, giving the written symbol a quiet visual presence.\n\nThe idea of clarity offers a point for personal reflection. Religious meaning is distinct from product specifications: the image does not certify a material or promise a particular effect.",
+  "category": "pendants",
+  "order": 150,
+  "details": "主题：净明派净字符挂件\n可见特征：净明派净字符、卷云式角纹\n展示依据：协会提供的商品照片\n材质与尺寸：请联系协会确认\n购买方式：先咨询款式、价格及供货情况",
+  "details_en": "Theme: Jingming Jing-Symbol Pendant\nVisible features: Jingming Jing symbol and curled corner ornament\nReference: Product photograph supplied by the Association\nMaterials and dimensions: Confirm with the Association\nOrdering: Inquire about design, price and availability first",
+  "faq": "问：在哪里可以确认尺寸和材质？\n答：请向协会索取该款实物的尺寸、材质及配件信息；图片只供了解外观，不代表未经确认的规格。",
+  "faq_en": "Q: Where can I confirm dimensions and materials?\nA: Ask the Association for the dimensions, materials and included accessories of the actual piece. Photographs show appearance, not unverified specifications.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/jingming-jing-pendant.jpg",
+      "thumbnail": "/assets/shop/jingming-jing-pendant-thumb.jpg",
+      "alt": "净明派净字符挂件原始商品照片，保留图片中的文字与水印",
+      "alt_en": "Original photograph of Jingming Jing-Symbol Pendant; source lettering and watermark retained",
+      "generated": false
+    }
+  ]
+}

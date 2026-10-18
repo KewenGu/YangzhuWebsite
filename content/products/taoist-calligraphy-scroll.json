@@ -1,0 +1,29 @@
+{
+  "currency": "USD",
+  "checkout_verified": false,
+  "availability": "inquiry",
+  "published": true,
+  "id": "taoist-calligraphy-scroll",
+  "title": "红金符箓卷轴",
+  "title_en": "Red & Gold Talisman Scroll",
+  "summary": "墨色符文与红金装裱相映，一幅适合静观的传统书写作品。",
+  "summary_en": "Expressive ink symbols and red-and-gold mounting form a striking work for quiet contemplation.",
+  "body": "照片展示一幅竖式符箓作品：红底上铺陈墨色符文与印记，上下以金色装裱衬托。竖向构图突出书写的节奏，适合在了解具体规格后规划居家陈列。\n\n本页展示此件作品的外观，供咨询具体款式。作品名称、尺寸、装裱方式及是否可提供同款，请向协会确认；文化寓意不构成实际效果保证。",
+  "body_en": "The photograph shows a vertical talisman work with ink symbols and seals on red, framed by gold-toned mounting. Its upright composition emphasizes the rhythm of the written forms.\n\nThis page presents the pictured design for inquiry. Confirm the precise work, dimensions, mounting and availability with the Association before planning a display. Cultural meaning does not promise a practical outcome.",
+  "category": "calligraphy",
+  "order": 160,
+  "details": "主题：红金符箓卷轴\n可见特征：竖式构图、红底、墨色符文、金色装裱外观\n展示依据：协会提供的商品照片\n材质与尺寸：请联系协会确认\n购买方式：先咨询款式、价格及供货情况",
+  "details_en": "Theme: Red & Gold Talisman Scroll\nVisible features: Vertical composition, red ground, ink symbols and gold-toned mounting\nReference: Product photograph supplied by the Association\nMaterials and dimensions: Confirm with the Association\nOrdering: Inquire about design, price and availability first",
+  "faq": "问：在哪里可以确认尺寸和材质？\n答：请向协会索取该款实物的尺寸、材质及配件信息；图片只供了解外观，不代表未经确认的规格。",
+  "faq_en": "Q: Where can I confirm dimensions and materials?\nA: Ask the Association for the dimensions, materials and included accessories of the actual piece. Photographs show appearance, not unverified specifications.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/taoist-calligraphy-scroll.jpg",
+      "thumbnail": "/assets/shop/taoist-calligraphy-scroll-thumb.jpg",
+      "alt": "红金符箓卷轴原始商品照片，保留图片中的文字与水印",
+      "alt_en": "Original photograph of Red & Gold Talisman Scroll; source lettering and watermark retained",
+      "generated": false
+    }
+  ]
+}

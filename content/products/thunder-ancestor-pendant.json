@@ -1,0 +1,29 @@
+{
+  "currency": "USD",
+  "checkout_verified": false,
+  "availability": "inquiry",
+  "published": true,
+  "id": "thunder-ancestor-pendant",
+  "title": "九天应元雷声普化天尊双面挂件",
+  "title_en": "Thunder Ancestor Double-Sided Pendant",
+  "summary": "一面人物图像，一面尊号文字，两种表达呈现雷祖主题。",
+  "summary_en": "A figure on one side and a sacred title on the other express the Thunder Ancestor theme.",
+  "body": "图片以并列方式展示这款雷祖主题挂件的两面：一面是人物与座下纹样，另一面为「九天应元雷声普化天尊」文字及红色装饰线条。正反两面的图像与文字相互呼应，适合欣赏传统图像与书写的结合。\n\n「辟邪」是原图使用的传统宗教表述，在此作为文化寓意介绍，不作具体效果的保证。图片展示双面设计，不代表订单含两枚挂件。",
+  "body_en": "The supplied photograph presents both sides of this Thunder Ancestor design: a figure with a decorative base on one side, and the title Jiutian Yingyuan Leisheng Puhua Tianzun with red accents on the other. Image and inscription create a complementary visual pairing.\n\nThe source photograph uses “evil-warding” as traditional religious language. It is presented here as cultural symbolism, not a guarantee. The two views describe a double-sided design, not an order containing two pendants.",
+  "category": "pendants",
+  "order": 120,
+  "details": "主题：九天应元雷声普化天尊双面挂件\n可见特征：双面设计；人物图像与尊号文字\n展示依据：协会提供的商品照片\n材质与尺寸：请联系协会确认\n购买方式：先咨询款式、价格及供货情况",
+  "details_en": "Theme: Thunder Ancestor Double-Sided Pendant\nVisible features: Double-sided design; figure and sacred title\nReference: Product photograph supplied by the Association\nMaterials and dimensions: Confirm with the Association\nOrdering: Inquire about design, price and availability first",
+  "faq": "问：在哪里可以确认尺寸和材质？\n答：请向协会索取该款实物的尺寸、材质及配件信息；图片只供了解外观，不代表未经确认的规格。",
+  "faq_en": "Q: Where can I confirm dimensions and materials?\nA: Ask the Association for the dimensions, materials and included accessories of the actual piece. Photographs show appearance, not unverified specifications.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/thunder-ancestor-pendant.jpg",
+      "thumbnail": "/assets/shop/thunder-ancestor-pendant-thumb.jpg",
+      "alt": "九天应元雷声普化天尊双面挂件原始商品照片，保留图片中的文字与水印",
+      "alt_en": "Original photograph of Thunder Ancestor Double-Sided Pendant; source lettering and watermark retained",
+      "generated": false
+    }
+  ]
+}

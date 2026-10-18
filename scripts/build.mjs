@@ -3,6 +3,9 @@ import {createHash} from 'node:crypto';
 import {optimize,sitemap} from './seo.mjs';
 import {readFile,writeFile,readdir,cp,mkdir,rm,access,stat} from 'node:fs/promises';
 import {types,validateEntry,renderEntry,safeMediaPath,escapeHTML as esc} from './content.mjs';
+import {validateProduct,renderShop,renderProductPreview,productMetadata,shopMetadata} from './shop.mjs';
+import {productSearchText} from './shop-discovery.mjs';
+import {validateShopSettings,renderShopPoliciesPage} from './shop-settings.mjs';
 import path from 'node:path';
 export async function readEntries(root='content'){
  const result={};
@@ -22,17 +25,38 @@ export async function readEntries(root='content'){
  }
  return result;
 }
+export async function readProducts(root='content/products'){
+ const result=[],ids=new Set();
+ for(const file of (await readdir(root)).filter(f=>f.endsWith('.json'))){
+  const p=validateProduct(JSON.parse(await readFile(path.join(root,file),'utf8')));
+  if(ids.has(p.id)||file!==p.id+'.json')throw Error(`Duplicate or mismatched product ID: ${file}`);ids.add(p.id);
+  for(const m of p.media)for(const value of [m.src,m.thumbnail].filter(Boolean)){const src=safeMediaPath(value);await access(src);if((await stat(src)).size>20000000)throw Error(`${p.id}: 商品图片超过20MB`);}
+  for(const v of p.variants||[])if(v.image){const src=safeMediaPath(v.image);await access(src);if((await stat(src)).size>20000000)throw Error(`${p.id}: 款式图片超过20MB`);}
+  result.push(p);
+ }
+ return result.sort((a,b)=>a.order-b.order||a.id.localeCompare(b.id));
+}
 export async function build(){
  const all=await readEntries();
+ const products=await readProducts();
+ const shopSettings=validateShopSettings(JSON.parse(await readFile('content/settings/shop.json','utf8')));
  const versions={};
- for(const asset of ['home.css','home.js','includes.js','new-script.js']) versions[asset]=createHash('sha256').update(await readFile(asset)).digest('hex').slice(0,12);
+ for(const asset of ['home.css','home.js','includes.js','new-script.js','shop.css','shop.js']) versions[asset]=createHash('sha256').update(await readFile(asset)).digest('hex').slice(0,12);
  const shared=await readFile('includes.js','utf8');
  const components=JSON.parse(shared.match(/const components = (.*);/)[1]);
- // Only explicit public files are deployed. Source data and draft content stay out of the website.
+ // Deploy public files and uploaded media; source records and unpublished pages are omitted.
  await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true});
- for(const name of ['assets','admin','home.css','home.js','includes.js','new-script.js','robots.txt','sitemap.xml','CNAME'])await cp(name,path.join('dist',name),{recursive:true});
+ for(const name of ['assets','admin','home.css','home.js','includes.js','new-script.js','shop.css','shop.js','robots.txt','sitemap.xml','CNAME'])await cp(name,path.join('dist',name),{recursive:true});
  await cp('scripts/content.mjs','admin/content.mjs');
  await cp('scripts/content.mjs','dist/admin/content.mjs');
+ await cp('scripts/shop.mjs','admin/shop.mjs');
+ await cp('scripts/shop.mjs','dist/admin/shop.mjs');
+ for(const name of ['shop-commerce','shop-settings','shop-discovery']){
+  await cp(`scripts/${name}.mjs`,`admin/${name}.mjs`);
+  await cp(`scripts/${name}.mjs`,`dist/admin/${name}.mjs`);
+ }
+ // Only public customer-facing settings belong in this file.
+ for(const directory of ['admin','dist/admin'])await writeFile(`${directory}/shop-settings.json`,JSON.stringify(shopSettings));
  await writeFile('dist/.nojekyll','');
  for(const page of ['index','about',...types]){
   const $=load(await readFile(page+'.html','utf8'));
@@ -60,8 +84,22 @@ export async function build(){
   await mkdir('dist/en',{recursive:true});
   await writeFile(`dist/en/${page}.html`,optimize($.html(),page,'en',components));
  }
- await writeFile('dist/sitemap.xml',sitemap());
+ const shopTemplate=await readFile('shop.html','utf8');
+ for(const lang of ['zh','en']){
+  const en=lang==='en',prefix=en?'dist/en':'dist';await mkdir(prefix+'/shop',{recursive:true});
+  const renderPage=async(page,main,metadata)=>{
+   const $=load(shopTemplate);$('main').html(main);
+   $('link[href],script[src]').each((_,el)=>{const attr=$(el).is('script')?'src':'href',name=$(el).attr(attr)?.split('?')[0];if(versions[name])$(el).attr(attr,'/'+name+'?v='+versions[name]);});
+   await writeFile(`${prefix}/${page}.html`,optimize($.html(),page,lang,components,metadata));
+  };
+  await renderPage('shop',renderShop(products,{english:en,settings:shopSettings}),shopMetadata(products,en));
+  await renderPage('shop-policies',renderShopPoliciesPage(shopSettings,{english:en}),{pageType:'WebPage'});
+  for(const p of products.filter(p=>p.published))await renderPage('shop/'+p.id,renderProductPreview(p,{english:en,settings:shopSettings}),productMetadata(p,en));
+ }
+ await writeFile('dist/sitemap.xml',sitemap(products));
+ const markdownText=s=>String(s).replace(/[\r\n]+/g,' ').replace(/[\\\[\]()*_`<>]/g,'');
+ await writeFile('dist/llms.txt','# Yangzhu Taoist Association of America\n\nOfficial bilingual website of the New York-based Taoist association.\n\n## Cultural shop\n\nProduct pages contain photographs, descriptions of Taoist cultural meanings, product facts and questions. Spiritual meanings describe tradition and belief, not guaranteed outcomes.\n\n- [Shipping, returns and customer service](https://yangzhu.org/en/shop-policies.html)\n\n'+products.filter(p=>p.published).map(p=>`- [${markdownText(p.title_en||p.title)}](https://yangzhu.org/en/shop/${p.id}.html): ${markdownText(productSearchText(p,true).description)}`).join('\n')+'\n');
  await writeFile('dist/admin/build.json',JSON.stringify({builtAt:new Date().toISOString(),revision:process.env.GITHUB_SHA||'local'}));
- console.log('Built website:',Object.fromEntries(types.map(t=>[t,all[t].filter(e=>e.published).length])));
+ console.log('Built website:',Object.fromEntries([...types.map(t=>[t,all[t].filter(e=>e.published).length]),['products',products.filter(p=>p.published).length]]));
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===path.resolve('scripts/build.mjs'))await build();

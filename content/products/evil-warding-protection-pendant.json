@@ -1,0 +1,63 @@
+{
+  "currency": "USD",
+  "checkout_verified": true,
+  "availability": "in_stock",
+  "published": true,
+  "id": "evil-warding-protection-pendant",
+  "title": "道教护佑佩饰",
+  "title_en": "Taoist Evil-Warding & Protection Pendant",
+  "category": "pendants",
+  "order": 20,
+  "price": 68,
+  "stripe_url": "https://buy.stripe.com/eVqaEYfwZ31K3ygc1Aew801",
+  "summary": "让传统纹样贴近日常，以随身佩饰寄托守护与安宁的心意。",
+  "summary_en": "A Taoist pendant for everyday wear, carrying a traditional wish for protection and peace.",
+  "body": "一枚随身佩饰，也是一份可被记起的心意。阳翥道教护佑佩饰依道教科仪与传统准备，以道教文化纹样为主题，便于在日常佩戴中表达对传统的珍视与对平安的祈愿。\n\n「护佑」与「辟邪」描述的是道教信仰中的传统寓意，并非对现实效果的承诺。不同图案各有文化主题，可以先欣赏图库中的款式，再向协会了解适合自己的选择。\n\n无论是为自己留一份心意，还是赠予亲友，都可以从纹样的文化主题开始选择。图库展示多种设计，一份订单不包含全部款式；购买前请与协会确认所选纹样、材质、尺寸、配件和配送安排。",
+  "body_en": "A pendant can hold a small, personal connection to tradition. Prepared according to Taoist rituals and traditions, Yangzhu's Taoist Evil-Warding & Protection Pendant is intended for everyday wear, expressing respect for Taoist culture and a wish for peace.\n\n“Protection” and “evil-warding” describe traditional religious symbolism, rather than a promise of practical results. Each motif has a distinct cultural theme; explore the gallery designs and ask the Association about your preferred choice.\n\nWhether chosen for yourself or as a gift, each design begins with a cultural story. The gallery shows several motifs; one order does not include every pictured design. Confirm your selected motif, materials, dimensions, accessories and delivery arrangements with the Association before purchase.",
+  "details": "商品类别：道教随身佩饰\n付款项目：Taoist Evil-Warding & Protection Pendant\n收款方式：Yangzhu Stripe 付款页\n纹样选择：购买前联系协会确认\n图片说明：不同纹样展示，非整套销售承诺",
+  "details_en": "Category: Taoist pendant for everyday wear\nCheckout item: Taoist Evil-Warding & Protection Pendant\nPayment: Yangzhu Stripe payment page\nDesign selection: Confirm with the Association before purchase\nPhotography: Design examples; not a promise of a complete set",
+  "faq": "问：可以选择图片中的某个图案吗？\n答：请在付款前联系协会确认所需纹样及供货情况；各款式展示页提供相应的咨询入口。\n\n问：一份订单包含所有挂件吗？\n答：不是。图库展示不同纹样，实际订单内容请与协会确认。\n\n问：护佑与辟邪是什么意思？\n答：这是道教信仰中对平安与守护的传统表达，属于文化与宗教寓意，不代表对具体结果的保证。",
+  "faq_en": "Q: Can I choose one of the pictured designs?\nA: Contact the Association before payment to confirm your preferred motif and its availability. Each design page includes an inquiry link.\n\nQ: Does one order include every pictured pendant?\nA: No. The gallery shows different designs. Confirm the contents of your order with the Association.\n\nQ: What do protection and evil-warding mean here?\nA: They express traditional Taoist aspirations for peace and protection. They describe religious and cultural meanings, not guaranteed outcomes.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/jingming-jing-pendant.jpg",
+      "thumbnail": "/assets/shop/jingming-jing-pendant-thumb.jpg",
+      "alt": "净明派净字符挂件款式展示",
+      "alt_en": "Jingming Jing-symbol pendant design",
+      "generated": false
+    },
+    {
+      "kind": "image",
+      "src": "/assets/shop/thunder-ancestor-pendant.jpg",
+      "thumbnail": "/assets/shop/thunder-ancestor-pendant-thumb.jpg",
+      "alt": "雷祖主题挂件正反面款式展示",
+      "alt_en": "Front and reverse design views of the Thunder Ancestor pendant",
+      "generated": false
+    },
+    {
+      "kind": "image",
+      "src": "/assets/shop/wenchang-pendant.jpg",
+      "thumbnail": "/assets/shop/wenchang-pendant-thumb.jpg",
+      "alt": "文昌帝君主题挂件款式展示",
+      "alt_en": "Wenchang Dijun pendant design",
+      "generated": false
+    },
+    {
+      "kind": "image",
+      "src": "/assets/shop/zhao-gongming-tiger-pendant.jpg",
+      "thumbnail": "/assets/shop/zhao-gongming-tiger-pendant-thumb.jpg",
+      "alt": "赵公明与虎主题挂件款式展示",
+      "alt_en": "Zhao Gongming and tiger pendant design",
+      "generated": false
+    },
+    {
+      "kind": "image",
+      "src": "/assets/shop/ziwei-inscription-pendant.jpg",
+      "thumbnail": "/assets/shop/ziwei-inscription-pendant-thumb.jpg",
+      "alt": "紫薇讳纹样挂件款式展示",
+      "alt_en": "Ziwei sacred inscription pendant design",
+      "generated": false
+    }
+  ]
+}

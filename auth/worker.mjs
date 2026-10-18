@@ -1,5 +1,6 @@
 // Minimal Decap GitHub OAuth bridge for Cloudflare Workers.
 // Secrets stay here; the browser receives only its own GitHub access token.
+import {shopAI} from './shop-ai.mjs';
 const cookieName='__Host-yangzhu-oauth';
 const enc=new TextEncoder();
 const base64url=bytes=>btoa(String.fromCharCode(...new Uint8Array(bytes))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
@@ -24,6 +25,7 @@ function popup(token,origin){
 export async function handle(request,env,fetcher=fetch){
  const url=new URL(request.url);
  if(url.pathname==='/translate')return translate(request,env,fetcher);
+ if(url.pathname.startsWith('/shop-ai/'))return shopAI(request,env,fetcher);
  if(request.method!=='GET')return error('Method not allowed',405);
  if(!env.GITHUB_CLIENT_ID||!env.GITHUB_CLIENT_SECRET||!env.ALLOWED_USERS||!env.CMS_ORIGIN||!env.AUTH_ORIGIN)return error('登录服务尚未完成配置，请联系管理员。',503);
  const origin=new URL(env.CMS_ORIGIN).origin;

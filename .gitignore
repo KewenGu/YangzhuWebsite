@@ -72,3 +72,9 @@ venv.bak/
 .wrangler/
 # Generated editor renderer (source: scripts/content.mjs)
 admin/content.mjs
+admin/shop.mjs
+admin/shop-commerce.mjs
+admin/shop-settings.mjs
+admin/shop-settings.json
+
+/admin/shop-discovery.mjs

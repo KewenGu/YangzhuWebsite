@@ -1,0 +1,63 @@
+{
+  "currency": "USD",
+  "checkout_verified": true,
+  "availability": "in_stock",
+  "published": true,
+  "id": "peace-protection-talisman",
+  "title": "道教护佑平安符",
+  "title_en": "Taoist Protection & Peace Talisman",
+  "category": "calligraphy",
+  "order": 10,
+  "price": 268,
+  "stripe_url": "https://buy.stripe.com/cNi3cwckN6dWfgY6Hgew800",
+  "summary": "以红金相映的符箓书写，为居所寄托一份平安与和合的心愿。",
+  "summary_en": "A traditional talisman for home display, expressing a wish for peace, protection and harmony.",
+  "body": "在一方安静的居所里，为传统留一处位置。阳翥道教护佑平安符依道教科仪与传统制作，将鲜明的红色、金色装裱与墨色符文相映，适合居家供奉或陈列，也是一份带有文化心意的礼物。\n\n在道教信仰中，符箓承载祈愿与敬意；平安与护佑是这一传统的精神寄托。商品所述寓意属于宗教与文化传统，不构成对个人结果的保证。\n\n从作品本身到文化交流中的分享，图库记录了符箓的不同呈现方式。选择时，欢迎先与协会确认心仪的作品、尺寸、装裱及寄送安排。照片中的多幅作品为展示示例，并不全部包含在一份订单内。",
+  "body_en": "Make room for a living tradition at home. Prepared according to Taoist rituals and traditions, Yangzhu's Protection & Peace Talisman brings together red, gold-toned mounting and expressive ink symbols in a piece intended for home enshrinement or display, or as a culturally meaningful gift.\n\nIn Taoist belief, talismans carry prayer and reverence, expressing aspirations for peace, protection and harmony. These meanings belong to religious and cultural tradition and do not guarantee personal outcomes.\n\nFrom individual works to moments of cultural exchange, the gallery offers different ways to appreciate the tradition. Contact the Association to confirm your chosen piece, dimensions, mounting and delivery arrangements. Photographs show examples; one order does not include every work pictured.",
+  "details": "商品类别：居家陈列符箓\n付款项目：Taoist Protection & Peace Talisman\n收款方式：Yangzhu Stripe 付款页\n款式与规格：购买前联系协会确认\n图片说明：符箓作品与文化交流场景示例",
+  "details_en": "Category: Talisman for home display\nCheckout item: Taoist Protection & Peace Talisman\nPayment: Yangzhu Stripe payment page\nDesign and specifications: Confirm with the Association before purchase\nPhotography: Examples of talisman works and cultural exchange settings",
+  "faq": "问：这个平安符适合放在哪里？\n答：本项目为居家陈列符箓；请根据具体作品及协会建议选择陈列位置。\n\n问：图片中的每幅作品都包含在订单里吗？\n答：不包含。图库展示作品与交流场景，具体交付内容请在购买前向协会确认。",
+  "faq_en": "Q: What is the talisman intended for?\nA: This item is intended for home display. Choose a location appropriate to the specific piece and the Association's guidance.\n\nQ: Does an order include every work shown in the gallery?\nA: No. The gallery contains example works and cultural exchange photographs. Confirm the exact contents of your order with the Association before purchase.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/taoist-calligraphy-scroll.jpg",
+      "thumbnail": "/assets/shop/taoist-calligraphy-scroll-thumb.jpg",
+      "alt": "红底金色装裱的道教符箓卷轴作品",
+      "alt_en": "Taoist talisman scroll with red ground and gold-toned mounting",
+      "generated": false
+    },
+    {
+      "kind": "image",
+      "src": "/assets/shop/taoist-calligraphy-horizontal.jpg",
+      "thumbnail": "/assets/shop/taoist-calligraphy-horizontal-thumb.jpg",
+      "alt": "红底横幅道教符箓作品",
+      "alt_en": "Horizontal Taoist talisman work on a red ground",
+      "generated": false
+    },
+    {
+      "kind": "image",
+      "src": "/assets/shop/calligraphy-collection.jpg",
+      "thumbnail": "/assets/shop/calligraphy-collection-thumb.jpg",
+      "alt": "阳翥道教符箓卷轴陈列",
+      "alt_en": "Taoist talisman scrolls on display at Yangzhu",
+      "generated": false
+    },
+    {
+      "kind": "image",
+      "src": "/assets/shop/calligraphy-presentation-1.jpg",
+      "thumbnail": "/assets/shop/calligraphy-presentation-1-thumb.jpg",
+      "alt": "文化交流活动中展示符箓卷轴，摄影署名保留",
+      "alt_en": "A talisman scroll presented during a cultural exchange; photographer credit retained",
+      "generated": false
+    },
+    {
+      "kind": "image",
+      "src": "/assets/shop/calligraphy-presentation-2.jpg",
+      "thumbnail": "/assets/shop/calligraphy-presentation-2-thumb.jpg",
+      "alt": "文化交流合影中展示红金色符箓作品，摄影署名保留",
+      "alt_en": "Red and gold talisman work shown during a cultural exchange; photographer credit retained",
+      "generated": false
+    }
+  ]
+}

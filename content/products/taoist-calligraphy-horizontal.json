@@ -1,0 +1,29 @@
+{
+  "currency": "USD",
+  "checkout_verified": false,
+  "availability": "inquiry",
+  "published": true,
+  "id": "taoist-calligraphy-horizontal",
+  "title": "红底横幅符箓作品",
+  "title_en": "Horizontal Red-Ground Talisman Art",
+  "summary": "多列符文铺陈于红底之上，为陈列空间带来鲜明的书写节奏。",
+  "summary_en": "Multiple columns of talismanic writing create a measured rhythm across a vivid red ground.",
+  "body": "这幅横向作品在红底上并列多组符文与印记，两侧饰以浅色装裱。横向展开的构图，适合从整体节奏与局部笔画两个角度欣赏。\n\n本页为照片所示款式提供咨询信息。具体题名、尺寸、材质与装裱请向协会确认；照片无法证明制作方式、年代或未经确认的宗教仪式。",
+  "body_en": "This horizontal work arranges several groups of talismanic writing and seals across a red ground, with pale mounting at the sides. The wide composition invites attention to both its overall rhythm and individual strokes.\n\nThis page is an inquiry listing for the pictured design. Confirm its exact title, dimensions, materials and mounting with the Association. Photography alone does not establish its production method, age or ritual history.",
+  "category": "calligraphy",
+  "order": 170,
+  "details": "主题：红底横幅符箓作品\n可见特征：横向构图、多列符文、红底与浅色装裱\n展示依据：协会提供的商品照片\n材质与尺寸：请联系协会确认\n购买方式：先咨询款式、价格及供货情况",
+  "details_en": "Theme: Horizontal Red-Ground Talisman Art\nVisible features: Horizontal composition, multiple symbol columns, red ground and pale mounting\nReference: Product photograph supplied by the Association\nMaterials and dimensions: Confirm with the Association\nOrdering: Inquire about design, price and availability first",
+  "faq": "问：在哪里可以确认尺寸和材质？\n答：请向协会索取该款实物的尺寸、材质及配件信息；图片只供了解外观，不代表未经确认的规格。",
+  "faq_en": "Q: Where can I confirm dimensions and materials?\nA: Ask the Association for the dimensions, materials and included accessories of the actual piece. Photographs show appearance, not unverified specifications.",
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/shop/taoist-calligraphy-horizontal.jpg",
+      "thumbnail": "/assets/shop/taoist-calligraphy-horizontal-thumb.jpg",
+      "alt": "红底横幅符箓作品原始商品照片，保留图片中的文字与水印",
+      "alt_en": "Original photograph of Horizontal Red-Ground Talisman Art; source lettering and watermark retained",
+      "generated": false
+    }
+  ]
+}

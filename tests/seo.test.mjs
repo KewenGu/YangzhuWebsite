@@ -21,5 +21,5 @@ test('both language pages expose unique canonical metadata, crawlable navigation
  }
 });
 test('sitemap contains only canonical public language URLs with no invented modification dates',()=>{
- const xml=sitemap();assert.equal((xml.match(/<loc>/g)||[]).length,12);assert.ok(!xml.includes('lastmod'));assert.ok(!xml.includes('/admin/'));
+ const xml=sitemap();assert.equal((xml.match(/<loc>/g)||[]).length,16);assert.ok(xml.includes('/en/shop-policies.html'));assert.ok(!xml.includes('lastmod'));assert.ok(!xml.includes('/admin/'));
 });
