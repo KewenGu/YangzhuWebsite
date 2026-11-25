@@ -1,5 +1,11 @@
 {
-  "media": [],
+  "media": [
+    {
+      "kind": "image",
+      "src": "/assets/uploads/75e8774e-8196-4fd6-818c-ff627532371c.jpeg",
+      "alt": "张"
+    }
+  ],
   "order": 60,
   "published": true,
   "id": "entry-5893174c-cdc2-4c0d-9cf0-b67398b65816",
